@@ -293,37 +293,11 @@ function useArchivio() {
 }
 
 /* ===================== componenti di base ===================== */
-function Logo({ size = 44 }) {
-  const id = useRef('lg' + uid()).current;
-  return (
-    <svg width={size} height={size} viewBox="0 0 64 64" role="img" aria-label="ProMateoS">
-      <defs>
-        <radialGradient id={id + 'a'} cx="36%" cy="30%" r="75%">
-          <stop offset="0" stopColor="#B9FBFF" />
-          <stop offset="0.35" stopColor="#2FD3EE" />
-          <stop offset="0.75" stopColor="#6A4CFF" />
-          <stop offset="1" stopColor="#2A1A86" />
-        </radialGradient>
-        <linearGradient id={id + 'b'} x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stopColor="#4B3BC4" />
-          <stop offset="1" stopColor="#1B1450" />
-        </linearGradient>
-      </defs>
-      <path d="M14 52 C19 45.5 45 45.5 50 52 L46 59 H18 Z" fill={`url(#${id}b)`} />
-      <path d="M18 59 H46" stroke="#2FD3EE" strokeWidth="1.4" strokeLinecap="round" opacity=".8" />
-      <circle cx="32" cy="28" r="21" fill={`url(#${id}a)`} />
-      <circle cx="32" cy="28" r="20.4" fill="none" stroke="#fff" strokeOpacity=".35" strokeWidth="1" />
-      <g fill="#fff" fillOpacity=".55">
-        <circle cx="24" cy="27" r="1.7" /><circle cx="32" cy="27" r="1.7" /><circle cx="40" cy="27" r="1.7" />
-        <circle cx="24" cy="34" r="1.7" /><circle cx="32" cy="34" r="1.7" />
-      </g>
-      <path d="M21 40 Q32 20 43 32" fill="none" stroke="#fff" strokeOpacity=".85" strokeWidth="1.8" strokeLinecap="round" />
-      <circle cx="43" cy="32" r="2.4" fill="#FFE27A" />
-      <ellipse cx="23.5" cy="16.5" rx="7.5" ry="4.2" fill="#fff" fillOpacity=".4" transform="rotate(-28 23.5 16.5)" />
-      <path d="M52 5 L53.6 9.4 L58 11 L53.6 12.6 L52 17 L50.4 12.6 L46 11 L50.4 9.4 Z" fill="#9BF5FF" />
-      <path d="M10 14 L11 16.6 L13.6 17.6 L11 18.6 L10 21.2 L9 18.6 L6.4 17.6 L9 16.6 Z" fill="#C9B8FF" />
-    </svg>
-  );
+const LOGO_SCURO_SVG = /*__LOGO_SCURO__*/'';
+const ICONA_SVG = /*__ICONA__*/'';
+
+function Logo() {
+  return <span className="icona-grande" dangerouslySetInnerHTML={{ __html: ICONA_SVG }} />;
 }
 
 function Icona({ nome }) {
@@ -399,7 +373,7 @@ function AnnoTab({ data, salva, vaiA }) {
     <div className="stack">
       {!completo && (
         <div className="benvenuto">
-          <Logo size={72} />
+          <Logo />
           <h2>Benvenuto in ProMateoS</h2>
           <p>Per cominciare indica quando inizia e finisce la scuola e i periodi di festività. Il calendario delle settimane si costruisce da solo e si aggiorna a ogni modifica.</p>
           <button className="bt" onClick={suggerisci}>Proponi le date dell'anno in corso</button>
@@ -1014,13 +988,7 @@ function App() {
   return (
     <>
       <header className="testata">
-        <div className="marchio">
-          <Logo size={46} />
-          <div>
-            <div className="nome">ProMate<span>oS</span></div>
-            <div className="motto">Programma l'anno, settimana per settimana</div>
-          </div>
-        </div>
+        <div className="marchio" role="img" aria-label="ProMateoS" dangerouslySetInnerHTML={{ __html: LOGO_SCURO_SVG }} />
         {data.anno.nome && <div className="anno-badge">A.S. {data.anno.nome}</div>}
       </header>
       <nav className="schede">

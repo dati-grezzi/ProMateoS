@@ -12,7 +12,10 @@ for f in sorted((radice / 'catalogo').glob('*.json')):
         libri.append(json.loads(f.read_text(encoding='utf-8')))
 catalogo = json.dumps(libri, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/')
 importa = (radice / 'src' / 'importa.js').read_text(encoding='utf-8')
+def logo(nome):
+    return json.dumps((radice / 'logo' / nome).read_text(encoding='utf-8').strip())
 app = (radice / 'src' / 'app.jsx').read_text(encoding='utf-8').replace('/*__IMPORTA__*/', importa).replace('/*__CATALOGO__*/[]', catalogo)
+app = app.replace("/*__LOGO_SCURO__*/''", logo('promateos-fondo-scuro.svg')).replace("/*__ICONA__*/''", logo('promateos-icona.svg'))
 html = (radice / 'src' / 'index.template.html').read_text(encoding='utf-8').replace('/*__APP__*/', app)
 (radice / 'index.html').write_text(html, encoding='utf-8')
 print(f'index.html: {len(html) // 1024} KB, {len(libri)} libri')
