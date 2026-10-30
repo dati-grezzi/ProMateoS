@@ -61,6 +61,19 @@ Formato di un libro:
 
 Per pubblicare su GitHub Pages: impostazioni del repository, Pages, ramo `main`, cartella radice.
 
+## Marchio
+
+Il marchio segue lo stile della famiglia di strumenti datigrezzi: vettori piatti, nome in **Zilla Slab Bold** convertito in tracciati, icona quadrata 120 × 120. La sfera di cristallo è piatta e il nome ha due toni (`ProMate` e `oS`).
+
+| File | Uso |
+|---|---|
+| `logo/promateos.svg` | marchio disteso, per fondo chiaro |
+| `logo/promateos-fondo-scuro.svg` | marchio disteso, per fondo scuro |
+| `logo/promateos-icona.svg`, `logo/promateos-icona-fondo-scuro.svg` | icona quadrata |
+| `logo/favicon.svg`, `logo/icona-180|192|512.png` | favicon e icone dell'app |
+
+I colori: viola notte `#1B1450`, viola `#6A4CFF`, ciano `#2FD3EE`, avorio `#F4F0E6`. Il carattere è nella cartella `caratteri/` con la sua licenza (SIL OFL). I file si rigenerano con `python3 tools/crea_logo.py` (richiede `fonttools` e `brotli`).
+
 ## Licenza
 
 ProMateoS è software libero, rilasciato con la licenza **GNU General Public License v3.0**: vedi il file `LICENSE`.
