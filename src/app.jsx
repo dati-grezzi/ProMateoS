@@ -16,6 +16,7 @@ const GIORNI = ['', 'Lun', 'Mar', 'Mer', 'Gio', 'Ven', 'Sab'];
 const fmtGM = d => d.getDate() + ' ' + MESI_BREVI[d.getMonth()];
 const fmtData = iso => (iso ? fmtGM(parseISO(iso)) + ' ' + parseISO(iso).getFullYear() : '');
 const num = v => (Number(v) || 0);
+const plur = (n, uno, molti) => n + ' ' + (n === 1 ? uno : molti);
 const fmtOre = n => (Math.round(n * 10) / 10).toString().replace('.', ',');
 
 function pasqua(y) {
@@ -259,36 +260,7 @@ function validaLibro(j) {
   return b;
 }
 
-// Importa un .docx con tabella CAPITOLO | OBIETTIVI | ATTIVITÀ (formato Contaci)
-async function libroDaDocx(file, meta) {
-  await caricaScript(URL_JSZIP);
-  const zip = await window.JSZip.loadAsync(await file.arrayBuffer());
-  const xml = await zip.file('word/document.xml').async('string');
-  const doc = new DOMParser().parseFromString(xml, 'application/xml');
-  const W = 'http://schemas.openxmlformats.org/wordprocessingml/2006/main';
-  const testoCella = tc => Array.from(tc.getElementsByTagNameNS(W, 'p')).map(p => Array.from(p.getElementsByTagNameNS(W, 't')).map(t => t.textContent).join('')).filter(Boolean);
-  const tbl = doc.getElementsByTagNameNS(W, 'tbl')[0];
-  if (!tbl) throw new Error('Nel file non ho trovato nessuna tabella.');
-  const righe = Array.from(tbl.getElementsByTagNameNS(W, 'tr')).slice(2);
-  const sezioni = [];
-  righe.forEach(tr => {
-    const celle = Array.from(tr.getElementsByTagNameNS(W, 'tc')).map(testoCella);
-    if (celle.length < 3 || !celle[0].length) return;
-    const m = celle[0].join(' ').match(/^\s*(\d+)\s*(.*)$/);
-    if (!m) return;
-    const les = [];
-    celle[2].join('\n').split('\n').forEach(r => {
-      const x = r.match(/Lezione\s+(\d+)\s+(.+)$/);
-      if (x) les.push({ id: 'L' + x[1], titolo: 'Lezione ' + x[1] + ' ' + x[2].trim(), pagine: '' });
-    });
-    sezioni.push({
-      id: 'cap' + m[1], codice: 'Cap. ' + m[1], titolo: m[2].trim(), lezioni: les,
-      obiettivi: celle[1].map(x => x.replace(/^[•\-\s]+/, '').trim()).filter(Boolean), indicatori: [], traguardi: []
-    });
-  });
-  if (!sezioni.length) throw new Error('Non riconosco la struttura della tabella (attesa: capitolo, obiettivi, attività didattiche).');
-  return { id: 'imp-' + uid(), titolo: meta.titolo, editore: meta.editore || '', materia: meta.materia || '', sezioni, importato: true };
-}
+/*__IMPORTA__*/
 
 /* ===================== archivio locale ===================== */
 const CHIAVE = 'promateos-v1';
@@ -545,16 +517,24 @@ function ImportaLibro({ chiudi, salva }) {
   const [testo, setTesto] = useState('');
   const [errore, setErrore] = useState('');
   const [occupato, setOccupato] = useState(false);
+  const [analisi, setAnalisi] = useState(null);      // documento Word letto, in attesa di conferma
+  const [nomeFile, setNomeFile] = useState('');
   const aggiungi = libro => { salva(d => ({ ...d, libri: [...d.libri, libro] })); chiudi(); };
   const daFile = async e => {
     const f = e.target.files[0]; if (!f) return;
-    setErrore(''); setOccupato(true);
+    setErrore(''); setOccupato(true); setAnalisi(null);
     try {
+      const titolo = meta.titolo.trim() || f.name.replace(/\.\w+$/, '');
       if (/\.json$/i.test(f.name)) aggiungi(validaLibro(JSON.parse(await f.text())));
-      else if (/\.docx$/i.test(f.name)) {
-        if (!meta.titolo.trim()) throw new Error('Scrivi prima il titolo del libro.');
-        aggiungi(await libroDaDocx(f, meta));
-      } else throw new Error('Formato non supportato. Usa un file .json o .docx. Per i PDF serve lo strumento di importazione incluso nel repository (cartella tools).');
+      else if (/\.docx$/i.test(f.name)) { setNomeFile(f.name); setAnalisi(analizzaDocumento(await leggiDocx(f))); }
+      else if (/\.(txt|md)$/i.test(f.name)) {
+        const l = libroDaTesto(await f.text(), { ...meta, titolo });
+        if (!l.sezioni.length) throw new Error('Il file è vuoto.');
+        aggiungi(l);
+      }
+      else if (/\.doc$/i.test(f.name)) throw new Error('Il vecchio formato .doc non si legge nel browser: aprilo con Word o LibreOffice, salvalo come .docx e importalo.');
+      else if (/\.pdf$/i.test(f.name)) throw new Error('I PDF si leggono con lo strumento del repository (cartella tools, importa_pdf.py), che produce un .json da importare qui.');
+      else throw new Error('Formato non supportato. Usa un file .docx, .json o .txt.');
     } catch (err) { setErrore(err.message || String(err)); }
     setOccupato(false); e.target.value = '';
   };
@@ -577,18 +557,97 @@ function ImportaLibro({ chiudi, salva }) {
       </div>
       {modo === 'file' ? (
         <>
-          <p className="vuoto">File accettati: <b>.json</b> (libro già nel formato ProMateoS, anche prodotto dagli strumenti del repository per i PDF) e <b>.docx</b> con tabella capitolo / obiettivi / attività didattiche. Per un .json titolo e materia vengono letti dal file.</p>
-          <input type="file" accept=".json,.docx" onChange={daFile} disabled={occupato} />
+          <p className="vuoto">Importa un <b>.docx</b> di programmazione (tabelle con colonne come unità o capitolo, nuclei o lezioni, traguardi, indicatori, obiettivi, attività, oppure semplici titoli ed elenchi), un <b>.json</b> o un <b>.txt</b>. Le colonne si riconoscono da sole e prima di importare puoi correggerle.</p>
+          <input type="file" accept=".docx,.json,.txt,.md" onChange={daFile} disabled={occupato} />
+          {occupato && <p className="vuoto">Lettura del file…</p>}
+          {analisi && <RevisioneDocx analisi={analisi} setAnalisi={setAnalisi} nomeFile={nomeFile} meta={meta} conferma={aggiungi} />}
         </>
       ) : (
         <>
           <p className="vuoto">Una riga per lezione. Le sezioni iniziano con <code>#</code>. Facoltativi: <code>Obiettivo: …</code>, <code>Indicatore: …</code>, e la pagina tra parentesi: <code>(pag. 12-13)</code>.</p>
-          <textarea rows={9} value={testo} placeholder={'# Le frazioni\nConfronto tra frazioni (pag. 10-11)\nSomma di frazioni\nObiettivo: Operare con le frazioni'} onChange={e => setTesto(e.target.value)} />
+          <textarea rows={9} value={testo} placeholder={'# Le frazioni\nConfronto tra frazioni (pag. 10-11)\nSomma di frazioni\nObiettivo: Operare con le frazioni\n# Le equazioni\nEquazioni di primo grado'} onChange={e => setTesto(e.target.value)} />
           <button className="bt" onClick={daTesto}>Importa</button>
         </>
       )}
       {errore && <p className="errore">{errore}</p>}
     </Finestra>
+  );
+}
+
+// Anteprima del riconoscimento di un documento Word, con correzione dei ruoli delle colonne
+function RevisioneDocx({ analisi, setAnalisi, nomeFile, meta, conferma }) {
+  const sezioni = useMemo(() => sezioniRisultanti(analisi), [analisi]);
+  const tot = riassuntoSezioni(sezioni);
+  const [aperta, setAperta] = useState(sezioni.length === 0);
+  const [k, setK] = useState(() => Math.max(0, analisi.tabelle.findIndex(t => t.usata)));
+  const t = analisi.tabelle[k];
+  const aggiornaTab = (i, fn) => setAnalisi(a => ({ ...a, tabelle: a.tabelle.map((x, j) => (j === i ? fn(x) : x)) }));
+  const cambiaRuolo = (c, ruolo) => aggiornaTab(k, x => ({
+    ...x, usata: true,
+    cfg: { ...x.cfg, origine: 'manuale', ruoli: x.cfg.ruoli.map((r, i) => (i === c ? ruolo : (ruolo === 'unita' && r === 'unita' ? 'ignora' : r))) }
+  }));
+  const importa = () => conferma({
+    id: 'imp-' + uid(), titolo: meta.titolo.trim() || nomeFile.replace(/\.docx$/i, ''),
+    editore: meta.editore, materia: meta.materia, sezioni, importato: true
+  });
+  return (
+    <div className="revisione">
+      {analisi.sembraPiano && <div className="avviso">Questo documento sembra un piano annuale (mesi e settimane), non la programmazione di un libro. Posso importarlo come elenco di argomenti, ma l'importazione dei piani con le settimane non c'è ancora.</div>}
+      {!analisi.tabelle.length && !sezioni.length && <div className="avviso">Nel documento non ci sono tabelle né testo riconoscibile: potrebbe essere una scansione o un'immagine. Se è un PDF usa lo strumento nella cartella tools del repository.</div>}
+      <div className={sezioni.length ? 'ok' : 'avviso'}>
+        {sezioni.length
+          ? 'Riconosciuto: ' + tot.sezioni + ' sezioni, ' + tot.lezioni + ' lezioni, ' + tot.obiettivi + ' obiettivi, ' + tot.indicatori + ' indicatori.'
+          : 'Non sono riuscito a riconoscere le sezioni da solo: indica qui sotto il ruolo di ogni colonna.'}
+      </div>
+      {sezioni.length > 0 && (
+        <ul className="lista-compatta">
+          {sezioni.slice(0, 60).map(s => <li key={s.id}><b>{s.codice}</b> {s.titolo} <span className="sotto">· {plur(s.lezioni.length, 'lezione', 'lezioni')}, {plur(s.obiettivi.length, 'obiettivo', 'obiettivi')}, {plur(s.indicatori.length, 'indicatore', 'indicatori')}</span></li>)}
+        </ul>
+      )}
+      <details open={aperta} onToggle={e => setAperta(e.target.open)}>
+        <summary>Correggi il riconoscimento</summary>
+        {analisi.tabelle.length > 1 && (
+          <div className="chips">
+            {analisi.tabelle.map((x, i) => (
+              <button key={i} className={'chip piccolo' + (i === k ? ' on' : '')} onClick={() => setK(i)}>Tabella {i + 1}{x.usata ? '' : ' (esclusa)'}</button>
+            ))}
+          </div>
+        )}
+        {t && (
+          <>
+            <label className="spunta"><input type="checkbox" checked={t.usata} onChange={e => aggiornaTab(k, x => ({ ...x, usata: e.target.checked }))} /> Usa questa tabella ({t.righe.length} righe, {t.nCol} colonne)</label>
+            <Campo etichetta="Righe iniziali da saltare (intestazioni)">
+              <input type="number" min="0" max="12" value={t.cfg.intest} onChange={e => aggiornaTab(k, x => ({ ...x, cfg: { ...x.cfg, origine: 'manuale', intest: Math.max(0, parseInt(e.target.value, 10) || 0) } }))} />
+            </Campo>
+            <p className="vuoto">Ruolo di ogni colonna (si riconosce {t.cfg.origine === 'intestazioni' ? 'dalle intestazioni' : t.cfg.origine === 'contenuto' ? 'dal contenuto' : t.cfg.origine === 'manuale' ? 'come impostato da te' : 'in modo approssimativo'}):</p>
+            <div className="scorri">
+              <table className="tabella anteprima">
+                <thead>
+                  <tr>{t.cfg.ruoli.map((r, c) => (
+                    <th key={c}><select value={r} onChange={e => cambiaRuolo(c, e.target.value)}>
+                      {RUOLI_COLONNA.map(x => <option key={x.id} value={x.id}>{x.et}</option>)}
+                    </select></th>
+                  ))}</tr>
+                </thead>
+                <tbody>
+                  {t.righe.slice(0, t.cfg.intest + 5).map((riga, i) => (
+                    <tr key={i} className={i < t.cfg.intest ? 'vac' : ''}>
+                      {t.cfg.ruoli.map((r, c) => {
+                        const cella = riga.find(x => x.col === c);
+                        const testo = cella ? cella.par.join(' · ') : '';
+                        return <td key={c}>{testo.length > 90 ? testo.slice(0, 89) + '…' : testo}</td>;
+                      })}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </>
+        )}
+        <label className="spunta"><input type="checkbox" checked={analisi.usaParagrafi} onChange={e => setAnalisi(a => ({ ...a, usaParagrafi: e.target.checked }))} /> Usa anche il testo fuori dalle tabelle (titoli ed elenchi)</label>
+      </details>
+      <button className="bt" onClick={importa} disabled={!sezioni.length}>Importa {sezioni.length ? sezioni.length + ' sezioni' : ''}</button>
+    </div>
   );
 }
 
