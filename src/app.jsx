@@ -57,7 +57,7 @@ function calcolaSettimane(anno) {
   const ini = parseISO(anno.inizio), fin = parseISO(anno.fine);
   if (fin < ini) return [];
   const trovaFesta = iso => (anno.festivita || []).find(f => f.da <= iso && iso <= (f.a || f.da));
-  const nGiorni = anno.sabato ? 6 : 5;
+  const nGiorni = 6;
   const out = [];
   let lun = lunediDi(ini), n = 1;
   while (lun <= fin) {
@@ -70,8 +70,8 @@ function calcolaSettimane(anno) {
     }
     const giovedi = addDays(lun, 3);
     out.push({
-      n, chiave: fmtISO(lun), lun, al: addDays(lun, nGiorni - 1), giorni,
-      giorniScuola: giorni.filter(g => g.lavora).length,
+      n, chiave: fmtISO(lun), lun, alVen: addDays(lun, 4), alSab: addDays(lun, 5), giorni,
+      giorniScuola: giorni.filter(g => g.lavora && g.dow <= 5).length,
       mese: MESI[giovedi.getMonth()], meseIdx: giovedi.getFullYear() * 12 + giovedi.getMonth()
     });
     lun = addDays(lun, 7); n++;
@@ -80,6 +80,11 @@ function calcolaSettimane(anno) {
 }
 
 const festeDellaSettimana = s => [...new Set(s.giorni.filter(g => g.festa).map(g => g.festa))];
+// Il sabato è una scelta di classe: lo usa il piano che ha ore il sabato (regime misto)
+const usaSabato = piano => num(piano.orario[6]) > 0;
+const giorniVisibili = (s, piano) => s.giorni.filter(g => g.dow <= 5 || usaSabato(piano));
+const vacanzaPiano = (s, piano) => giorniVisibili(s, piano).every(g => !g.lavora);
+const festePiano = (s, piano) => [...new Set(giorniVisibili(s, piano).filter(g => g.festa).map(g => g.festa))];
 const oreDisponibili = (s, piano) => s.giorni.reduce((t, g) => t + (g.lavora ? num(piano.orario[g.dow]) : 0), 0);
 const oreAssegnate = items => (items || []).reduce((t, i) => t + num(i.ore), 0);
 const chiaveLezione = r => r.b + '|' + r.s + '|' + r.l;
@@ -132,9 +137,11 @@ function distribuisci(piano, libri, settimane, dallaChiave) {
 function costruisciTabella(data, pianiIds) {
   const settimane = calcolaSettimane(data.anno);
   const piani = pianiIds.map(id => data.piani.find(p => p.id === id)).filter(Boolean);
+  const conSabato = piani.some(usaSabato);
   const righe = settimane.map(s => ({
-    mese: s.mese, n: s.n, dal: fmtGM(s.lun), al: fmtGM(s.al),
-    vacanza: s.giorniScuola === 0, note: festeDellaSettimana(s).join(', '),
+    mese: s.mese, n: s.n, dal: fmtGM(s.lun), al: fmtGM(conSabato ? s.alSab : s.alVen),
+    vacanza: piani.length ? piani.every(p => vacanzaPiano(s, p)) : s.giorniScuola === 0,
+    note: (piani.length ? [...new Set([].concat(...piani.map(p => festePiano(s, p))))] : festeDellaSettimana(s)).join(', '),
     celle: piani.map(p => {
       const it = p.assegnazioni[s.chiave] || [];
       return { testo: it.map(x => x.testo).join('; '), ore: oreAssegnate(it) };
@@ -285,7 +292,7 @@ async function libroDaDocx(file, meta) {
 
 /* ===================== archivio locale ===================== */
 const CHIAVE = 'promateos-v1';
-const datiIniziali = () => ({ v: 1, anno: { nome: '', inizio: '', fine: '', festivita: [], sabato: false }, libri: [], piani: [], pianoAttivo: null });
+const datiIniziali = () => ({ v: 1, anno: { nome: '', inizio: '', fine: '', festivita: [] }, libri: [], piani: [], pianoAttivo: null });
 
 // Passa a un nuovo anno scolastico: nuove date, festività nazionali proposte, piani spostati di un numero intero di settimane
 function nuovoAnno(d, nome, inizio, fine, portaPiani) {
@@ -432,7 +439,7 @@ function AnnoTab({ data, salva, vaiA }) {
           <Campo etichetta="Inizio lezioni"><input type="date" value={a.inizio} onChange={e => cambiaInizio(e.target.value)} /></Campo>
           <Campo etichetta="Fine lezioni"><input type="date" value={a.fine} onChange={e => imposta({ fine: e.target.value })} /></Campo>
         </div>
-        <label className="spunta"><input type="checkbox" checked={!!a.sabato} onChange={e => imposta({ sabato: e.target.checked })} /> Si fa lezione anche il sabato</label>
+        <p className="vuoto">Il sabato si imposta per ogni classe, nell'orario del piano: così nella stessa scuola ci possono essere classi con la settimana corta e classi con il sabato.</p>
       </Pannello>
 
       <Pannello titolo="Festività e sospensioni" azioni={<button className="bt ghost piccolo" disabled={!a.inizio || !a.fine} onClick={nazionali}>Aggiungi le festività nazionali</button>}>
@@ -458,7 +465,7 @@ function AnnoTab({ data, salva, vaiA }) {
           <div className="numeri">
             <div><b>{settimane.length}</b><span>settimane di calendario</span></div>
             <div><b>{piene}</b><span>con almeno un giorno di lezione</span></div>
-            <div><b>{giorniTot}</b><span>giorni di lezione</span></div>
+            <div><b>{giorniTot}</b><span>giorni di lezione (lun–ven)</span></div>
           </div>
           <button className="bt" onClick={() => vaiA('piani')}>Avanti: crea un piano</button>
         </Pannello>
@@ -598,7 +605,6 @@ function PianiTab({ data, salva, vaiA }) {
   const modifica = patch => salva(d => ({ ...d, piani: d.piani.map(p => p.id === piano.id ? { ...p, ...patch } : p) }));
   const elimina = () => { if (confirm('Eliminare il piano "' + piano.nome + '" con tutte le sue assegnazioni?')) salva(d => { const resto = d.piani.filter(p => p.id !== piano.id); return { ...d, piani: resto, pianoAttivo: resto[0] ? resto[0].id : null }; }); };
   const duplica = () => salva(d => { const c = { ...JSON.parse(JSON.stringify(piano)), id: uid(), nome: piano.nome + ' (copia)' }; return { ...d, piani: [...d.piani, c], pianoAttivo: c.id }; });
-  const nGiorni = data.anno.sabato ? 6 : 5;
 
   const scegliLibro = id => {
     const usa = piano.libri.includes(id);
@@ -633,8 +639,9 @@ function PianiTab({ data, salva, vaiA }) {
               <Campo etichetta="Classe"><input value={piano.classe} onChange={e => modifica({ classe: e.target.value })} /></Campo>
             </div>
             <h4>Orario settimanale (ore per giorno)</h4>
+            <p className="vuoto">Sabato: lascia 0 se questa classe non ha lezione il sabato. Le settimane si adattano da sole.</p>
             <div className="orario">
-              {Array.from({ length: nGiorni }, (_, i) => i + 1).map(g => (
+              {[1, 2, 3, 4, 5, 6].map(g => (
                 <label key={g} className="ora"><span>{GIORNI[g]}</span>
                   <input type="number" min="0" step="0.5" value={piano.orario[g] || 0} onChange={e => modifica({ orario: { ...piano.orario, [g]: num(e.target.value) } })} />
                 </label>
@@ -714,7 +721,7 @@ function SettimaneTab({ data, salva, vaiA }) {
   const totAss = Object.values(piano.assegnazioni).reduce((t, l) => t + oreAssegnate(l), 0);
   const nOrfane = Object.keys(piano.assegnazioni).filter(k => !settimane.some(s => s.chiave === k)).length;
   const senzaOrario = totDisp === 0;
-  const primaChiaveLibera = (settimane.find(s => s.giorniScuola > 0) || settimane[0]).chiave;
+  const primaChiaveLibera = (settimane.find(s => !vacanzaPiano(s, piano)) || settimane[0]).chiave;
 
   const autoDistribuisci = () => {
     if (senzaOrario) { setMessaggio('Imposta prima l\'orario settimanale del piano (scheda Piani).'); return; }
@@ -756,15 +763,15 @@ function SettimaneTab({ data, salva, vaiA }) {
           {g.lista.map(s => {
             const items = piano.assegnazioni[s.chiave] || [];
             const disp = oreDisponibili(s, piano), ass = oreAssegnate(items);
-            const feste = festeDellaSettimana(s);
-            const vacanza = s.giorniScuola === 0;
+            const feste = festePiano(s, piano);
+            const vacanza = vacanzaPiano(s, piano);
             const aperta = apertaChiave === s.chiave;
             const sfora = disp > 0 && ass > disp + 1e-9;
             return (
               <article key={s.chiave} className={'settimana' + (vacanza ? ' vacanza' : '') + (sfora ? ' sfora' : '')}>
                 <header onClick={() => setApertaChiave(apertaChiave === s.chiave ? null : s.chiave)}>
                   <div>
-                    <strong>Sett. {s.n}</strong> <span className="sotto">{fmtGM(s.lun)} – {fmtGM(s.al)}</span>
+                    <strong>Sett. {s.n}</strong> <span className="sotto">{fmtGM(s.lun)} – {fmtGM(usaSabato(piano) ? s.alSab : s.alVen)}</span>
                     {feste.length > 0 && <div className="feste">{feste.join(' · ')}</div>}
                     {items.length > 0 && !aperta && <div className="riassunto">{items.map(i => i.testo || '—').join(' · ')}</div>}
                   </div>

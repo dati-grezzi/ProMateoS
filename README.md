@@ -10,7 +10,7 @@ App web a file unico (React via CDN), senza server: i dati restano nel browser.
 
 1. **Anno**: inizio e fine delle lezioni, festività (le nazionali si propongono da sole). Il calendario delle settimane si ricalcola a ogni modifica. "Nuovo anno scolastico" riparte da nuove date portando con sé i piani.
 2. **Libri**: libri e programmazioni, con sezioni, lezioni, obiettivi e indicatori. Si importano da `.json`, `.docx` (tabella capitolo / obiettivi / attività) o da testo incollato.
-3. **Piani**: un piano per materia e classe, con orario settimanale, libri usati, sezioni scelte e ordine di svolgimento.
+3. **Piani**: un piano per materia e classe, con orario settimanale, libri usati, sezioni scelte e ordine di svolgimento. Il sabato si decide classe per classe (ore del sabato maggiori di zero), per le scuole con regime misto.
 4. **Settimane**: per ogni settimana si scelgono le lezioni dal libro, o si aggiungono voci libere, verifiche e ripassi. "Distribuisci" riempie le settimane in base alle ore disponibili.
 5. **Esporta**: tabella annuale in Word (`.docx`), CSV o PDF (stampa). Più piani possono stare affiancati, come nelle tabelle aritmetica / geometria. Il backup completo si scarica e si ripristina da qui.
 
