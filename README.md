@@ -23,18 +23,24 @@ I cataloghi sono in `catalogo/`, estratti dalle programmazioni ufficiali per gli
 
 ## Importare altre programmazioni
 
-La lettura delle programmazioni è la parte più delicata, e conviene partire dal **PDF**: le tabelle si leggono con precisione. Il `.docx` è la seconda scelta; il vecchio `.doc` perde colonne e struttura.
+L'importazione dei file **Word (.docx)** è nell'app stessa e riconosce da sola il formato:
+
+* tabelle con intestazioni diverse (unità, capitolo, modulo…; nuclei, contenuti, lezioni…; traguardi, indicatori, obiettivi, abilità, attività…), anche su più righe, con celle unite e intestazioni ripetute;
+* tabelle senza intestazioni: il ruolo di ogni colonna si deduce dal contenuto (pagine, "Lezione N", verbi degli obiettivi);
+* documenti senza tabelle: titoli ed elenchi (`Obiettivi:`, `Lezioni:`).
+
+Prima di importare, l'app mostra cosa ha riconosciuto e lascia correggere il ruolo di ogni colonna: se il riconoscimento non basta non c'è un errore senza uscita, si imposta a mano. Si importano anche `.json` e `.txt`.
+
+I **PDF** si leggono con uno strumento Python (le tabelle dei PDF sono la fonte più precisa) che produce un `.json` da importare nell'app o da mettere in `catalogo/`:
 
 ```
-pip install pdfplumber python-docx
+pip install pdfplumber
 python3 tools/importa_pdf.py volume.pdf --id scopri-A --titolo "Scopri perché! – Volume A" \
     --materia Scienze --editore Zanichelli --prefisso A -o catalogo/scopri-A.json
-python3 tools/importa_docx.py programmazione.docx --id contaci-N2 --titolo "Contaci – Numeri 2" \
-    --materia Matematica -o catalogo/contaci-N2.json
 python3 tools/build.py        # rigenera index.html
 ```
 
-`importa_pdf.py` legge il formato "Idee per insegnare" (pagine dispari: unità / nuclei / profili / traguardi / indicatori; pagine pari: obiettivi / attività). Un `.json` prodotto dagli strumenti si può anche importare direttamente dall'app, senza rigenerare nulla.
+`importa_pdf.py` legge il formato "Idee per insegnare" (pagine dispari: unità / nuclei / profili / traguardi / indicatori; pagine pari: obiettivi / attività). Il vecchio `.doc` va salvato come `.docx` prima dell'importazione.
 
 Formato di un libro:
 
@@ -49,8 +55,9 @@ Formato di un libro:
 
 * `src/app.jsx`: l'applicazione.
 * `src/index.template.html`: pagina e stile.
-* `tools/build.py`: unisce template, app e cataloghi in `index.html` (il file che si pubblica).
-* `tools/importa_pdf.py`, `tools/importa_docx.py`: lettura delle programmazioni.
+* `tools/build.py`: unisce template, app, importatore e cataloghi in `index.html` (il file che si pubblica).
+* `src/importa.js`: lettura dei file Word.
+* `tools/importa_pdf.py`: lettura dei PDF delle programmazioni.
 
 Per pubblicare su GitHub Pages: impostazioni del repository, Pages, ramo `main`, cartella radice.
 
