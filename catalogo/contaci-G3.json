@@ -1,0 +1,172 @@
+{
+ "id": "contaci-G3",
+ "titolo": "Contaci – Misure, spazio e figure 3",
+ "editore": "Zanichelli",
+ "materia": "Matematica",
+ "sezioni": [
+  {
+   "id": "cap1",
+   "codice": "Cap. 1",
+   "titolo": "Osservazioni sulla circonferenza",
+   "lezioni": [
+    {
+     "id": "1-L1",
+     "titolo": "Lezione 1 Circonferenza, cerchio e loro parti",
+     "pagine": ""
+    },
+    {
+     "id": "1-L2",
+     "titolo": "Lezione 2 Circonferenze e rette sul piano. La tangente",
+     "pagine": ""
+    },
+    {
+     "id": "1-L3",
+     "titolo": "Lezione 3 Angoli al centro e alla circonferenza",
+     "pagine": ""
+    },
+    {
+     "id": "1-L4",
+     "titolo": "Lezione 4 Circonferenza circoscritta a un poligono",
+     "pagine": ""
+    }
+   ],
+   "obiettivi": [
+    "Costruire figure del piano e dello spazio e disegni geometrici, utilizzando in modo appropriato e con accuratezza opportuni strumenti (carta, spago, corde, riga, squadra, compasso, goniometro, software,…).",
+    "Riconoscere e costruire figure piane isometriche e simili e utilizzare isometrie e similitudini per risolvere situazioni problematiche in contesti interni ed esterni alla matematica.",
+    "Applicare il teorema di Pitagora in contesti geometrici."
+   ],
+   "indicatori": [],
+   "traguardi": []
+  },
+  {
+   "id": "cap2",
+   "codice": "Cap. 2",
+   "titolo": "Circonferenza e cerchio",
+   "lezioni": [
+    {
+     "id": "2-L7",
+     "titolo": "Lezione 7 Studi sulla lunghezza della circonferenza",
+     "pagine": ""
+    },
+    {
+     "id": "2-L8",
+     "titolo": "Lezione 8 Lunghezza della circonferenza",
+     "pagine": ""
+    },
+    {
+     "id": "2-L9",
+     "titolo": "Lezione 9 Area del cerchio",
+     "pagine": ""
+    },
+    {
+     "id": "2-L10",
+     "titolo": "Lezione 10 Calcolo di circonferenza e cerchi",
+     "pagine": ""
+    },
+    {
+     "id": "2-L11",
+     "titolo": "Lezione 11 Il valore esatto",
+     "pagine": ""
+    },
+    {
+     "id": "2-L12",
+     "titolo": "Lezione 12 Archi e settori circolari",
+     "pagine": ""
+    }
+   ],
+   "obiettivi": [
+    "Determinare la lunghezza della circonferenza e l'area del cerchio con metodi esatti e approssimati (stima per difetto e per eccesso).",
+    "Utilizzare il numero π per risolvere problemi geometrici e reali e riconoscere l’importanza storica di tale costante."
+   ],
+   "indicatori": [],
+   "traguardi": []
+  },
+  {
+   "id": "cap3",
+   "codice": "Cap. 3",
+   "titolo": "La superficie dei solidi",
+   "lezioni": [
+    {
+     "id": "3-L13",
+     "titolo": "Lezione 13 Classificare i solidi",
+     "pagine": ""
+    },
+    {
+     "id": "3-L14",
+     "titolo": "Lezione 14 Disegnare i solidi in scala",
+     "pagine": ""
+    },
+    {
+     "id": "3-L15",
+     "titolo": "Lezione 15 Dal solido allo sviluppo piano",
+     "pagine": ""
+    },
+    {
+     "id": "3-L16",
+     "titolo": "Lezione 16 Le superfici dei solidi a due basi",
+     "pagine": ""
+    },
+    {
+     "id": "3-L17",
+     "titolo": "Lezione 17 Le superfici dei solidi a punta",
+     "pagine": ""
+    },
+    {
+     "id": "3-L18",
+     "titolo": "Lezione 18 Esercitazione sulle superfici dei solidi",
+     "pagine": ""
+    },
+    {
+     "id": "3-L19",
+     "titolo": "Lezione 19 Il teorema di Pitagora applicato ai solidi",
+     "pagine": ""
+    }
+   ],
+   "obiettivi": [
+    "Visualizzare oggetti tridimensionali a partire da rappresentazioni bidimensionali e viceversa.",
+    "Determinare l'area di figure piane al fine di calcolare la superficie di alcuni solidi (retti e regolari)",
+    "Applicare il teorema di Pitagora in contesti geometrici e reali."
+   ],
+   "indicatori": [],
+   "traguardi": []
+  },
+  {
+   "id": "cap4",
+   "codice": "Cap. 4",
+   "titolo": "Il volume dei solidi",
+   "lezioni": [
+    {
+     "id": "4-L20",
+     "titolo": "Lezione 20 Le unità di misura del volume",
+     "pagine": ""
+    },
+    {
+     "id": "4-L21",
+     "titolo": "Lezione 21 Volume dei solidi a due basi",
+     "pagine": ""
+    },
+    {
+     "id": "4-L22",
+     "titolo": "Lezione 22 Volume dei solidi a punta",
+     "pagine": ""
+    },
+    {
+     "id": "4-L23",
+     "titolo": "Lezione 23 Esercitazione su volumi e superfici",
+     "pagine": ""
+    },
+    {
+     "id": "4-L24",
+     "titolo": "Lezione 24 Volume e superficie della sfera",
+     "pagine": ""
+    }
+   ],
+   "obiettivi": [
+    "Determinare il volume di figure solide (es. prismi, piramidi, sfera, ecc., ma anche solidi irregolari) con metodi esatti e approssimati (stima per difetto e per eccesso).",
+    "Risolvere problemi utilizzando le proprietà geometriche delle figure."
+   ],
+   "indicatori": [],
+   "traguardi": []
+  }
+ ]
+}

@@ -1,0 +1,578 @@
+{
+ "id": "scopri-A",
+ "titolo": "Scopri perché! – Volume A (chimica e fisica)",
+ "editore": "Zanichelli",
+ "materia": "Scienze",
+ "sezioni": [
+  {
+   "id": "A0",
+   "codice": "A0",
+   "titolo": "Per iniziare – Il metodo scientifico",
+   "lezioni": [
+    {
+     "id": "A0-1",
+     "titolo": "Le fasi del metodo scientifico",
+     "pagine": "A2-A3, A6-A7"
+    }
+   ],
+   "obiettivi": [
+    "Formalizzare le tappe dell’indagine scientifica.",
+    "Saper utilizzare semplici strumenti di misura adeguati alla situazione."
+   ],
+   "indicatori": [
+    "Acquisire la consapevolezza che si esplora l’ambiente utilizzando i propri sensi.",
+    "Individuare ipotesi coerenti con il fenomeno osservato e verificarle sia sulla base delle esperienze pregresse sia con l’utilizzo di strumenti anche non concettuali."
+   ],
+   "traguardi": [
+    "Acquisire un metodo di indagine.",
+    "Comprendere il ruolo della scienza nella storia e nella società contemporanea."
+   ]
+  },
+  {
+   "id": "A1",
+   "codice": "A1",
+   "titolo": "Osservare, classificare, sperimentare",
+   "lezioni": [
+    {
+     "id": "A1-1",
+     "titolo": "Gli strumenti e gli errori di misura",
+     "pagine": "A20-A21"
+    },
+    {
+     "id": "A1-2",
+     "titolo": "Le unità di misura",
+     "pagine": "A22-A23"
+    }
+   ],
+   "obiettivi": [
+    "Riconoscere e descrivere quanto osservato, sentito, toccato.",
+    "Individuare le modalità e gli strumenti per verificare le ipotesi.",
+    "Effettuare corrette misurazioni, visualizzarne graficamente i risultati; dare una spiegazione del fenomeno coerente con i risultati ottenuti.",
+    "Saper utilizzare semplici strumenti di misura adeguati alla situazione.",
+    "Essere in grado di calcolare la media delle misure e conoscere il significato di approssimazione."
+   ],
+   "indicatori": [
+    "Effettuare e stimare misure in modo diretto e indiretto.",
+    "Acquisire la consapevolezza che le misure ottenute sono affette da un’intrinseca incertezza."
+   ],
+   "traguardi": [
+    "Consolidare il concetto di misura come trasformazione di una qualità in un numero e in un’unità di misura."
+   ]
+  },
+  {
+   "id": "A2",
+   "codice": "A2",
+   "titolo": "Un mondo di materia",
+   "lezioni": [
+    {
+     "id": "A2-1",
+     "titolo": "Che cos’è e com’è fatta la materia",
+     "pagine": "A36-A37"
+    },
+    {
+     "id": "A2-2",
+     "titolo": "Il volume e la densità",
+     "pagine": "A38-A39"
+    },
+    {
+     "id": "A2-3",
+     "titolo": "I cambiamenti di stato",
+     "pagine": "A40-A41"
+    }
+   ],
+   "obiettivi": [
+    "Essere in grado di misurare la massa e il volume di un oggetto utilizzando strumenti di misura e metodi empirici.",
+    "Stabilire la relazione tra il volume di un liquido e il livello raggiunto.",
+    "Organizzare semplici esperienze per consolidare il concetto di densità.",
+    "Realizzare modelli (grafici o con l’ausilio di materiali diversi) degli stati di aggregazione della materia.",
+    "Saper descrivere i cambiamenti di stato della materia; acquisire termini specifici."
+   ],
+   "indicatori": [
+    "Acquisire il concetto di volume e massa.",
+    "Acquisire il concetto di densità come relazione tra massa e volume.",
+    "Conoscere gli assiomi alla base della teoria atomica della materia.",
+    "Formulare ipotesi di modelli sulla struttura dei corpi allo stato solido, liquido e aeriforme.",
+    "Conoscere le relazioni di trasformazione degli stati di aggregazione della materia."
+   ],
+   "traguardi": [
+    "Costruire concetti e formularli con un linguaggio adeguato.",
+    "Individuare relazioni tra grandezze.",
+    "Elaborare modelli (la costruzione di un modello astratto passa attraverso oggetti concreti).",
+    "Acquisire competenze linguistiche."
+   ]
+  },
+  {
+   "id": "A3",
+   "codice": "A3",
+   "titolo": "La temperatura e il calore",
+   "lezioni": [
+    {
+     "id": "A3-1",
+     "titolo": "Misurare la temperatura",
+     "pagine": "A58-A59"
+    },
+    {
+     "id": "A3-2",
+     "titolo": "La differenza tra calore e temperatura",
+     "pagine": "A60"
+    },
+    {
+     "id": "A3-3",
+     "titolo": "Come si trasmette il calore",
+     "pagine": "A62-A63"
+    }
+   ],
+   "obiettivi": [
+    "Descrivere le caratteristiche qualitative del calore.",
+    "Descrivere le caratteristiche quantitative della temperatura.",
+    "Descrivere significative relazioni tra calore e temperatura.",
+    "Descrivere i modi di propagazione del calore.",
+    "Descrivere le trasformazioni fisiche della materia.",
+    "Acquisizione di termini specifici."
+   ],
+   "indicatori": [
+    "Acquisire il concetto di calore come forma di energia.",
+    "Acquisire il concetto di temperatura.",
+    "Comprendere la relazione tra i diversi fenomeni e lo stato di agitazione delle particelle che costituiscono i corpi."
+   ],
+   "traguardi": [
+    "Costruire concetti e formularli con un linguaggio adeguato.",
+    "Individuare relazioni tra grandezze.",
+    "Acquisire competenze linguistiche."
+   ]
+  },
+  {
+   "id": "A4",
+   "codice": "A4",
+   "titolo": "Le basi della chimica",
+   "lezioni": [
+    {
+     "id": "A4-1",
+     "titolo": "Le trasformazioni fisiche e chimiche",
+     "pagine": "A84-A85"
+    },
+    {
+     "id": "A4-2",
+     "titolo": "I miscugli e le soluzioni",
+     "pagine": "A86-A87"
+    },
+    {
+     "id": "A4-3",
+     "titolo": "La struttura dell’atomo",
+     "pagine": "A88-A91"
+    },
+    {
+     "id": "A4-4",
+     "titolo": "La tavola periodica",
+     "pagine": "A92-A95"
+    },
+    {
+     "id": "A4-5",
+     "titolo": "I legami chimici",
+     "pagine": "A96-A99"
+    }
+   ],
+   "obiettivi": [
+    "Acquisire il concetto di fenomeno fisico e chimico.",
+    "Acquisire il concetto di elemento e di composto.",
+    "Essere in grado di leggere una formula chimica e saper bilanciare semplici reazioni.",
+    "Individuare la periodicità e il ripetersi delle caratteristiche dei diversi elementi.",
+    "Essere consapevoli della relazione tra le proprietà di un elemento e la sua configurazione elettronica."
+   ],
+   "indicatori": [
+    "Classificare un fenomeno in base al tipo di trasformazione che la materia subisce.",
+    "Comprendere la trasformazione delle sostanze sia scomponendo composti sia formandoli.",
+    "Completare la costruzione del concetto di trasformazione della materia.",
+    "Individuare un ordine logico nella classificazione degli elementi.",
+    "Sviluppare la modellizzazione della struttura atomica."
+   ],
+   "traguardi": [
+    "Costruire concetti e sistemarli organicamente.",
+    "Scomporre e ricomporre la complessità in elementi e relazioni.",
+    "Interpretare lo svolgersi di fenomeni controllati sperimentalmente.",
+    "Affinare le abilità operative.",
+    "Acquisire competenze linguistiche."
+   ]
+  },
+  {
+   "id": "A5",
+   "codice": "A5",
+   "titolo": "Le reazioni chimiche",
+   "lezioni": [
+    {
+     "id": "A5-1",
+     "titolo": "Le leggi delle reazioni chimiche",
+     "pagine": "A110-A113"
+    },
+    {
+     "id": "A5-2",
+     "titolo": "Energia e velocità delle reazioni",
+     "pagine": "A114-A115"
+    },
+    {
+     "id": "A5-3",
+     "titolo": "Gli ossidi, le anidridi e le combustioni",
+     "pagine": "A116-A117"
+    },
+    {
+     "id": "A5-4",
+     "titolo": "Gli acidi, le basi e i sali",
+     "pagine": "A118-A119"
+    },
+    {
+     "id": "A5-5",
+     "titolo": "Il pH",
+     "pagine": "A120-A121"
+    }
+   ],
+   "obiettivi": [
+    "Essere consapevoli che alcune reazioni avvengono con sviluppo o assorbimento di energia.",
+    "Essere in grado di leggere una formula chimica e saper bilanciare reazioni.",
+    "Acquisire il concetto di ossidazione.",
+    "Classificare e riconoscere composti chimici anche utilizzando indicatori.",
+    "Individuare negli schemi di reazioni chimiche, accanto ai prodotti anche l’energia che si produce."
+   ],
+   "indicatori": [
+    "Evidenziare la relazione tra energia e materia nelle trasformazioni chimiche.",
+    "Acquisire il concetto di conservazione della massa in una trasformazione chimica.",
+    "Classificare gli elementi in base alla loro reattività con l’ossigeno.",
+    "Riconoscere i composti chimici in base alle loro proprietà.",
+    "Identificare le combustioni con le ossidazioni."
+   ],
+   "traguardi": [
+    "Costruire concetti e sistemarli organicamente.",
+    "Individuare relazioni all’interno di un contesto complesso.",
+    "Interpretare lo svolgersi di fenomeni controllati sperimentalmente.",
+    "Affinare le abilità operative.",
+    "Acquisire competenze linguistiche."
+   ]
+  },
+  {
+   "id": "A6",
+   "codice": "A6",
+   "titolo": "La chimica della vita",
+   "lezioni": [
+    {
+     "id": "A6-1",
+     "titolo": "Il carbonio e gli idrocarburi",
+     "pagine": "A134-A135"
+    },
+    {
+     "id": "A6-2",
+     "titolo": "I polimeri e le plastiche",
+     "pagine": "A136-A137"
+    },
+    {
+     "id": "A6-3",
+     "titolo": "I carboidrati",
+     "pagine": "A138-A139"
+    },
+    {
+     "id": "A6-4",
+     "titolo": "I lipidi",
+     "pagine": "A140-A141"
+    },
+    {
+     "id": "A6-5",
+     "titolo": "Le proteine e gli acidi nucleici",
+     "pagine": "A142-A145"
+    }
+   ],
+   "obiettivi": [
+    "Essere consapevoli che tutte le molecole di sostanze organiche contengono carbonio e che sono presenti nella quotidianità.",
+    "Conoscere le caratteristiche chimiche dei composti del carbonio.",
+    "Constatare che gli elementi presenti nelle sostanze organiche sono principalmente quattro.",
+    "Comprendere che nei composti organici tali elementi si riuniscono in unità tipiche dal cui montaggio risultano glucidi, lipidi e proteine.",
+    "Sapere che glucidi, lipidi e proteine entrano nella struttura cellulare di organismi animali e vegetali e quindi negli alimenti.",
+    "Conoscere le funzioni costruttive, regolatrici ed energetiche di glucidi, lipidi e proteine."
+   ],
+   "indicatori": [
+    "Acquisire il concetto di composto organico e cogliere la differenza con quello inorganico.",
+    "Riconoscere analogie e differenze nei comportamenti chimici di alcuni derivati del carbonio.",
+    "Elaborare modelli di molecole complesse visti come montaggio di unità semplici.",
+    "Intuire la natura sintetica delle materie plastiche.",
+    "Capire, attraverso una modellizzazione, la composizione delle sostanze organiche.",
+    "Individuare le relazioni tra composti organici e organismi viventi.",
+    "Individuare relazioni tra composti organici ed energia."
+   ],
+   "traguardi": [
+    "Costruire concetti e sistemarli organicamente.",
+    "Individuare relazioni tra energia e materia e tra materia e vita.",
+    "Acquisire competenze linguistiche."
+   ]
+  },
+  {
+   "id": "A7",
+   "codice": "A7",
+   "titolo": "Il movimento e l’equilibrio",
+   "lezioni": [
+    {
+     "id": "A7-1",
+     "titolo": "I diversi tipi di moto",
+     "pagine": "A158-A161"
+    },
+    {
+     "id": "A7-2",
+     "titolo": "Le forze",
+     "pagine": "A162-A163"
+    },
+    {
+     "id": "A7-3",
+     "titolo": "Il baricentro e l’equilibrio",
+     "pagine": "A164-A165"
+    },
+    {
+     "id": "A7-4",
+     "titolo": "La leva",
+     "pagine": "A166-A169"
+    }
+   ],
+   "obiettivi": [
+    "Acquisire il concetto di moto e gli elementi che lo caratterizzano.",
+    "Rappresentare la velocità come grandezza vettoriale.",
+    "Comprendere che la velocità è relativa al sistema di riferimento.",
+    "Formalizzare le leggi del moto rettilineo uniforme e del moto uniformemente accelerato.",
+    "Acquisire il concetto di forza e rappresentarla graficamente.",
+    "Consolidare il concetto di peso come particolare tipo di forza.",
+    "Effettuare corrette misure di forze.",
+    "Individuare le condizioni che determinano l’equilibrio di un corpo (azioni combinate di più forze).",
+    "Conoscere le grandezze caratteristiche di una leva.",
+    "Risolvere i problemi riferiti alle condizioni di equilibrio di una leva."
+   ],
+   "indicatori": [
+    "Comprendere la relazione tra spazio e tempo per definire la velocità.",
+    "Dare una descrizione quantitativa del movimento.",
+    "Riconoscere una grandezza fisica dagli effetti che produce e imparare a misurarla.",
+    "Comprendere la correlazione tra variazione di velocità e forza.",
+    "Valutare gli effetti di più forze applicate a un corpo.",
+    "Saper individuare la posizione del baricentro di un corpo in equilibrio."
+   ],
+   "traguardi": [
+    "Costruire concetti e sistemarli organicamente.",
+    "Individuare e comprendere relazioni tra grandezze.",
+    "Interpretare lo svolgersi di fenomeni controllati sperimentalmente.",
+    "Formulare ipotesi e verificarle utilizzando strumenti matematici e di misura.",
+    "Acquisire competenze linguistiche."
+   ]
+  },
+  {
+   "id": "A8",
+   "codice": "A8",
+   "titolo": "Le onde, i suoni e la luce",
+   "lezioni": [
+    {
+     "id": "A8-1",
+     "titolo": "Le onde",
+     "pagine": "A182-A183"
+    },
+    {
+     "id": "A8-2",
+     "titolo": "Il suono e le sue proprietà",
+     "pagine": "A184-A187"
+    },
+    {
+     "id": "A8-3",
+     "titolo": "La luce, un’onda molto speciale",
+     "pagine": "A188-A189"
+    },
+    {
+     "id": "A8-4",
+     "titolo": "La riflessione della luce e gli specchi",
+     "pagine": "A190-A191"
+    },
+    {
+     "id": "A8-5",
+     "titolo": "La rifrazione della luce e le lenti",
+     "pagine": "A192-A193"
+    },
+    {
+     "id": "A8-6",
+     "titolo": "La luce e i colori",
+     "pagine": "A194-A195"
+    }
+   ],
+   "obiettivi": [
+    "Descrivere le caratteristiche di un’onda.",
+    "Comprendere che nel moto ondulatorio non c’è trasporto di materia.",
+    "Cogliere la relazione tra lunghezza d’onda e frequenza.",
+    "Saper riconoscere un’onda trasversale da una longitudinale.",
+    "Conoscere le velocità di propagazione di un’onda sonora nei mezzi.",
+    "Sapere che cosa determina l’altezza, l’intensità e il timbro di un suono.",
+    "Verificare sperimentalmente gli effetti della riflessione dei suoni.",
+    "Conoscere le caratteristiche di una radiazione luminosa.",
+    "Distinguere tra sorgenti luminose, corpi illuminati.",
+    "Osservare e descrivere i fenomeni di riflessione, diffusione, rifrazione, assorbimento e dispersione della luce.",
+    "Spiegare i colori come scomposizione della luce."
+   ],
+   "indicatori": [
+    "Capire come si propagano le onde sonore.",
+    "Definire il suono e la luce come fenomeni ondulatori.",
+    "Correlare la vibrazione di un oggetto con la generazione di onde sonore.",
+    "Mettere in relazione le caratteristiche del suono con quelle delle onde sonore.",
+    "Comprendere come si genera la riflessione delle onde sonore.",
+    "Capire come i corpi rispondono alle radiazioni luminose.",
+    "Comprendere e descrivere in che modo si propagano i raggi luminosi.",
+    "Saper cogliere le relazioni di causa ed effetto nei fenomeni di riflessione, rifrazione e dispersione della luce."
+   ],
+   "traguardi": [
+    "Costruire concetti e sistemarli organicamente.",
+    "Osservare e interpretare lo svolgersi di fenomeni controllati sperimentalmente.",
+    "Individuare le relazioni tra grandezze.",
+    "Acquisire competenze linguistiche."
+   ]
+  },
+  {
+   "id": "A9",
+   "codice": "A9",
+   "titolo": "Le forze e il movimento",
+   "lezioni": [
+    {
+     "id": "A9-1",
+     "titolo": "Il principio di inerzia e l’attrito",
+     "pagine": "A212-A213"
+    },
+    {
+     "id": "A9-2",
+     "titolo": "La legge fondamentale della dinamica",
+     "pagine": "A214-A215"
+    },
+    {
+     "id": "A9-3",
+     "titolo": "La gravità, il peso e la massa",
+     "pagine": "A216-A217"
+    },
+    {
+     "id": "A9-4",
+     "titolo": "Il principio di azione e reazione",
+     "pagine": "A218-A219"
+    },
+    {
+     "id": "A9-5",
+     "titolo": "Il galleggiamento",
+     "pagine": "A220-A221"
+    }
+   ],
+   "obiettivi": [
+    "Il significato di inerzia e la sua relazione con la massa di un corpo.",
+    "Capire la relazione tra variazione di velocità e forza.",
+    "Individuare la relazione matematica tra accelerazione e intensità di una forza e tra accelerazione e massa di un corpo.",
+    "Conoscere le relazioni tra massa, peso e accelerazione di gravità e formalizzare le relazioni matematiche.",
+    "Conoscere e comprendere i principi della dinamica.",
+    "Capire la relazione tra densità di un corpo e il suo comportamento in un fluido."
+   ],
+   "indicatori": [
+    "Consolidare il concetto di forza come causa del moto o ostacolo a esso.",
+    "Esaminare fenomeni in cui intervengono più grandezze utilizzando anche strumenti matematici.",
+    "Mettere in relazione le forze applicate agli oggetti e il modo in cui essi si muovono.",
+    "Individuare grandezze costanti su tutta la superficie terrestre.",
+    "Arrivare all’idea di legge come relazione generale che regola fenomeni apparentemente molto diversi."
+   ],
+   "traguardi": [
+    "Costruire concetti e sistemarli organicamente.",
+    "Individuare e comprendere relazioni tra grandezze.",
+    "Formulare ipotesi e verificarle utilizzando strumenti matematici e di misura.",
+    "Acquisire competenze linguistiche."
+   ]
+  },
+  {
+   "id": "A10",
+   "codice": "A10",
+   "titolo": "L’elettricità e il magnetismo",
+   "lezioni": [
+    {
+     "id": "A10-1",
+     "titolo": "La forza elettrica",
+     "pagine": "A232-A235"
+    },
+    {
+     "id": "A10-2",
+     "titolo": "I circuiti elettrici e le leggi di Ohm",
+     "pagine": "A236-A239"
+    },
+    {
+     "id": "A10-3",
+     "titolo": "La forza magnetica",
+     "pagine": "A240-A241"
+    },
+    {
+     "id": "A10-4",
+     "titolo": "L’elettromagnetismo",
+     "pagine": "A242-A243"
+    }
+   ],
+   "obiettivi": [
+    "Considerare fenomeni legati a un accumulo di cariche elettriche ferme.",
+    "Sapere come si origina la corrente elettrica in un circuito: la differenza di potenziale.",
+    "Capire che cosa è la corrente elettrica e come si misura.",
+    "Costruire e fare funzionare semplici circuiti elettrici.",
+    "Definire in modo operativo l’intensità di corrente, la resistenza e la tensione.",
+    "Esaminare l’effetto Joule e la dissociazione elettrolitica.",
+    "Essere in grado di effettuare esperienze volte a indurre il magnetismo e l’elettromagnetismo."
+   ],
+   "indicatori": [
+    "A partire dai concetti di carica e di campo elettrico introdurre quello di corrente elettrica.",
+    "Conoscere gli effetti dello spostamento di cariche elettriche.",
+    "Analizzare gli elementi di un circuito elettrico e sistemarli in modo logico.",
+    "Definire le grandezze elettriche, con le loro unità di misura, in base agli effetti che producono.",
+    "Comprendere gli effetti del passaggio della corrente elettrica.",
+    "Interpretare fenomeni e situazioni relativi al magnetismo e all’elettromagnetismo."
+   ],
+   "traguardi": [
+    "Costruire concetti e sistemarli organicamente.",
+    "Individuare relazioni all’interno di un contesto complesso.",
+    "Interpretare lo svolgersi di fenomeni controllati sperimentalmente.",
+    "Affinare le abilità operative.",
+    "Acquisire competenze linguistiche."
+   ]
+  },
+  {
+   "id": "A11",
+   "codice": "A11",
+   "titolo": "Le fonti di energia",
+   "lezioni": [
+    {
+     "id": "A11-1",
+     "titolo": "La definizione e le forme di energia",
+     "pagine": "A256-A259"
+    },
+    {
+     "id": "A11-2",
+     "titolo": "L’uso dell’energia e le emissioni di gas-serra",
+     "pagine": "A260-A261"
+    },
+    {
+     "id": "A11-3",
+     "titolo": "I combustibili fossili",
+     "pagine": "A262-A263"
+    },
+    {
+     "id": "A11-4",
+     "titolo": "Le fonti di energia rinnovabili",
+     "pagine": "A266-A267"
+    }
+   ],
+   "obiettivi": [
+    "Acquisire il concetto di lavoro come relazione tra forza e spostamento.",
+    "Acquisire il concetto di potenza come relazione tra lavoro e tempo.",
+    "Consolidare il concetto di energia come capacità di un corpo di compiere un lavoro.",
+    "Comprendere e descrivere fenomeni in cui avvengono passaggi e trasformazioni di energia.",
+    "Esaminare le varie fonti energetiche e individuare quelle ecosostenibili.",
+    "Capire il significato di radioattività e fornire esempi di uso dell’energia nucleare."
+   ],
+   "indicatori": [
+    "Introdurre una grandezza fisica attraverso la relazione matematica con altre due grandezze.",
+    "Distinguere le varie forme di energia e le trasformazioni da una forma all’altra.",
+    "Comprendere il significato di conservazione dell’energia.",
+    "Prendere coscienza dei problemi connessi all’utilizzo delle varie fonti energetiche.",
+    "Comprendere la relazione tra massa e energia nelle reazioni nucleari."
+   ],
+   "traguardi": [
+    "Costruire concetti e sistemarli organicamente.",
+    "Scomporre la complessità nei suoi elementi e cogliere relazioni, anche con strumenti matematici.",
+    "Individuare relazioni tra energia e materia.",
+    "Adottare atteggiamenti responsabili verso l’uso delle risorse energetiche.",
+    "Acquisire competenze linguistiche."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,594 @@
+{
+ "id": "scopri-B",
+ "titolo": "Scopri perché! – Volume B (scienze della vita)",
+ "editore": "Zanichelli",
+ "materia": "Scienze",
+ "sezioni": [
+  {
+   "id": "B0",
+   "codice": "B0",
+   "titolo": "Per iniziare – Le scienze della vita",
+   "lezioni": [
+    {
+     "id": "B0-1",
+     "titolo": "La teoria dell’evoluzione",
+     "pagine": "B4-B7"
+    }
+   ],
+   "obiettivi": [
+    "Descrivere il concetto di selezione naturale."
+   ],
+   "indicatori": [
+    "Acquisire il concetto di teoria dell’evoluzione e di selezione naturale.",
+    "Comprendere la relazione tra l’umanità e gli altri esseri viventi."
+   ],
+   "traguardi": [
+    "Costruire concetti e formularli con un linguaggio adeguato.",
+    "Acquisire competenze linguistiche."
+   ]
+  },
+  {
+   "id": "B1",
+   "codice": "B1",
+   "titolo": "La vita e le cellule",
+   "lezioni": [
+    {
+     "id": "B1-1",
+     "titolo": "Gli elementi fondamentali della cellula",
+     "pagine": "B18-B19"
+    },
+    {
+     "id": "B1-2",
+     "titolo": "Utilizzare il microscopio",
+     "pagine": "B21"
+    },
+    {
+     "id": "B1-3",
+     "titolo": "Il ciclo della vita",
+     "pagine": "B26-B27"
+    },
+    {
+     "id": "B1-4",
+     "titolo": "I regni dei viventi",
+     "pagine": "B28-B29"
+    }
+   ],
+   "obiettivi": [
+    "Applicare più criteri in modo da individuare caratteristiche sempre più specifiche.",
+    "Scegliere e applicare criteri per individuare le differenze tra vivente e non vivente.",
+    "Definire le funzioni fondamentali alla vita di un vivente.",
+    "Conoscere le funzioni vitali di animali e vegetali e la trasformazione della materia nel ciclo biologico.",
+    "Acquisire e ordinare le conoscenze sui regni dei viventi individuando la correlazione tra strutture e funzioni."
+   ],
+   "indicatori": [
+    "Individuare le differenze tra organismi autotrofi ed eterotrofi.",
+    "Individuare nella cellula l’unità costitutiva funzionale di tutti gli esseri viventi.",
+    "Conoscere la struttura della cellula animale e vegetale in relazione alle funzioni vitali."
+   ],
+   "traguardi": [
+    "Indurre a osservare in modo analitico la realtà.",
+    "Individuare le strutture degli organismi in relazione alle funzioni svolte.",
+    "Acquisire competenze linguistiche."
+   ]
+  },
+  {
+   "id": "B2",
+   "codice": "B2",
+   "titolo": "I microrganismi",
+   "lezioni": [
+    {
+     "id": "B2-1",
+     "titolo": "I virus",
+     "pagine": "B42-B45"
+    },
+    {
+     "id": "B2-2",
+     "titolo": "I batteri",
+     "pagine": "B46-B49"
+    },
+    {
+     "id": "B2-3",
+     "titolo": "Il protisti",
+     "pagine": "B50-B51"
+    },
+    {
+     "id": "B2-4",
+     "titolo": "I funghi",
+     "pagine": "B52-B55"
+    }
+   ],
+   "obiettivi": [
+    "Conoscere le caratteristiche e le funzioni vitali dei microrganismi.",
+    "Conoscere le differenze tra virus e batteri."
+   ],
+   "indicatori": [
+    "Capire che il virus non è un essere vivente.",
+    "Comprendere quali sono le strategie da adottare per combattere una malattia di origine virale o batterica.",
+    "Collegare e confrontare, sottolineando analogie e differenze, i diversi gruppi di microrganismi."
+   ],
+   "traguardi": [
+    "Indurre a osservare in modo analitico la realtà.",
+    "Individuare le strutture dei microrganismi e le relazioni con gli altri esseri viventi.",
+    "Acquisire competenze linguistiche."
+   ]
+  },
+  {
+   "id": "B3",
+   "codice": "B3",
+   "titolo": "Le piante",
+   "lezioni": [
+    {
+     "id": "B3-1",
+     "titolo": "La fotosintesi clorofilliana",
+     "pagine": "B70"
+    },
+    {
+     "id": "B3-2",
+     "titolo": "Il trasporto nelle piante",
+     "pagine": "B71"
+    },
+    {
+     "id": "B3-3",
+     "titolo": "Le radici",
+     "pagine": "B72-B73"
+    },
+    {
+     "id": "B3-4",
+     "titolo": "Il fusto",
+     "pagine": "B74-B75"
+    },
+    {
+     "id": "B3-5",
+     "titolo": "La foglia",
+     "pagine": "B76-B77"
+    },
+    {
+     "id": "B3-6",
+     "titolo": "La riproduzione",
+     "pagine": "B78-B81"
+    }
+   ],
+   "obiettivi": [
+    "Sapere che le differenze di struttura di animali e vegetali sono riconducibili al diverso modo con cui si procurano le sostanze organiche.",
+    "Conoscere la struttura della radice, del fusto, della foglia e del fiore e la loro funzione.",
+    "Saper contestualizzare i fenomeni di capillarità e osmosi.",
+    "Saper descrivere i metodi utilizzati dalle piante per l’impollinazione e la disseminazione.",
+    "Saper descrivere l’evoluzione degli adattamenti dei vegetali dall’acqua alla terraferma."
+   ],
+   "indicatori": [
+    "Conoscere l’interazione tra le piante con la luce e con l’acqua.",
+    "Utilizzare la reazione di fotosintesi come guida all’analisi della struttura della pianta.",
+    "Comprendere i modi di riprodursi di un vegetale.",
+    "Conoscere il processo di evoluzione dai vegetali semplici ai complessi."
+   ],
+   "traguardi": [
+    "Individuare le strutture degli organismi vegetali in relazione alle funzioni svolte.",
+    "Evidenziare la relazione tra ambiente e adattamento a esso.",
+    "Acquisire competenze linguistiche."
+   ]
+  },
+  {
+   "id": "B4",
+   "codice": "B4",
+   "titolo": "Gli animali invertebrati",
+   "lezioni": [
+    {
+     "id": "B4-1",
+     "titolo": "Le spugne",
+     "pagine": "B96"
+    },
+    {
+     "id": "B4-2",
+     "titolo": "I celenterati",
+     "pagine": "B97-B98"
+    },
+    {
+     "id": "B4-3",
+     "titolo": "I platelminti",
+     "pagine": "B100"
+    },
+    {
+     "id": "B4-4",
+     "titolo": "I nematodi",
+     "pagine": "B100"
+    },
+    {
+     "id": "B4-5",
+     "titolo": "Gli anellidi",
+     "pagine": "B101"
+    },
+    {
+     "id": "B4-6",
+     "titolo": "I molluschi e gli echinodermi",
+     "pagine": "B102"
+    },
+    {
+     "id": "B4-7",
+     "titolo": "Gli artropodi",
+     "pagine": "B104-B107"
+    }
+   ],
+   "obiettivi": [
+    "Osservare e descrivere le caratteristiche strutturali e funzionali degli invertebrati.",
+    "Analizzare i diversi livelli di organizzazione per risolvere il problema della nutrizione, del movimento, della difesa, della riproduzione.",
+    "Individuare che la varietà delle soluzioni con cui viene affrontato lo stesso tipo di problema dipende anche dall’ambiente in cui l’animale vive.",
+    "Attraverso il metodo del confronto, esaminare le analogie e le differenze tra i diversi gruppi di organismi."
+   ],
+   "indicatori": [
+    "Capire che i diversi livelli di organizzazione di vita possono essere molto differenti, pur mantenendo le stesse necessità.",
+    "Comprendere che strutture più evolute corrispondono a maggiori esigenze energetiche.",
+    "Intuire la relazione tra struttura e abitudini di vita.",
+    "Evidenziare le analogie tra i diversi gruppi di animali."
+   ],
+   "traguardi": [
+    "Individuare le strutture degli organismi invertebrati in relazione alle funzioni svolte.",
+    "Evidenziare la relazione tra ambiente e adattamento a esso.",
+    "Acquisire competenze linguistiche."
+   ]
+  },
+  {
+   "id": "B5",
+   "codice": "B5",
+   "titolo": "Gli animali vertebrati",
+   "lezioni": [
+    {
+     "id": "B5-1",
+     "titolo": "I cordati",
+     "pagine": "B118"
+    },
+    {
+     "id": "B5-2",
+     "titolo": "I vertebrati",
+     "pagine": "B119-B120"
+    },
+    {
+     "id": "B5-3",
+     "titolo": "I pesci",
+     "pagine": "B122-B123"
+    },
+    {
+     "id": "B5-4",
+     "titolo": "Gli anfibi",
+     "pagine": "B124-B125"
+    },
+    {
+     "id": "B5-5",
+     "titolo": "I rettili",
+     "pagine": "B126-B127"
+    },
+    {
+     "id": "B5-6",
+     "titolo": "Gli uccelli",
+     "pagine": "B128-B129"
+    },
+    {
+     "id": "B5-7",
+     "titolo": "I mammiferi",
+     "pagine": "B130-B131"
+    }
+   ],
+   "obiettivi": [
+    "Osservare e descrivere le caratteristiche strutturali e funzionali dei vertebrati.",
+    "Analizzare i diversi livelli di organizzazione per risolvere il problema della nutrizione, del movimento, della difesa, della riproduzione.",
+    "Individuare che la varietà delle soluzioni con cui viene affrontato lo stesso tipo di problema dipende anche dall’ambiente in cui l’animale vive.",
+    "Attraverso il metodo del confronto, esaminare le analogie e le differenze tra i diversi gruppi di organismi."
+   ],
+   "indicatori": [
+    "Interpretare la struttura anatomica e funzionale dei vertebrati tenendo presente che ogni organismo deve procurarsi le sostanze organiche e l’energia di cui ha bisogno.",
+    "Comprendere il collegamento tra funzione e sistema predisposto ad assolverla.",
+    "Intuire la relazione tra struttura e abitudini di vita.",
+    "Evidenziare le analogie tra i diversi gruppi di animali."
+   ],
+   "traguardi": [
+    "Individuare le strutture degli organismi vertebrati in relazione alle funzioni svolte.",
+    "Evidenziare la relazione tra ambiente e adattamento a esso.",
+    "Acquisire competenze linguistiche."
+   ]
+  },
+  {
+   "id": "B6",
+   "codice": "B6",
+   "titolo": "La classificazione dei viventi",
+   "lezioni": [
+    {
+     "id": "B6-1",
+     "titolo": "La nomenclatura binomia",
+     "pagine": "B148"
+    },
+    {
+     "id": "B6-2",
+     "titolo": "Le categorie tassonomiche",
+     "pagine": "B149"
+    },
+    {
+     "id": "B6-3",
+     "titolo": "Strutture analoghe e omologhe",
+     "pagine": "B150"
+    },
+    {
+     "id": "B6-4",
+     "titolo": "Gli alberi filogenetici",
+     "pagine": "B151"
+    },
+    {
+     "id": "B6-5",
+     "titolo": "La nostra specie tra i viventi",
+     "pagine": "B152-B153"
+    }
+   ],
+   "obiettivi": [
+    "Accedere alla classificazione come strumento interpretativo delle somiglianze e delle diversità.",
+    "Capire il significato della nomenclatura binomia.",
+    "Sviluppare schematizzazioni per identificare un gruppo di organismi.",
+    "Imparare a utilizzare i caratteri tipici che servono a identificare gli esseri viventi appartenenti a un certo gruppo.",
+    "Sapere in che modo si possono costruire le parentele tra specie.",
+    "Classificare i regni dei viventi non animali o vegetali.",
+    "Classificare l’essere umano come esemplificazione di come operano i criteri di classificazione."
+   ],
+   "indicatori": [
+    "Osservare in modo analitico il mondo dei viventi.",
+    "Comprendere il senso delle classificazioni.",
+    "Capire che l’appartenenza alla stessa specie è la base della classificazione degli organismi viventi.",
+    "Classificare gli esseri viventi in categorie tassonomiche sempre più vaste, in base alle caratteristiche comuni.",
+    "Analizzare i caratteri omologhi per costruire la filogenesi degli esseri viventi.",
+    "Riordinare le conoscenze sui regni dei viventi.",
+    "Classificare la specie Homo sapiens secondo le regole della tassonomia."
+   ],
+   "traguardi": [
+    "Costruire concetti e formularli con un linguaggio adeguato.",
+    "Confrontare situazioni, cogliere analogie e differenze.",
+    "Sviluppare formalizzazioni logiche.",
+    "Acquisire competenze linguistiche."
+   ]
+  },
+  {
+   "id": "B7",
+   "codice": "B7",
+   "titolo": "I viventi e l’ambiente",
+   "lezioni": [
+    {
+     "id": "B7-1",
+     "titolo": "Che cos’è l’ecologia",
+     "pagine": "B170-B173"
+    },
+    {
+     "id": "B7-2",
+     "titolo": "Le interazioni alimentari",
+     "pagine": "B174-B177"
+    },
+    {
+     "id": "B7-3",
+     "titolo": "Il ciclo del carbonio",
+     "pagine": "B179"
+    },
+    {
+     "id": "B7-4",
+     "titolo": "Il ciclo dell’azoto",
+     "pagine": "B179"
+    },
+    {
+     "id": "B7-5",
+     "titolo": "I biomi terrestri",
+     "pagine": "B180-B185"
+    },
+    {
+     "id": "B7-6",
+     "titolo": "I biomi acquatici",
+     "pagine": "B186-B189"
+    }
+   ],
+   "obiettivi": [
+    "Distinguere i principali elementi costitutivi di un ambiente e analizzare le relazioni tra essi.",
+    "Stabilire le relazioni tra viventi e habitat mettendo in evidenza il ruolo che gli elementi abiotici hanno sugli organismi (anche in termini di adattamenti di strutture anatomiche).",
+    "Costruire catene e reti alimentari e piramidi alimentari e spiegarle anche in termini di passaggi di energia.",
+    "Comprendere la capacità di autoregolarsi di un ecosistema, a fronte dell’evoluzione delle condizioni climatiche.",
+    "Prendere coscienza dell’azione dell’uomo nella conservazione o distruzione di ecosistemi."
+   ],
+   "indicatori": [
+    "Comprensione del concetto di ecosistema.",
+    "Comprendere i fattori che condizionano la distribuzione degli organismi in un ecosistema.",
+    "Stabilire relazioni di causa e effetto.",
+    "Approfondire la conoscenza delle relazioni tra i diversi elementi dell’ambiente per capire le reciproche influenze.",
+    "Prendere coscienza dell’ecosistema come entità dinamica.",
+    "Comprendere il concetto di bioma."
+   ],
+   "traguardi": [
+    "Costruire concetti e formularli con un linguaggio adeguato.",
+    "Scomporre la complessità in relazioni e sottostrutture.",
+    "Costruire una visione dell’ambiente come sistema dinamico di viventi e non viventi che interagiscono tra loro.",
+    "Acquisire competenze linguistiche."
+   ]
+  },
+  {
+   "id": "B8",
+   "codice": "B8",
+   "titolo": "I comportamenti degli animali",
+   "lezioni": [
+    {
+     "id": "B8-1",
+     "titolo": "Che cos’è l’etologia",
+     "pagine": "B200-B201"
+    },
+    {
+     "id": "B8-2",
+     "titolo": "Comportamenti innati e appresi",
+     "pagine": "B202-B205"
+    },
+    {
+     "id": "B8-3",
+     "titolo": "La comunicazione animale",
+     "pagine": "B206-B207"
+    },
+    {
+     "id": "B8-4",
+     "titolo": "La territorialità e la riproduzione",
+     "pagine": "B208-B211"
+    },
+    {
+     "id": "B8-5",
+     "titolo": "La vita sociale",
+     "pagine": "B212-B213"
+    }
+   ],
+   "obiettivi": [
+    "Distinguere i principali tipi di apprendimento animale.",
+    "Stabilire le relazioni tra viventi della stessa specie e di specie diverse, mettendo in evidenza il ruolo dell’apprendimento e della comunicazione nella sopravvivenza degli individui e delle specie.",
+    "Stabilire le relazioni tra viventi e habitat mettendo in relazione i comportamenti degli individui con la propria nicchia ecologica.",
+    "Comprendere il ruolo della socialità nel mondo animale.",
+    "Intuire la relazione tra struttura e abitudini di vita.",
+    "Prendere coscienza della relazione tra i comportamenti umani e quelli animali come prodotto del processo evolutivo."
+   ],
+   "indicatori": [
+    "Comprensione del concetto di etologia.",
+    "Stabilire relazioni di causa e effetto.",
+    "Classificare i diversi tipi di apprendimento animale.",
+    "Approfondire la conoscenza delle relazioni tra i diversi comportamenti animali per capire le reciproche influenze.",
+    "Comprendere la complessità delle organizzazioni sociali nel mondo animale."
+   ],
+   "traguardi": [
+    "Costruire concetti e formularli con un linguaggio adeguato.",
+    "Scomporre la complessità in relazioni e sottostrutture.",
+    "Costruire una visione dell’ambiente come sistema dinamico di viventi che interagiscono tra loro in modi complessi e codificati.",
+    "Acquisire competenze linguistiche."
+   ]
+  },
+  {
+   "id": "B9",
+   "codice": "B9",
+   "titolo": "L’evoluzione della vita",
+   "lezioni": [
+    {
+     "id": "B9-1",
+     "titolo": "L’evoluzione e la selezione naturale",
+     "pagine": "B228-B231"
+    },
+    {
+     "id": "B9-2",
+     "titolo": "L’evoluzione sotto i nostri occhi",
+     "pagine": "B232-B233"
+    },
+    {
+     "id": "B9-3",
+     "titolo": "L’evoluzione ha bisogno di tempo",
+     "pagine": "B234-B235"
+    },
+    {
+     "id": "B9-4",
+     "titolo": "La vita nelle ere geologiche",
+     "pagine": "B236-B241"
+    }
+   ],
+   "obiettivi": [
+    "Confrontare le teorie di Lamarck e di Darwin, individuando analogie e differenze.",
+    "Capire i presupposti della teoria di Darwin: in particolare la variabilità intraspecifica e la lotta per la sopravvivenza.",
+    "Analizzare l’azione delle diverse cause per comprendere il meccanismo della selezione naturale.",
+    "Utilizzare la teoria per comprendere fenomeni come l’estinzione di specie e la nascita di nuove specie.",
+    "Percorrere il cammino evolutivo che ha portato alle variazioni ambientali e allo sviluppo degli organismi nelle ere geologiche.",
+    "Conoscere i metodi di datazione di un fossile per ricostruire un quadro dei cambiamenti biologici."
+   ],
+   "indicatori": [
+    "Evidenziare i presupposti su cui si sono fondate le diverse ipotesi sull’evoluzione dei viventi.",
+    "Interpretare in modo dinamico il rapporto esseri viventi-ambiente, per spiegare il fenomeno dell’adattamento e della loro continua trasformazione.",
+    "Completare la teoria dell’evoluzione con le conoscenze relative alla genetica.",
+    "Riconoscere gli adattamenti e la dimensione storica della vita intrecciata con la storia della Terra.",
+    "Interpretare lo studio dei fossili come prova a favore della teoria dell’evoluzione."
+   ],
+   "traguardi": [
+    "Costruire concetti e sistemarli organicamente.",
+    "Scomporre la complessità di un contesto in relazioni.",
+    "Interpretare lo svolgersi di fenomeni ambientali osservando analogie e differenze, relazioni di causa-effetto.",
+    "Acquisire competenze linguistiche."
+   ]
+  },
+  {
+   "id": "B10",
+   "codice": "B10",
+   "titolo": "L’evoluzione del genere Homo",
+   "lezioni": [
+    {
+     "id": "B10-1",
+     "titolo": "Gli esseri umani e gli altri primati",
+     "pagine": "B254-B255"
+    },
+    {
+     "id": "B10-2",
+     "titolo": "I primati bipedi",
+     "pagine": "B256-B257"
+    },
+    {
+     "id": "B10-3",
+     "titolo": "Le specie del genere Homo",
+     "pagine": "B258-B259"
+    }
+   ],
+   "obiettivi": [
+    "Individuare i caratteri distintivi dei primati.",
+    "Ricostruire le tappe attraverso cui sono avvenuti i processi evolutivi dei primati.",
+    "Individuare i caratteri distintivi degli ominidi.",
+    "Riconoscere le analogie e differenze nelle specie del genere Homo.",
+    "Distinguere l’evoluzione culturale da quella biologica e conoscere alcuni aspetti dell’evoluzione culturale.",
+    "Identificare l’evoluzione tecnologica con le modificazioni dello stile di vita."
+   ],
+   "indicatori": [
+    "Analizzare le somiglianze strutturali tra i primati.",
+    "Risalire alle relazioni di parentela che esistono tra i primati per ricostruirne l’evoluzione.",
+    "Stabilire l’esistenza di un progenitore comune a partire dall’analisi di caratteri esclusivi degli ominidi.",
+    "Conoscere i cambiamenti più significativi dell’evoluzione degli ominidi.",
+    "Comprendere che le omologie individuate nell’evoluzione dell’uomo non comportano solo una modificazione fisica, ma soprattutto intellettiva."
+   ],
+   "traguardi": [
+    "Costruire concetti e sistemarli organicamente.",
+    "A partire da un contesto complesso esaminare situazioni individuando analogie e differenze.",
+    "Comprendere il ruolo della comunità umana nel tempo e nello spazio.",
+    "Ricomporre la storia della vita dell’uomo basandosi sulle somiglianze strutturali tra i diversi esseri viventi.",
+    "Acquisire competenze linguistiche."
+   ]
+  },
+  {
+   "id": "B11",
+   "codice": "B11",
+   "titolo": "L’antropocene e lo sviluppo sostenibile",
+   "lezioni": [
+    {
+     "id": "B11-1",
+     "titolo": "La nuova epoca in cui viviamo",
+     "pagine": "B274-B277"
+    },
+    {
+     "id": "B11-2",
+     "titolo": "La nostra impronta ambientale",
+     "pagine": "B278-B279"
+    },
+    {
+     "id": "B11-3",
+     "titolo": "Per uno sviluppo sostenibile ed equo",
+     "pagine": "B284-B285"
+    }
+   ],
+   "obiettivi": [
+    "Definire l’Antropocene come era geologica.",
+    "Definire il concetto di globalizzazione.",
+    "Misurare l’impronta ambientale degli esseri umani.",
+    "Indicare le materie prime fondamentali per il nostro benessere.",
+    "Riconoscere l’importanza della velocità con cui si verificano i cambiamenti provocati dall’essere umano.",
+    "Descrivere il concetto di transizione energetica.",
+    "Elencare le possibilità offerte dalla tecnologia per rendere sostenibile la presenza degli esseri umani sulla Terra."
+   ],
+   "indicatori": [
+    "Riconoscere gli aspetti caratteristici dell’Antropocene.",
+    "Capire il ruolo ambivalente della tecnologia come pericolo e soluzione.",
+    "Individuare gli effetti positivi e negativi della globalizzazione sulla vita degli esseri umani.",
+    "Comprendere l’importanza delle risorse del pianeta Terra per il benessere degli esseri umani e delle altre specie viventi.",
+    "Comprendere il concetto di sostenibilità ambientale."
+   ],
+   "traguardi": [
+    "Costruire concetti e formularli con un linguaggio adeguato.",
+    "Confrontare situazioni, cogliere analogie e differenze.",
+    "Sviluppare formalizzazioni logiche.",
+    "Acquisire competenze linguistiche.",
+    "A partire da un contesto complesso esaminare situazioni individuando analogie e differenze.",
+    "Comprendere il ruolo della comunità umana nel tempo e nello spazio."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,159 @@
+{
+ "id": "contaci-G2",
+ "titolo": "Contaci – Misure, spazio e figure 2",
+ "editore": "Zanichelli",
+ "materia": "Matematica",
+ "sezioni": [
+  {
+   "id": "cap1",
+   "codice": "Cap. 1",
+   "titolo": "L’area",
+   "lezioni": [
+    {
+     "id": "1-L1",
+     "titolo": "Lezione 1 Pavimentazioni",
+     "pagine": ""
+    },
+    {
+     "id": "1-L2",
+     "titolo": "Lezione 2 Lunghezze e perimetri",
+     "pagine": ""
+    },
+    {
+     "id": "1-L3",
+     "titolo": "Lezione 3 Unità di misura dell'area",
+     "pagine": ""
+    },
+    {
+     "id": "1-L4",
+     "titolo": "Lezione 4 Area dei parallelogrammi",
+     "pagine": ""
+    },
+    {
+     "id": "1-L5",
+     "titolo": "Lezione 5 Area dei triangoli",
+     "pagine": ""
+    },
+    {
+     "id": "1-L6",
+     "titolo": "Lezione 6 Esercitazione sulle aree",
+     "pagine": ""
+    }
+   ],
+   "obiettivi": [
+    "Descrivere, classificare, disegnare le principali figure piane (triangoli, quadrilateri, poligoni regolari), figure più semplici o complesse.",
+    "Usare le principali trasformazioni geometriche e le loro invarianti.",
+    "Determinare l'area di figure piane: triangoli, quadrilateri, ma anche figure irregolari, con metodi esatti e approssimati (stima per difetto e per eccesso).",
+    "Effettuare misure e stime di misure di lunghezza e di area."
+   ],
+   "indicatori": [],
+   "traguardi": []
+  },
+  {
+   "id": "cap2",
+   "codice": "Cap. 2",
+   "titolo": "Il teorema di Pitagora",
+   "lezioni": [
+    {
+     "id": "2-L9",
+     "titolo": "Lezione 9 Il triangolo rettangolo",
+     "pagine": ""
+    },
+    {
+     "id": "2-L10",
+     "titolo": "Lezione 10 Il teorema di Pitagora",
+     "pagine": ""
+    },
+    {
+     "id": "2-L11",
+     "titolo": "Lezione 11 La lunghezza dei cateti e dell’ipotenusa",
+     "pagine": ""
+    },
+    {
+     "id": "2-L12",
+     "titolo": "Lezione 12 Applicazioni del teorema di Pitagora",
+     "pagine": ""
+    }
+   ],
+   "obiettivi": [
+    "Applicare il teorema di Pitagora in contesti geometrici e reali.",
+    "Risolvere problemi utilizzando le proprietà geometriche delle figure o applicando teoremi (ad esempio il teorema di Pitagora o quelli di Euclide)."
+   ],
+   "indicatori": [],
+   "traguardi": []
+  },
+  {
+   "id": "cap3",
+   "codice": "Cap. 3",
+   "titolo": "La similitudine",
+   "lezioni": [
+    {
+     "id": "3-L15",
+     "titolo": "Lezione 15 Ingrandimenti e riduzioni",
+     "pagine": ""
+    },
+    {
+     "id": "3-L16",
+     "titolo": "Lezione 16 Figure simili",
+     "pagine": ""
+    },
+    {
+     "id": "3-L17",
+     "titolo": "Lezione 17 Il rapporto di scala",
+     "pagine": ""
+    },
+    {
+     "id": "3-L18",
+     "titolo": "Lezione 18 Le carte geografiche",
+     "pagine": ""
+    },
+    {
+     "id": "3-L19",
+     "titolo": "Lezione 19 La similitudine nei triangoli",
+     "pagine": ""
+    }
+   ],
+   "obiettivi": [
+    "Identificare figure piane simili in vari contesti e riprodurre in scala una figura assegnata.",
+    "Riconoscere, descrivere e utilizzare le similitudini e le sue invarianti.",
+    "Riconoscere e costruire figure piane simili e utilizzare isometrie e similitudini per risolvere situazioni problematiche in contesti interni ed esterni alla matematica."
+   ],
+   "indicatori": [],
+   "traguardi": []
+  },
+  {
+   "id": "cap4",
+   "codice": "Cap. 4",
+   "titolo": "Rette sul piano cartesiano",
+   "lezioni": [
+    {
+     "id": "4-L22",
+     "titolo": "Lezione 22 Relazioni sul piano cartesiano",
+     "pagine": ""
+    },
+    {
+     "id": "4-L23",
+     "titolo": "Lezione 23 Dall’equazione ai punti al grafico",
+     "pagine": ""
+    },
+    {
+     "id": "4-L24",
+     "titolo": "Lezione 24 Disegnare rette sul piano cartesiano",
+     "pagine": ""
+    },
+    {
+     "id": "4-L25",
+     "titolo": "Lezione 25 Punto di intersezione tra due rette",
+     "pagine": ""
+    }
+   ],
+   "obiettivi": [
+    "Estendere e generalizzare sequenze numeriche e geometriche, costruendo rappresentazioni in linguaggio simbolico per esprimere la generalizzazione individuata.",
+    "Rappresentare relazioni e funzioni in diversi linguaggi (numerico, simbolico, grafico, verbale) e passare da uno all’altro.",
+    "Rappresentare relazioni e funzioni attraverso tabelle e grafici nel piano cartesiano a partire dalle loro equazioni anche con dati provenienti da contesti esterni alla matematica come quello delle scienze, con strumenti materiali o digitali."
+   ],
+   "indicatori": [],
+   "traguardi": []
+  }
+ ]
+}

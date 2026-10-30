@@ -1,0 +1,458 @@
+{
+ "id": "scopri-D",
+ "titolo": "Scopri perché! – Volume D (Terra e universo)",
+ "editore": "Zanichelli",
+ "materia": "Scienze",
+ "sezioni": [
+  {
+   "id": "D0",
+   "codice": "D0",
+   "titolo": "Per iniziare – Il pianeta blu",
+   "lezioni": [],
+   "obiettivi": [
+    "Conoscere le caratteristiche del pianeta Terra che lo rendono adatto allo sviluppo della vita.",
+    "Comprendere che le risorse del pianeta sono limitate e che non devono essere consumate."
+   ],
+   "indicatori": [
+    "Comprendere la correlazione tra posizione del pianeta nello spazio e caratteristiche adatte allo sviluppo della vita.",
+    "Applicare nel quotidiano strategie che consentano di utilizzare in modo sostenibile le risorse del pianeta."
+   ],
+   "traguardi": [
+    "Acquisire gli strumenti per comprendere perché il nostro pianeta è unico e saperle applicare alla quotidianità."
+   ]
+  },
+  {
+   "id": "D1",
+   "codice": "D1",
+   "titolo": "L’aria, l’atmosfera e il meteo",
+   "lezioni": [
+    {
+     "id": "D1-1",
+     "titolo": "Le proprietà dell’aria",
+     "pagine": "D12-D13"
+    },
+    {
+     "id": "D1-2",
+     "titolo": "La pressione dell’aria",
+     "pagine": "D14-D17"
+    },
+    {
+     "id": "D1-3",
+     "titolo": "Gli strati dell’atmosfera",
+     "pagine": "D18-D19"
+    },
+    {
+     "id": "D1-4",
+     "titolo": "Il meteo",
+     "pagine": "D24-D25"
+    }
+   ],
+   "obiettivi": [
+    "Attraverso alcune attività prendere coscienza che: – i gas hanno un volume e un peso; – il volume dei gas ha la caratteristica di variare; – esiste una correlazione tra volume e pressione; – la pressione atmosferica varia; – alla pressione sono legati gli spostamenti delle masse d’aria.",
+    "Mettere in relazione le variazioni della composizione dell’aria nel processo di respirazione.",
+    "Comprendere le modalità di formazione dei fenomeni atmosferici.",
+    "Mettere in relazione la pressione atmosferica con le variazioni di altitudine e con le differenze di temperatura."
+   ],
+   "indicatori": [
+    "Consolidare il concetto di volume di un gas.",
+    "Riflettere sulle proprietà dei gas.",
+    "Acquisire il concetto di pressione anche in modo operativo.",
+    "Approfondire le relazioni tra temperatura, volume e pressione di un gas.",
+    "Saper costruire semplici strumenti di misura adeguati alla situazione."
+   ],
+   "traguardi": [
+    "Costruire concetti e formularli con un linguaggio adeguato.",
+    "Acquisire competenze linguistiche."
+   ]
+  },
+  {
+   "id": "D2",
+   "codice": "D2",
+   "titolo": "L’acqua e l’idrosfera",
+   "lezioni": [
+    {
+     "id": "D2-1",
+     "titolo": "La tensione superficiale",
+     "pagine": "D40"
+    },
+    {
+     "id": "D2-2",
+     "titolo": "La capillarità",
+     "pagine": "D41"
+    },
+    {
+     "id": "D2-3",
+     "titolo": "La pressione dell’acqua",
+     "pagine": "D42-D43"
+    },
+    {
+     "id": "D2-4",
+     "titolo": "Il ciclo dell’acqua",
+     "pagine": "D44-D45"
+    }
+   ],
+   "obiettivi": [
+    "Essere consapevoli dell’importanza dell’idrosfera nelle risorse del nostro pianeta.",
+    "Capire come la densità, la capacità termica, la solubilità dell’acqua sono fondamentali per lo sviluppo degli organismi viventi.",
+    "Aver chiaro che l’idrosfera e la biosfera sono sistemi chiusi che interagiscono attraverso il ciclo dell’acqua.",
+    "Confrontare la pressione dell’acqua con quella atmosferica e capire la relazione tra la pressione di un fluido e la profondità.",
+    "Comprendere, in modo operativo, fenomeni legati alle forze di coesione e di adesione tra le molecole dell’acqua."
+   ],
+   "indicatori": [
+    "Comprendere le relazioni tra le proprietà dell’acqua e la vita degli organismi viventi.",
+    "Conoscere le proprietà fisiche e chimiche dell’acqua.",
+    "Comprendere l’influenza dei cambiamenti dello stato di aggregazione dell’acqua sull’equilibrio della biosfera.",
+    "Comprendere come agisce la pressione idrostatica."
+   ],
+   "traguardi": [
+    "Costruire concetti e formularli con un linguaggio adeguato.",
+    "Individuare relazioni tra fenomeni.",
+    "Acquisire competenze linguistiche."
+   ]
+  },
+  {
+   "id": "D3",
+   "codice": "D3",
+   "titolo": "Il suolo",
+   "lezioni": [
+    {
+     "id": "D3-1",
+     "titolo": "Le proprietà del suolo",
+     "pagine": "D64-D67"
+    },
+    {
+     "id": "D3-2",
+     "titolo": "La formazione del suolo",
+     "pagine": "D68-D71"
+    },
+    {
+     "id": "D3-3",
+     "titolo": "I cicli della vita nel suolo",
+     "pagine": "D72-D73"
+    }
+   ],
+   "obiettivi": [
+    "Individuare il profilo e la struttura del suolo.",
+    "Classificare gli agenti fisico-chimici e biologici che hanno contribuito all’evoluzione del suolo.",
+    "Analizzare le caratteristiche e le proprietà dei terreni e ricercare le interdipendenze tra i fattori fisico-chimici (aria, acqua, costituenti organici) e biologici.",
+    "Comprendere le trasformazioni della materia da organica a inorganica in modo ciclico.",
+    "Guidare all’osservazione di quei fenomeni che possono servire all’intuizione della ciclicità delle relazioni tra gli organismi viventi e i fattori non viventi.",
+    "Riflettere su quanto e come l’intervento dell’uomo agisce sulla realtà naturale e quale sia la responsabilità della collettività sulle trasformazioni del suolo."
+   ],
+   "indicatori": [
+    "Comprendere che l’attuale aspetto del suolo è il risultato di continue trasformazioni dovute a forze esogene ed endogene.",
+    "Conoscere le relazioni tra elementi del suolo per capirne le reciproche influenze.",
+    "Collegare le osservazioni dirette e le attività proposte con problematiche di tipo più generale, stabilendo relazioni di causa ed effetto.",
+    "Prendere coscienza dell’azione dell’uomo nella conservazione e nella distruzione del suolo."
+   ],
+   "traguardi": [
+    "Costruire concetti e formularli con un linguaggio adeguato Individuare relazioni tra elementi viventi e non viventi.",
+    "Acquisire competenze linguistiche."
+   ]
+  },
+  {
+   "id": "D4",
+   "codice": "D4",
+   "titolo": "La Terra e la sua evoluzione",
+   "lezioni": [
+    {
+     "id": "D4-1",
+     "titolo": "Com’è fatto il pianeta Terra",
+     "pagine": "D92-D93"
+    },
+    {
+     "id": "D4-2",
+     "titolo": "La tettonica delle placche",
+     "pagine": "D94-D97"
+    },
+    {
+     "id": "D4-3",
+     "titolo": "L’erosione, il trasporto e la sedimentazione",
+     "pagine": "D98-D99"
+    }
+   ],
+   "obiettivi": [
+    "Sapere che cosa c’è oltre la crosta terrestre fino al nucleo centrale e in che modo si è giunti a questa conoscenza.",
+    "Esaminare le analogie tra organismi viventi e la complementarietà di struttura dei continenti come presupposti della teoria di Wegener.",
+    "Trovare relazioni di causa ed effetto tra i movimenti delle placche e fenomeni quali l’orogenesi, la formazione delle dorsali e delle fosse oceaniche.",
+    "Descrivere il processo di fossilizzazione e comprendere le informazioni che fornisce la paleontologia."
+   ],
+   "indicatori": [
+    "Esaminare gli effetti delle forze endogene che agiscono sulla crosta terrestre; elaborare un modello interpretativo dell’interno della Terra.",
+    "Individuare i problemi sollevati dall’osservazione di fenomeni, creando possibili collegamenti tra di essi.",
+    "Comprendere come la teoria della tettonica delle placche sia in grado di fornire un’interpretazione unitaria ad un insieme di fenomeni diversi.",
+    "Considerare i fattori esogeni che modificano la superficie terrestre."
+   ],
+   "traguardi": [
+    "Costruire concetti e formularli con un linguaggio adeguato.",
+    "Scomporre la complessità in relazioni e sottostrutture.",
+    "Sviluppare semplici schemi e modelli interpretativi dei fenomeni.",
+    "Acquisire competenze linguistiche."
+   ]
+  },
+  {
+   "id": "D5",
+   "codice": "D5",
+   "titolo": "I vulcani e i terremoti",
+   "lezioni": [
+    {
+     "id": "D5-1",
+     "titolo": "I vulcani e le eruzioni",
+     "pagine": "D112-D115"
+    },
+    {
+     "id": "D5-2",
+     "titolo": "I terremoti e gli tsunami",
+     "pagine": "D118-D121"
+    },
+    {
+     "id": "D5-3",
+     "titolo": "L’origine dei vulcani e dei terremoti",
+     "pagine": "D124-D125"
+    }
+   ],
+   "obiettivi": [
+    "Comprendere la struttura di un cono vulcanico. Spiegare il meccanismo delle eruzioni vulcaniche e descriverne le caratteristiche.",
+    "Avere un’idea generale sul tipo di attività vulcanica in Italia.",
+    "Capire la correlazione tra accumulo di energia elastica e intensità delle scosse sismiche.",
+    "Distinguere tra ipocentro e epicentro; riconoscere i tipi di onde sismiche.",
+    "Analizzare la carta del pericolo sismico in Italia.",
+    "Conoscere su che cosa si basano le scale per misurare l’intensità dei terremoti.",
+    "Essere consapevoli che è possibile ridurre il rischio sismico con azioni di prevenzione.",
+    "Individuare la distribuzione dei vulcani e terremoti sulla Terra.",
+    "Saper spiegare ciò che avviene nelle zone dove le placche si allontanano, dove si scontrano, dove scorrono l’una rispetto all’altra."
+   ],
+   "indicatori": [
+    "Spiegare come l’attività vulcanica è collegata a fenomeni che avvengono al di sotto della crosta terrestre.",
+    "Interpretare attraverso un modello la teoria elastica dei terremoti.",
+    "A partire dall’osservazione della propagazione delle onde, distinguere i tipi di onde sismiche.",
+    "Correlare le conoscenze alla valutazione sul rischio sismico dell’Italia e comprendere la conseguente pianificazione della protezione da questo rischio.",
+    "Interpretare fenomeni mediante la teoria, individuando relazioni di causa ed effetto tra movimenti delle placche e fenomeni osservati."
+   ],
+   "traguardi": [
+    "Costruire concetti e formularli con un linguaggio adeguato.",
+    "Interpretare lo svolgersi di fenomeni ambientali.",
+    "Essere in grado di sviluppare semplici modellizzazioni di fenomeni.",
+    "Acquisire competenze linguistiche."
+   ]
+  },
+  {
+   "id": "D6",
+   "codice": "D6",
+   "titolo": "I minerali e le rocce",
+   "lezioni": [
+    {
+     "id": "D6-1",
+     "titolo": "Le rocce e i minerali",
+     "pagine": "D136-D139"
+    },
+    {
+     "id": "D6-2",
+     "titolo": "Le rocce magmatiche",
+     "pagine": "D140-D141"
+    },
+    {
+     "id": "D6-3",
+     "titolo": "Le rocce sedimentarie",
+     "pagine": "D142-D143"
+    },
+    {
+     "id": "D6-4",
+     "titolo": "Le rocce metamorfiche",
+     "pagine": "D144-D145"
+    },
+    {
+     "id": "D6-5",
+     "titolo": "Il ciclo delle rocce",
+     "pagine": "D146-D147"
+    }
+   ],
+   "obiettivi": [
+    "Sapere come si formano i minerali ed essere in grado di definire che cosa è il reticolo cristallino e che cosa è una roccia.",
+    "Leggere e applicare con alcuni esempi la scala di Mohs.",
+    "Conoscere l’origine delle rocce magmatiche: saper distinguere rocce effusive e intrusive.",
+    "Conoscere il processo di formazione delle rocce sedimentarie: distinguere le rocce clastiche da quelle chimiche e organogene.",
+    "Individuare le forze tettoniche che determinano l’origine delle rocce metamorfiche.",
+    "Interpretare lo schema del ciclo delle rocce."
+   ],
+   "indicatori": [
+    "Conoscere la differenza tra minerali e rocce.",
+    "Saper descrivere la struttura di qualche minerale.",
+    "Collegare le caratteristiche macroscopiche dei diversi tipi di rocce al loro processo di formazione.",
+    "Attribuire il nome ai diversi tipi di rocce in base alle loro caratteristiche e alla loro origine.",
+    "Comprendere la correlazione degli agenti endogeni ed esogeni che determinano la trasformazione delle rocce."
+   ],
+   "traguardi": [
+    "Costruire concetti e formularli con un linguaggio adeguato.",
+    "Scomporre la complessità in elementi e relazioni.",
+    "Interpretare lo svolgersi di fenomeni ambientali.",
+    "Essere in grado di sviluppare semplici schematizzazioni di fenomeni.",
+    "Acquisire competenze linguistiche."
+   ]
+  },
+  {
+   "id": "D7",
+   "codice": "D7",
+   "titolo": "La Terra e la Luna",
+   "lezioni": [
+    {
+     "id": "D7-1",
+     "titolo": "Orientarsi sull’astronave Terra",
+     "pagine": "D158-D159"
+    },
+    {
+     "id": "D7-2",
+     "titolo": "I moti della Terra nello spazio",
+     "pagine": "D160-D161"
+    },
+    {
+     "id": "D7-3",
+     "titolo": "Il dì, la notte e le stagioni",
+     "pagine": "D162-D163"
+    },
+    {
+     "id": "D7-4",
+     "titolo": "La Luna, il nostro satellite",
+     "pagine": "D164-D165"
+    },
+    {
+     "id": "D7-5",
+     "titolo": "Le eclissi e le maree",
+     "pagine": "D166-D167"
+    }
+   ],
+   "obiettivi": [
+    "Precisare l’interpretazione della latitudine e della longitudine. Definire su un reticolato geografico le coordinate di un punto sulla superficie terrestre.",
+    "Descrivere i moti della Terra: di rotazione intorno al proprio asse e di rivoluzione intorno al Sole.",
+    "Comprendere le conseguenze che derivano da tali movimenti: l’alternarsi del dì e la notte e le stagioni.",
+    "Saper descrivere le caratteristiche della Luna e spiegare la sequenza delle fasi lunari.",
+    "Conoscere le condizioni in cui può verificarsi un’eclissi di Luna o di Sole."
+   ],
+   "indicatori": [
+    "Conoscere la funzione di un sistema di riferimento.",
+    "Esaminare fenomeni complessi: ricostruire in base a indizi indiretti ciò che non è direttamente visibile.",
+    "Costruire semplici modelli che aiutino la comprensione dei fenomeni.",
+    "Comprendere, tenendo presente l’attrazione gravitazionale del Sole, i moti della Terra e della Luna.",
+    "Saper mettere in relazione le posizioni della Terra, della Luna e del Sole per spiegare come avvengono le eclissi e le maree."
+   ],
+   "traguardi": [
+    "Costruire concetti e formularli con un linguaggio adeguato.",
+    "Scomporre la complessità in elementi e relazioni.",
+    "Interpretare lo svolgersi di fenomeni ambientali.",
+    "Essere in grado di sviluppare semplici schematizzazioni di fenomeni.",
+    "Acquisire competenze linguistiche."
+   ]
+  },
+  {
+   "id": "D8",
+   "codice": "D8",
+   "titolo": "Il sistema solare",
+   "lezioni": [
+    {
+     "id": "D8-1",
+     "titolo": "Il Sole, la nostra stella",
+     "pagine": "D182-D183"
+    },
+    {
+     "id": "D8-2",
+     "titolo": "I pianeti rocciosi e i pianeti gassosi",
+     "pagine": "D184-D187"
+    }
+   ],
+   "obiettivi": [
+    "Spiegare attraverso le leggi di Keplero il moto dei pianeti nel Sistema solare.",
+    "Descrivere, anche con l’aiuto di uno schema, la struttura del Sole.",
+    "Classificare i pianeti in base alla loro origine.",
+    "Acquisire informazioni qualitative e quantitative sui pianeti anche mettendole in relazione con la Terra."
+   ],
+   "indicatori": [
+    "Conoscere la funzione di un sistema di riferimento.",
+    "Esaminare fenomeni complessi: ricostruire in base a indizi indiretti ciò che non è direttamente visibile.",
+    "Costruire semplici modelli che aiutino la comprensione dei fenomeni.",
+    "Mettere in relazione l’emissione di energia termica e luminosa con la struttura del Sole.",
+    "Valutare le ipotesi su eventuali altre forme di vita nel Sistema solare."
+   ],
+   "traguardi": [
+    "Costruire concetti e formularli con un linguaggio adeguato.",
+    "Scomporre la complessità in elementi e relazioni.",
+    "Sviluppare semplici modelli interpretativi dei fenomeni.",
+    "Acquisire competenze linguistiche."
+   ]
+  },
+  {
+   "id": "D9",
+   "codice": "D9",
+   "titolo": "Le stelle, le galassie, l’universo",
+   "lezioni": [
+    {
+     "id": "D9-1",
+     "titolo": "Le caratteristiche delle stelle",
+     "pagine": "D202-D203"
+    },
+    {
+     "id": "D9-2",
+     "titolo": "La vita e la morte delle stelle",
+     "pagine": "D204-D205"
+    },
+    {
+     "id": "D9-3",
+     "titolo": "Le galassie",
+     "pagine": "D206-D207"
+    }
+   ],
+   "obiettivi": [
+    "Rapportare la luminosità di una stella alla sua distanza dalla Terra.",
+    "Classificare le stelle per dimensione e colore.",
+    "Saper descrivere la principale caratteristica di un buco nero.",
+    "Sapere che cosa è una galassia e individuare la posizione della Via Lattea.",
+    "Spiegare la teoria del Big Bang e le sue implicazioni."
+   ],
+   "indicatori": [
+    "Utilizzare l’anno-luce per stimare le distanze stellari.",
+    "Mettere in relazione il colore di una stella con la sua temperatura superficiale.",
+    "Correlare l’evoluzione di una stella alla sua massa.",
+    "Conoscere la teoria del Big Bang per comprendere la relazione tra l’energia liberata e formazione della materia."
+   ],
+   "traguardi": [
+    "Costruire concetti e formularli con un linguaggio adeguato.",
+    "Individuare relazioni tra meccanismi di movimento e adattamento all’ambiente.",
+    "Acquisire competenze linguistiche."
+   ]
+  },
+  {
+   "id": "D10",
+   "codice": "D10",
+   "titolo": "L’emergenza clima",
+   "lezioni": [
+    {
+     "id": "D10-1",
+     "titolo": "Da che cosa dipende il clima",
+     "pagine": "D220-D221"
+    },
+    {
+     "id": "D10-2",
+     "titolo": "L’effetto serra e le emissioni di carbonio",
+     "pagine": "D222-D223"
+    }
+   ],
+   "obiettivi": [
+    "Individuare le relazioni tra temperatura, pressione e umidità dell’aria.",
+    "Comprendere l’evolversi delle condizioni del tempo a partire dall’analisi delle variazioni dei valori di temperatura, pressione e umidità.",
+    "Individuare negli emisferi terrestri la corrispondenza tra le celle convettive, le fasce climatiche e ambienti terrestri.",
+    "Conoscere l’origine dei venti variabili, periodici e costanti.",
+    "Sapere in che cosa consiste l’effetto serra e le conseguenze sull’evoluzione del clima."
+   ],
+   "indicatori": [
+    "Comprendere come avvengono i movimenti convettivi nell’aria.",
+    "Definire la differenza tra tempo atmosferico e clima.",
+    "Essere consapevoli dei rischi ambientali legati al surriscaldamento dell’atmosfera e della necessità di scelte sostenibili."
+   ],
+   "traguardi": [
+    "Costruire concetti e formularli con un linguaggio adeguato.",
+    "Individuare relazioni tra meccanismi di movimento e adattamento all’ambiente.",
+    "Individuare la relazione tra alimentazione e energia.",
+    "Acquisire competenze linguistiche."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,569 @@
+{
+ "id": "scopri-C",
+ "titolo": "Scopri perché! – Volume C (corpo umano)",
+ "editore": "Zanichelli",
+ "materia": "Scienze",
+ "sezioni": [
+  {
+   "id": "C0",
+   "codice": "C0",
+   "titolo": "Per iniziare – Dalle cellule agli apparati",
+   "lezioni": [
+    {
+     "id": "C0-1",
+     "titolo": "L’organizzazione del corpo umano",
+     "pagine": "C2-C3"
+    },
+    {
+     "id": "C0-2",
+     "titolo": "Gli organi e gli apparati",
+     "pagine": "C4-C5"
+    },
+    {
+     "id": "C0-3",
+     "titolo": "Il corpo sano è in equilibrio: l’omeòstasi",
+     "pagine": "C6-C7"
+    }
+   ],
+   "obiettivi": [
+    "Capire il significato dei termini: organo e apparato.",
+    "Intendere il passaggio da un’unica cellula a cellule specializzate organizzate in tessuti, organi e sistemi che assolvono a funzioni diverse.",
+    "Sviluppare schematizzazioni per identificare organi e apparati.",
+    "Acquisire consapevolezza dell’importanza dell’interazione tra diversi organi e apparati del corpo umano al fine del suo funzionamento ottimale.",
+    "Intuire la relazione tra benessere fisiologico e salute."
+   ],
+   "indicatori": [
+    "Individuare relazioni tra le caratteristiche del corpo umano e le risposte agli stimoli ambientali.",
+    "Comprendere la complessità dell’organizzazione del corpo umano.",
+    "Prendere coscienza degli apparati del corpo umano e delle loro interazioni."
+   ],
+   "traguardi": [
+    "Costruire concetti e formularli con un linguaggio adeguato.",
+    "Scomporre la complessità in relazioni e sottostrutture.",
+    "Acquisire competenze linguistiche."
+   ]
+  },
+  {
+   "id": "C1",
+   "codice": "C1",
+   "titolo": "Le ossa e i muscoli",
+   "lezioni": [
+    {
+     "id": "C1-1",
+     "titolo": "I tessuti delle ossa",
+     "pagine": "C12-C13"
+    },
+    {
+     "id": "C1-2",
+     "titolo": "Lo scheletro del corpo umano",
+     "pagine": "C14-C17"
+    },
+    {
+     "id": "C1-3",
+     "titolo": "I tessuti dei muscoli",
+     "pagine": "C18-C19"
+    },
+    {
+     "id": "C1-4",
+     "titolo": "I muscoli del corpo umano",
+     "pagine": "C20-C21"
+    },
+    {
+     "id": "C1-5",
+     "titolo": "Le articolazioni",
+     "pagine": "C22-C23"
+    }
+   ],
+   "obiettivi": [
+    "Conoscere le caratteristiche e le funzioni del tessuto osseo.",
+    "Evidenziare le parti dell’apparato scheletrico e acquisire termini specifici come presupposto per affrontare lo studio delle sue strutture e funzioni.",
+    "Conoscere le caratteristiche e le funzioni dei tessuti muscolari.",
+    "Comprendere la sinergia tra scheletro e muscoli per il movimento del corpo umano.",
+    "Analizzare le articolazioni e le loro possibilità di movimento."
+   ],
+   "indicatori": [
+    "Individuare le caratteristiche funzionali fondamentali della cellula e del tessuto osseo.",
+    "Individuare le caratteristiche funzionali fondamentali della cellula e dei tessuti muscolari.",
+    "Capire quali sono le condizioni che permettono di cambiare la reciproca posizione delle varie parti del corpo."
+   ],
+   "traguardi": [
+    "Costruire concetti e formularli con un linguaggio adeguato.",
+    "Individuare relazioni tra meccanismi di movimento e adattamento all’ambiente.",
+    "Acquisire competenze linguistiche."
+   ]
+  },
+  {
+   "id": "C2",
+   "codice": "C2",
+   "titolo": "L’apparato digerente",
+   "lezioni": [
+    {
+     "id": "C2-1",
+     "titolo": "Il ruolo dell’alimentazione",
+     "pagine": "C36-C37"
+    },
+    {
+     "id": "C2-2",
+     "titolo": "I principi nutritivi e la dieta",
+     "pagine": "C38- C41"
+    },
+    {
+     "id": "C2-3",
+     "titolo": "La digestione e la nutrizione",
+     "pagine": "C42-C43"
+    },
+    {
+     "id": "C2-4",
+     "titolo": "Nella bocca: la lingua e i denti",
+     "pagine": "C44-C45"
+    },
+    {
+     "id": "C2-5",
+     "titolo": "Dalla bocca allo stomaco",
+     "pagine": "C46-C47"
+    },
+    {
+     "id": "C2-6",
+     "titolo": "L’intestino: digestione, assorbimento ed eliminazione",
+     "pagine": "C48-C49"
+    }
+   ],
+   "obiettivi": [
+    "Conoscere quali sono i fattori alimentari e in quali alimenti si trovano.",
+    "Conoscere la funzione di ciascun principio alimentare e il suo apporto energetico.",
+    "Sapere che il fabbisogno calorico giornaliero deve essere soddisfatto da un’opportuna quota di nutrienti.",
+    "Conoscere la struttura e la funzione degli organi dell’apparato digerente.",
+    "Saper interpretare modelli che servano a chiarire come le sostanze complesse vengono smontate in sostanze semplici e quindi rimontate in complesse."
+   ],
+   "indicatori": [
+    "Comprendere la relazione tra apparato masticatore e alimentazione.",
+    "Comprendere che il nostro organismo ha bisogno di ricevere sostanze capaci di assolvere a diverse funzioni.",
+    "Acquisire il concetto di metabolismo basale.",
+    "Riconoscere in situazioni concrete gli effetti del rapporto alimentazione- benessere.",
+    "Descrivere il collegamento tra strutture, funzioni e sistema predisposto ad assolverle.",
+    "Analizzare le fasi del processo di nutrizione."
+   ],
+   "traguardi": [
+    "Costruire concetti e formularli con un linguaggio adeguato.",
+    "Individuare relazioni tra meccanismi di movimento e adattamento all’ambiente.",
+    "Individuare la relazione tra alimentazione e energia.",
+    "Acquisire competenze linguistiche."
+   ]
+  },
+  {
+   "id": "C3",
+   "codice": "C3",
+   "titolo": "L’apparato respiratorio",
+   "lezioni": [
+    {
+     "id": "C3-1",
+     "titolo": "Il ruolo della respirazione",
+     "pagine": "C62-C63"
+    },
+    {
+     "id": "C3-2",
+     "titolo": "Le vie respiratorie e i polmoni",
+     "pagine": "C64-C67"
+    },
+    {
+     "id": "C3-3",
+     "titolo": "La respirazione cellulare",
+     "pagine": "C68-C69"
+    },
+    {
+     "id": "C3-4",
+     "titolo": "L’inspirazione e l’espirazione",
+     "pagine": "C70-C71"
+    }
+   ],
+   "obiettivi": [
+    "Comprendere che la reazione di ossidazione è alla base della respirazione cellulare e polmonare.",
+    "Confrontare la respirazione e la fotosintesi.",
+    "Conoscere la struttura e le funzioni degli organi dell’apparato respiratorio.",
+    "Capire che il sistema respiratorio opera scambi con l’ambiente esterno per mezzo del sangue.",
+    "Individuare gli effetti del fumo delle sigarette sull’organismo."
+   ],
+   "indicatori": [
+    "Individuare la corrispondenza tra processi a livello cellulare e processi a livello polmonare.",
+    "Comprendere il collegamento tra funzione respiratoria e sistema predisposto ad assolverla.",
+    "Mettere in relazione l’apparato respiratorio con il circolatorio.",
+    "Riflettere su comportamenti che, pur socialmente accettati, recano danno alla salute."
+   ],
+   "traguardi": [
+    "Costruire concetti e formularli con un linguaggio adeguato.",
+    "Individuare la relazione tra respirazione e energia.",
+    "Scomporre la complessità in elementi e relazioni.",
+    "Acquisire competenze linguistiche."
+   ]
+  },
+  {
+   "id": "C4",
+   "codice": "C4",
+   "titolo": "L’apparato circolatorio e l’immunità",
+   "lezioni": [
+    {
+     "id": "C4-1",
+     "titolo": "L’apparato circolatorio e il sangue",
+     "pagine": "C84-C87"
+    },
+    {
+     "id": "C4-2",
+     "titolo": "Il cuore",
+     "pagine": "C88-C89"
+    },
+    {
+     "id": "C4-3",
+     "titolo": "Il cuore",
+     "pagine": "C88-C89"
+    },
+    {
+     "id": "C4-4",
+     "titolo": "I vasi sanguigni",
+     "pagine": "C90-C91"
+    },
+    {
+     "id": "C4-5",
+     "titolo": "La grande e la piccola circolazione",
+     "pagine": "C92-C93"
+    },
+    {
+     "id": "C4-6",
+     "titolo": "La linfa",
+     "pagine": "C94-C95"
+    },
+    {
+     "id": "C4-7",
+     "titolo": "Le difese immunitarie",
+     "pagine": "C96-C99"
+    },
+    {
+     "id": "C4-8",
+     "titolo": "I gruppi sanguigni",
+     "pagine": "C100-C102"
+    }
+   ],
+   "obiettivi": [
+    "Conoscere le funzioni dell’apparato circolatorio e i meccanismi di trasporto.",
+    "Analizzare la parte corpuscolata del sangue e le sue funzioni.",
+    "Conoscere la struttura del cuore e come avviene il ciclo cardiaco.",
+    "Comprendere come attraverso il sistema circolatorio avvenga lo scambio di gas.",
+    "Capire perché la circolazione del sangue è doppia e completa.",
+    "Conoscere la funzione della linfa.",
+    "Individuare nell’azione dei microrganismi una delle cause di malattia.",
+    "Analizzare le vie di diffusione delle malattie.",
+    "Riconoscere le difese specifiche e aspecifiche all’ingresso di microrganismi nel corpo.",
+    "Conoscere attraverso la risposta immunitaria dei linfociti, le relazioni antigene-anticorpo.",
+    "Capire l’importanza della compatibilità tra i gruppi sanguigni.",
+    "Essere consapevoli di come l’azione del sistema immunitario può essere indotta attivamente o passivamente."
+   ],
+   "indicatori": [
+    "Correlare l’apparato circolatorio al respiratorio e al digerente.",
+    "Comprendere la relazione tra il sangue e tutte le cellule dell’organismo.",
+    "Capire che la ciclicità del sistema di trasporto è correlata al ciclo cardiaco.",
+    "Comprendere il collegamento tra la funzione del sangue e il sistema predisposto ad attuarla.",
+    "Apprendere una gestione corretta del proprio corpo.",
+    "Interpretare le cause che possono determinare lo stato di malessere del corpo.",
+    "Capire i meccanismi specifici e aspecifici di difesa dell’organismo.",
+    "Comprendere le relazioni di causa e effetto nelle risposte del sistema immunitario.",
+    "Capire le modalità con cui viene attivato il sistema di difesa dell’organismo."
+   ],
+   "traguardi": [
+    "Costruire concetti e formularli con un linguaggio adeguato.",
+    "Scomporre la complessità in elementi e relazioni.",
+    "Acquisire competenze linguistiche."
+   ]
+  },
+  {
+   "id": "C5",
+   "codice": "C5",
+   "titolo": "L’apparato urinario e la pelle",
+   "lezioni": [
+    {
+     "id": "C5-1",
+     "titolo": "L’escrezione e l’omeostasi",
+     "pagine": "C14-C15"
+    },
+    {
+     "id": "C5-2",
+     "titolo": "L’apparato urinario",
+     "pagine": "C116-C118"
+    },
+    {
+     "id": "C5-3",
+     "titolo": "La pelle",
+     "pagine": "C120-C123"
+    }
+   ],
+   "obiettivi": [
+    "Considerare la funzione di escrezione come complementare alle altre funzioni (respiratoria, digerente, respiratoria).",
+    "Conoscere la struttura dell’apparato urinario.",
+    "Comprendere in che modo i reni regolano l’equilibrio idrico, salino e chimico nell’organismo.",
+    "Descrivere la struttura e la funzione della pelle nel rapporto con l’ambiente esterno."
+   ],
+   "indicatori": [
+    "Capire che all’equilibrio interno concorre la funzione di escrezione.",
+    "Comprendere il collegamento tra la necessità di eliminare i rifiuti e il sistema predisposto ad attuarla.",
+    "Comprendere la funzione di omeostasi della pelle."
+   ],
+   "traguardi": [
+    "Costruire concetti e formularli con un linguaggio adeguato.",
+    "Scomporre la complessità in elementi e relazioni.",
+    "Acquisire competenze linguistiche."
+   ]
+  },
+  {
+   "id": "C6",
+   "codice": "C6",
+   "titolo": "Il sistema nervoso e il sistema endocrino",
+   "lezioni": [
+    {
+     "id": "C6-1",
+     "titolo": "Il sistema nervoso e i neuroni",
+     "pagine": "C140-C143"
+    },
+    {
+     "id": "C6-2",
+     "titolo": "Il sistema nervoso centrale",
+     "pagine": "C144-C147"
+    },
+    {
+     "id": "C6-3",
+     "titolo": "Il sistema nervoso periferico",
+     "pagine": "C148-C149"
+    },
+    {
+     "id": "C6-4",
+     "titolo": "Il sistema endocrino",
+     "pagine": "C150-C153"
+    }
+   ],
+   "obiettivi": [
+    "Analizzare la funzione di coordinamento degli organi e di adattamento all’ambiente.",
+    "Conoscere la struttura del cervello come centro di funzioni complesse.",
+    "Analizzare il meccanismo di alcune funzioni ricostruendo i collegamenti necessari per effettuarle.",
+    "Conoscere le modalità di intervento volontario e involontario in risposta agli stimoli.",
+    "Conoscere i meccanismi di reciproco controllo tra gli elementi del sistema endocrino.",
+    "Comprendere che le differenze di struttura corrispondono ai diversi livelli di organizzazione e dipendono dall’ambiente in cui vive un animale."
+   ],
+   "indicatori": [
+    "Comprendere la complessità del funzionamento del sistema nervoso individuando relazioni con l’esterno e l’interno.",
+    "Conoscere in che modo vengono elaborati i segnali provenienti dall’ambiente.",
+    "Essere consapevoli dello stretto collegamento tra azioni e informazioni.",
+    "Individuare il coordinamento dei sistemi in relazione al mantenimento dell’equilibrio interno e alle interazioni con l’esterno."
+   ],
+   "traguardi": [
+    "Costruire concetti e sistemarli organicamente.",
+    "Decomporre e ricomporre la complessità del sistema in elementi e relazioni.",
+    "Avere una visione organica del proprio corpo al fine di attuarne una corretta gestione.",
+    "Acquisire competenze linguistiche."
+   ]
+  },
+  {
+   "id": "C7",
+   "codice": "C7",
+   "titolo": "Gli organi di senso",
+   "lezioni": [
+    {
+     "id": "C7-1",
+     "titolo": "I sensi e i recettori sensoriali",
+     "pagine": "C166-C167"
+    },
+    {
+     "id": "C7-2",
+     "titolo": "La pelle e il tatto",
+     "pagine": "C168-C169"
+    },
+    {
+     "id": "C7-3",
+     "titolo": "L’occhio e la vista",
+     "pagine": "C170-C171"
+    },
+    {
+     "id": "C7-4",
+     "titolo": "L’orecchio, l’udito e l’equilibrio",
+     "pagine": "C172-C173"
+    },
+    {
+     "id": "C7-5",
+     "titolo": "Il gusto e l’olfatto",
+     "pagine": "C174-C175"
+    }
+   ],
+   "obiettivi": [
+    "Descrivere la funzione degli organi di senso.",
+    "Conoscere e comprendere la struttura degli organi di senso.",
+    "Capire come a partire da uno stimolo luminoso, sonoro, olfattivo, tattile il sistema nervoso costruisce la percezione dell’ambiente esterno.",
+    "Essere consapevoli che le percezioni sensoriali possono essere associate (es. visive- uditive, gustative-olfattive).",
+    "Comprendere che le differenze di struttura corrispondono ai diversi livelli di organizzazione in relazione all’ambiente in cui vive un animale."
+   ],
+   "indicatori": [
+    "Sapere quali sensazioni gli organismi viventi ricevono dall’ambiente.",
+    "Capire in che modo i recettori consentono di conoscere e relazionare con il mondo esterno.",
+    "Seguire il percorso degli stimoli esterni dagli organi di senso ai centri nervosi, anche effettuando analogie con strumenti tecnologici.",
+    "Riflettere sullo stato di benessere o di malessere che può derivare dall’alterazione dell’interpretazione dei messaggi sensoriali."
+   ],
+   "traguardi": [
+    "Costruire concetti e sistemarli organicamente.",
+    "Decomporre e ricomporre la complessità del sistema in elementi e relazioni.",
+    "Avere una visione organica del proprio corpo al fine di attuarne una corretta gestione.",
+    "Acquisire competenze linguistiche."
+   ]
+  },
+  {
+   "id": "C8",
+   "codice": "C8",
+   "titolo": "La riproduzione",
+   "lezioni": [
+    {
+     "id": "C8-1",
+     "titolo": "La meiosi e i gameti",
+     "pagine": "C188-C189"
+    },
+    {
+     "id": "C8-2",
+     "titolo": "L’apparato riproduttore maschile",
+     "pagine": "C190-C191"
+    },
+    {
+     "id": "C8-3",
+     "titolo": "L’apparato riproduttore femminile",
+     "pagine": "C192-C195"
+    },
+    {
+     "id": "C8-4",
+     "titolo": "Come si forma una nuova vita",
+     "pagine": "C198-C201"
+    }
+   ],
+   "obiettivi": [
+    "Conoscere la struttura dello spermatozoo e della cellula uovo.",
+    "Saper descrivere le fasi della mitosi e della meiosi.",
+    "Conoscere la struttura dell’apparato genitale maschile e femminile e capirne il funzionamento.",
+    "Saper descrivere il ciclo riproduttivo femminile.",
+    "Conoscere la tappe dello sviluppo di un nuovo organismo: da zigote a feto.",
+    "Riconoscere l’età puberale come una fase per vivere la sessualità in modo equilibrato."
+   ],
+   "indicatori": [
+    "Individuare i processi del cambiamento di un vivente a partire dall’organizzazione microscopica dei gameti maschili e femminili.",
+    "Individuare il processo di divisione cromosomica tipico dei gameti.",
+    "Analizzare il percorso dei gameti maschili e femminili all’interno degli organi genitali.",
+    "Individuare le modalità di coordinamento tra l’apparato genitale e il sistema endocrino.",
+    "Conoscere i mutamenti, a livello micro e macroscopico, indotti dalla fecondazione.",
+    "Essere consapevoli delle problematiche fisiche e psicologiche legate alla maturazione sessuale."
+   ],
+   "traguardi": [
+    "Costruire concetti e sistemarli organicamente.",
+    "Decomporre e ricomporre la complessità del sistema in elementi e relazioni.",
+    "Avere una visione organica del proprio corpo al fine di attuarne una corretta gestione.",
+    "Acquisire competenze linguistiche."
+   ]
+  },
+  {
+   "id": "C9",
+   "codice": "C9",
+   "titolo": "La genetica e l’ereditarietà",
+   "lezioni": [
+    {
+     "id": "C9-1",
+     "titolo": "Le leggi di Mendel",
+     "pagine": "C214-C217"
+    },
+    {
+     "id": "C9-2",
+     "titolo": "Il DNA e la genetica moderna",
+     "pagine": "C218-C219"
+    },
+    {
+     "id": "C9-3",
+     "titolo": "La genetica umana",
+     "pagine": "C220-C221"
+    },
+    {
+     "id": "C9-4",
+     "titolo": "I geni e l’ambiente",
+     "pagine": "222-C223"
+    },
+    {
+     "id": "C9-5",
+     "titolo": "La variabilità genetica e l’evoluzione",
+     "pagine": "C224-C225"
+    },
+    {
+     "id": "C9-6",
+     "titolo": "Il codice genetico e le proteine",
+     "pagine": "C226-C229"
+    }
+   ],
+   "obiettivi": [
+    "Capire le principali leggi che governano la trasmissione dei caratteri ereditari.",
+    "Tradurre con i termini specifici della genetica i meccanismi evidenziati dalle leggi di Mendel.",
+    "Comprendere come il fenotipo di un individuo dipende dal proprio genotipo a cui si aggiunge l’influenza dell’ambiente.",
+    "Conoscere il meccanismo di duplicazione del DNA e il crossing-over durante la meiosi.",
+    "Comprendere in che modo vengono interpretate le istruzioni del DNA per effettuare la sintesi delle proteine.",
+    "Conoscere le cause delle mutazioni.",
+    "Conoscere alcune malattie genetiche ereditarie dominanti o recessive e individuare le probabilità che si trasmettano alle generazioni successive.",
+    "Utilizzo di schemi, tabelle e calcolo delle percentuali per formalizzare i meccanismi dell’ereditarietà.",
+    "Saper descrivere la relazione tra la sintesi delle proteine e il codice genetico."
+   ],
+   "indicatori": [
+    "Cogliere l’analogia delle leggi di Mendel con la genetica.",
+    "Comprendere la relazione tra fenotipo e genotipo di un individuo.",
+    "Comprendere il meccanismo di trasmissione del DNA da una cellula all’altra e da una generazione all’altra.",
+    "Consolidare il concetto di variabilità genetica.",
+    "Comprendere in che modo il codice genetico determina il fenotipo di un individuo.",
+    "Considerare la genetica come uno degli elementi che entrano nel quadro dell’evoluzione.",
+    "Correlare le mutazioni di alleli e la presenza di agenti mutageni alle malattie genetiche ereditarie."
+   ],
+   "traguardi": [
+    "Costruire concetti e formularli con un linguaggio adeguato.",
+    "Scomporre la complessità del sistema in elementi e relazioni.",
+    "Sviluppare formalizzazioni logiche e matematiche di fatti e fenomeni.",
+    "Acquisire competenze linguistiche."
+   ]
+  },
+  {
+   "id": "C10",
+   "codice": "C10",
+   "titolo": "Le biotecnologie",
+   "lezioni": [
+    {
+     "id": "C10-1",
+     "titolo": "Dalle biotecnologie antiche agli OGM",
+     "pagine": "C242-C244"
+    },
+    {
+     "id": "C10-2",
+     "titolo": "Le tecniche usate dai biologi",
+     "pagine": "C246-C249"
+    }
+   ],
+   "obiettivi": [
+    "Avere la consapevolezza che da molto tempo le biotecnologie implicano l’uso di organismi viventi.",
+    "Conoscere la funzione degli enzimi di restrizione e ligasi.",
+    "Sapere come, a partire da una molecola di DNA ricombinante, si crea un organismo geneticamente modificato.",
+    "Capire in che modo viene effettuata la clonazione del DNA.",
+    "Descrivere le tappe del procedimento per ottenere cellule transgeniche.",
+    "Conoscere il metodo per ottenere le impronte del DNA, per identificare le persone.",
+    "Sapere in che modo le biotecnologie sono utilizzate nell’alimentazione, in medicina, nel risanamento dell’ambiente.",
+    "Conoscere le tecniche per realizzare la clonazione di un animale.",
+    "Saper descrivere il funzionamento e l’utilità della PCR."
+   ],
+   "indicatori": [
+    "Essere in grado di spiegare la differenza tra vecchie e nuove biotecnologie.",
+    "Comprendere la funzione e le finalità delle biotecnologie e dell’ingegneria genetica.",
+    "Capire che cosa si intende per organismo geneticamente modificato e in che modo viene costruito.",
+    "Conoscere le modalità per produrre copie di una parte di genoma.",
+    "Essere in grado di interpretare le impronte del DNA.",
+    "Sapere a che cosa servono gli OGM e riflettere sui rischi derivanti dal loro utilizzo.",
+    "Riflettere sulle difficoltà, anche da un punto di vista etico, relative alla clonazione di organismi.",
+    "Sapere come viene attuata la replicazione di un frammento di DNA."
+   ],
+   "traguardi": [
+    "Costruire concetti e formularli con un linguaggio adeguato.",
+    "Scomporre la complessità in relazioni e sottostrutture.",
+    "Conoscere i problemi legati all’uso delle scienze nel campo dello sviluppo tecnologico.",
+    "Acquisire competenze linguistiche."
+   ]
+  }
+ ]
+}

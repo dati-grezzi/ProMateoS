@@ -1,0 +1,385 @@
+{
+ "id": "contaci-N3",
+ "titolo": "Contaci – Numeri, relazioni, funzioni, dati e informatica 3",
+ "editore": "Zanichelli",
+ "materia": "Matematica",
+ "sezioni": [
+  {
+   "id": "cap1",
+   "codice": "Cap. 1",
+   "titolo": "Numeri razionali e insiemi numerici",
+   "lezioni": [
+    {
+     "id": "1-L1",
+     "titolo": "Lezione 1 I numeri interi: cosa ricordi?",
+     "pagine": ""
+    },
+    {
+     "id": "1-L2",
+     "titolo": "Lezione 2 Numeri decimali positivi e negativi",
+     "pagine": ""
+    },
+    {
+     "id": "1-L3",
+     "titolo": "Lezione 3 Le frazioni: cosa ricordi?",
+     "pagine": ""
+    },
+    {
+     "id": "1-L4",
+     "titolo": "Lezione 4 Somme algebriche con le frazioni",
+     "pagine": ""
+    },
+    {
+     "id": "1-L5",
+     "titolo": "Lezione 5 Moltiplicazioni e potenze di frazioni",
+     "pagine": ""
+    },
+    {
+     "id": "1-L6",
+     "titolo": "Lezione 6 Divisioni con frazioni positive e negative",
+     "pagine": ""
+    },
+    {
+     "id": "1-L7",
+     "titolo": "Lezione 7 Espressioni",
+     "pagine": ""
+    },
+    {
+     "id": "1-L8",
+     "titolo": "Lezione 8 Numeri razionali: una visione d’insieme",
+     "pagine": ""
+    },
+    {
+     "id": "1-L9",
+     "titolo": "Lezione 9 I numeri reali",
+     "pagine": ""
+    }
+   ],
+   "obiettivi": [
+    "Eseguire addizioni, sottrazioni, moltiplicazioni, divisioni, ordinamenti e confronti tra i numeri naturali, interi, razionali sotto forma di frazioni e numeri decimali, quando possibile a mente oppure utilizzando gli usuali algoritmi scritti, le calcolatrici e software specifici, valutando quale strumento possa essere più opportuno.",
+    "Operare con diversi sistemi di numerazione.",
+    "Rappresentare i numeri naturali, interi e razionali (sotto forma di frazioni e numeri decimali) sulla retta.",
+    "Utilizzare frazioni equivalenti e numeri decimali per denotare uno stesso numero razionale in diversi modi, spiegando vantaggi e svantaggi dell’uso di rappresentazioni diverse.",
+    "Riconoscere l’esistenza dei numeri irrazionali.",
+    "Eseguire semplici espressioni di calcolo con i numeri naturali, interi e razionali (sotto forma di frazioni e numeri decimali), tenendo conto della convenzionalità dell’uso delle parentesi e della precedenza delle operazioni."
+   ],
+   "indicatori": [],
+   "traguardi": []
+  },
+  {
+   "id": "cap2",
+   "codice": "Cap. 2",
+   "titolo": "Potenze e ordini di grandezza",
+   "lezioni": [
+    {
+     "id": "2-L10",
+     "titolo": "Lezione 10 Rivediamo le potenze",
+     "pagine": ""
+    },
+    {
+     "id": "2-L11",
+     "titolo": "Lezione 11 Proprietà delle potenze con la stessa base",
+     "pagine": ""
+    },
+    {
+     "id": "2-L12",
+     "titolo": "Lezione 12 Potenze di prodotti e quozienti",
+     "pagine": ""
+    },
+    {
+     "id": "2-L13",
+     "titolo": "Lezione 13 Per esponente un numero negativo o lo zero",
+     "pagine": ""
+    },
+    {
+     "id": "2-L14",
+     "titolo": "Lezione 14 Numeri grandi",
+     "pagine": ""
+    },
+    {
+     "id": "2-L15",
+     "titolo": "Lezione 15 Numeri piccoli",
+     "pagine": ""
+    },
+    {
+     "id": "2-L16",
+     "titolo": "Lezione 16 Confrontare gli ordini di grandezza",
+     "pagine": ""
+    }
+   ],
+   "obiettivi": [
+    "Utilizzare la notazione usuale per le potenze con esponente intero positivo e le proprietà delle potenze per semplificare calcoli e notazioni.",
+    "Esprimere misure utilizzando anche le potenze del 10 e le cifre significative."
+   ],
+   "indicatori": [],
+   "traguardi": []
+  },
+  {
+   "id": "cap3",
+   "codice": "Cap. 3",
+   "titolo": "Il calcolo letterale",
+   "lezioni": [
+    {
+     "id": "3-L17",
+     "titolo": "Lezione 17 Espressioni letterali e modelli",
+     "pagine": ""
+    },
+    {
+     "id": "3-L18",
+     "titolo": "Lezione 18 L’area del rettangolo come modello",
+     "pagine": ""
+    },
+    {
+     "id": "3-L19",
+     "titolo": "Lezione 19 Ancora su perimetri e aree",
+     "pagine": ""
+    },
+    {
+     "id": "3-L20",
+     "titolo": "Lezione 20 Il modello del volume",
+     "pagine": ""
+    },
+    {
+     "id": "3-L21",
+     "titolo": "Lezione 21 I monomi",
+     "pagine": ""
+    },
+    {
+     "id": "3-L22",
+     "titolo": "Lezione 22 Somme e differenze di monomi",
+     "pagine": ""
+    },
+    {
+     "id": "3-L23",
+     "titolo": "Lezione 23 Prodotto di monomi",
+     "pagine": ""
+    },
+    {
+     "id": "3-L24",
+     "titolo": "Lezione 24 Operazioni con i monomi",
+     "pagine": ""
+    },
+    {
+     "id": "3-L25",
+     "titolo": "Lezione 25 I polinomi",
+     "pagine": ""
+    },
+    {
+     "id": "3-L26",
+     "titolo": "Lezione 26 Somma di polinomi",
+     "pagine": ""
+    },
+    {
+     "id": "3-L27",
+     "titolo": "Lezione 27 Differenza di polinomi",
+     "pagine": ""
+    },
+    {
+     "id": "3-L28",
+     "titolo": "Lezione 28 Addizioni e sottrazioni di polinomi",
+     "pagine": ""
+    },
+    {
+     "id": "3-L29",
+     "titolo": "Lezione 29 Prodotto di un numero per un polinomio",
+     "pagine": ""
+    },
+    {
+     "id": "3-L30",
+     "titolo": "Lezione 30 Monomio per polinomio",
+     "pagine": ""
+    },
+    {
+     "id": "3-L31",
+     "titolo": "Lezione 31 Dividere un polinomio, dividere un monomio",
+     "pagine": ""
+    },
+    {
+     "id": "3-L32",
+     "titolo": "Lezione 32 Prodotto di polinomi",
+     "pagine": ""
+    },
+    {
+     "id": "3-L33",
+     "titolo": "Lezione 33 Esercitazione con i polinomi",
+     "pagine": ""
+    }
+   ],
+   "obiettivi": [
+    "Introduzione al linguaggio algebrico.",
+    "Estendere e generalizzare sequenze numeriche e geometriche, costruendo rappresentazioni in linguaggio simbolico per esprimere la generalizzazione individuata.",
+    "Rappresentare relazioni e funzioni in diversi linguaggi (numerico, simbolico, grafico, verbale) e passare da uno all’altro.",
+    "Comprendere e utilizzare il concetto di algoritmo come strumento per la risoluzione di problemi.."
+   ],
+   "indicatori": [],
+   "traguardi": []
+  },
+  {
+   "id": "cap4",
+   "codice": "Cap. 4",
+   "titolo": "Le equazioni",
+   "lezioni": [
+    {
+     "id": "4-L34",
+     "titolo": "Lezione 34 L’uguale protagonista",
+     "pagine": ""
+    },
+    {
+     "id": "4-L35",
+     "titolo": "Lezione 35 Risolvere un’equazione",
+     "pagine": ""
+    },
+    {
+     "id": "4-L36",
+     "titolo": "Lezione 36 Polinomi, equazioni e formule inverse",
+     "pagine": ""
+    },
+    {
+     "id": "4-L37",
+     "titolo": "Lezione 37 Equazioni determinate, impossibili o indeterminate",
+     "pagine": ""
+    },
+    {
+     "id": "4-L38",
+     "titolo": "Lezione 38 Equazioni con il denominatore",
+     "pagine": ""
+    },
+    {
+     "id": "4-L39",
+     "titolo": "Lezione 39 Due incognite",
+     "pagine": ""
+    }
+   ],
+   "obiettivi": [
+    "Risolvere problemi utilizzando equazioni di primo grado.",
+    "Rappresentare relazioni e funzioni in diversi linguaggi (numerico, simbolico, grafico, verbale) e passare da uno all’altro.",
+    "Comprendere e utilizzare il concetto di algoritmo come strumento per la risoluzione di problemi."
+   ],
+   "indicatori": [],
+   "traguardi": []
+  },
+  {
+   "id": "cap5",
+   "codice": "Cap. 5",
+   "titolo": "Le funzioni",
+   "lezioni": [
+    {
+     "id": "5-L43",
+     "titolo": "Lezione 43 Leggere grafici sul piano cartesiano",
+     "pagine": ""
+    },
+    {
+     "id": "5-L44",
+     "titolo": "Lezione 44 Legge di proporzionalità diretta",
+     "pagine": ""
+    },
+    {
+     "id": "5-L45",
+     "titolo": "Lezione 45 Legge di proporzionalità inversa",
+     "pagine": ""
+    },
+    {
+     "id": "5-L46",
+     "titolo": "Lezione 46 Le funzioni",
+     "pagine": ""
+    },
+    {
+     "id": "5-L47",
+     "titolo": "Lezione 47 Il grafico di una funzione",
+     "pagine": ""
+    },
+    {
+     "id": "5-L48",
+     "titolo": "Lezione 48 L’equazione della retta",
+     "pagine": ""
+    }
+   ],
+   "obiettivi": [
+    "Rappresentare relazioni e funzioni in diversi linguaggi (numerico, simbolico, grafico, verbale) e passare da uno all’altro.",
+    "Rappresentare relazioni e funzioni attraverso tabelle e grafici nel piano cartesiano a partire dalle loro equazioni (ad esempio, y=ax, y=a/x, y=ax2, y=2n) anche con dati provenienti da contesti esterni alla matematica come quello delle scienze, con strumenti materiali o digitali.",
+    "Conoscere il collegamento tra y=ax, y=a/x e il concetto di proporzionalità."
+   ],
+   "indicatori": [],
+   "traguardi": []
+  },
+  {
+   "id": "cap6",
+   "codice": "Cap. 6",
+   "titolo": "Probabilità",
+   "lezioni": [
+    {
+     "id": "6-L50",
+     "titolo": "Lezione 50 Eventi aleatori",
+     "pagine": ""
+    },
+    {
+     "id": "6-L51",
+     "titolo": "Lezione 51 Rivediamo la probabilità classica",
+     "pagine": ""
+    },
+    {
+     "id": "6-L52",
+     "titolo": "Lezione 52 La probabilità frequentista",
+     "pagine": ""
+    }
+   ],
+   "obiettivi": [
+    "In situazioni significative, confrontare dati al fine di prendere decisioni, utilizzando le distribuzioni delle frequenze e delle frequenze relative.",
+    "All'interno di contesti di incertezza, individuare gli eventi elementari, assegnare a essi una probabilità; determinare la probabilità di eventi composti, scomponibili in eventi elementari disgiunti.",
+    "Riconoscere coppie di eventi complementari, incompatibili, indipendenti."
+   ],
+   "indicatori": [],
+   "traguardi": []
+  },
+  {
+   "id": "cap7",
+   "codice": "Cap. 7",
+   "titolo": "Probabilità, liste e statistica",
+   "lezioni": [
+    {
+     "id": "7-L54",
+     "titolo": "Lezione 54 Numeri casuali e probabilità",
+     "pagine": ""
+    },
+    {
+     "id": "7-L55",
+     "titolo": "Lezione 55 Liste e statistica",
+     "pagine": ""
+    },
+    {
+     "id": "7-L56",
+     "titolo": "Lezione 56 Istogrammi",
+     "pagine": ""
+    },
+    {
+     "id": "7-L57",
+     "titolo": "Lezione 57 Calcoliamo π con la pioggia",
+     "pagine": ""
+    },
+    {
+     "id": "7-L58",
+     "titolo": "Lezione 58 Ellissi e iperboli",
+     "pagine": ""
+    },
+    {
+     "id": "7-L59",
+     "titolo": "Lezione 59 Velocità, accelerazione e moto parabolico",
+     "pagine": ""
+    },
+    {
+     "id": "7-L60",
+     "titolo": "Lezione 60 Non è finita qui!",
+     "pagine": ""
+    }
+   ],
+   "obiettivi": [
+    "Scrivere semplici programmi con strutture di controllo, condizioni, variabili, liste di dati e applicarli alla probabilità e statistica.",
+    "Valutare l’esito di un algoritmo o di un programma seguendone i passi e tenendo traccia del valore delle variabili.",
+    "Utilizzare il concetto di algoritmo come strumento per la risoluzione di problemi in ambito matematico, statistico, fisico.",
+    "Esaminare un algoritmo o un programma per capirne il comportamento, identificarne eventuali difetti e correggerli (debug)."
+   ],
+   "indicatori": [],
+   "traguardi": []
+  }
+ ]
+}

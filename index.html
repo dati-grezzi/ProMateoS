@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<!-- ProMateoS: software libero, licenza GNU General Public License v3.0 (vedi LICENSE) -->
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#15132B">
+<title>ProMateoS · programmazione didattica</title>
+<link rel="icon" type="image/svg+xml" href="logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#15132B;--ink2:#2A2658;--viola:#6A4CFF;--viola-ch:#EEEAFF;--cyan:#1FD1E8;--menta:#17B890;--ambra:#B7791F;--ambra-bg:#FFF4DC;--rosso:#D63A40;--rosso-bg:#FFE9EA;--bg:#F4F5FD;--card:#fff;--line:#E2E3F3;--muted:#6B6A8A}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Inter',system-ui,-apple-system,Segoe UI,sans-serif;background:var(--bg);color:var(--ink);-webkit-tap-highlight-color:transparent;line-height:1.45}
+h1,h2,h3,h4{font-family:'Space Grotesk','Inter',system-ui,sans-serif;margin:0}
+h2{font-size:1.15rem}h3{font-size:1.05rem}h4{font-size:.9rem;margin:14px 0 6px;color:var(--ink2)}
+p{margin:6px 0}
+.testata{background:linear-gradient(135deg,#15132B 0%,#2A2658 55%,#4B3BC4 100%);color:#fff;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.marchio{display:flex;gap:12px;align-items:center}
+.nome{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.6rem;letter-spacing:.2px;line-height:1.1}
+.nome span{background:linear-gradient(90deg,#7DF3FF,#C9B8FF);-webkit-background-clip:text;background-clip:text;color:transparent}
+.motto{font-size:.78rem;opacity:.8}
+.anno-badge{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);padding:4px 10px;border-radius:999px;font-size:.8rem;white-space:nowrap}
+nav.schede{position:fixed;bottom:0;left:0;right:0;display:flex;background:#fff;border-top:1px solid var(--line);z-index:20;padding-bottom:env(safe-area-inset-bottom)}
+nav.schede button{flex:1;border:0;background:none;padding:8px 2px 6px;display:flex;flex-direction:column;align-items:center;gap:2px;font:inherit;font-size:.7rem;color:var(--muted);cursor:pointer}
+nav.schede button.on{color:var(--viola);font-weight:600}
+.ico{width:22px;height:22px}
+main{max-width:860px;margin:0 auto;padding:14px 14px 96px}
+.stack{display:flex;flex-direction:column;gap:14px}
+@media(min-width:760px){
+  nav.schede{position:static;max-width:860px;margin:12px auto 0;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  nav.schede button{flex-direction:row;justify-content:center;gap:8px;padding:12px;font-size:.9rem}
+  main{padding-bottom:40px}
+}
+.pannello{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:0 1px 2px rgba(21,19,43,.04)}
+.pannello-testa{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:10px;flex-wrap:wrap}
+.azioni{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:8px}
+.pannello-testa .azioni{margin-top:0}
+.bt{border:0;border-radius:12px;padding:11px 16px;font:inherit;font-weight:600;font-size:.92rem;background:var(--viola);color:#fff;cursor:pointer;min-height:44px;display:inline-flex;align-items:center;justify-content:center}
+.bt:hover{background:#5A3CF0}
+.bt:disabled{opacity:.45;cursor:not-allowed}
+.bt.ghost{background:#fff;color:var(--ink2);border:1px solid var(--line)}
+.bt.ghost:hover{background:var(--viola-ch)}
+.bt.piccolo{padding:6px 12px;min-height:36px;font-size:.84rem;border-radius:10px}
+.bt.pericolo{color:var(--rosso)}
+.bt.file{cursor:pointer}
+input,select,textarea{font:inherit;font-size:1rem;width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink)}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--viola);outline-offset:-1px;border-color:transparent}
+input[type=checkbox]{width:20px;height:20px;padding:0;flex:none}
+textarea{resize:vertical}
+.campo{display:flex;flex-direction:column;gap:4px}
+.campo-et{font-size:.78rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.aiuto{font-size:.78rem;color:var(--muted)}
+.griglia{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.griglia.aggiungi{align-items:end;margin-top:12px}
+.spunta{display:flex;gap:10px;align-items:center;margin-top:10px;cursor:pointer}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 8px}
+.chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 14px;font:inherit;font-size:.88rem;cursor:pointer;color:var(--ink2);min-height:38px}
+.chip.piccolo{padding:5px 11px;font-size:.8rem;min-height:32px}
+.chip.on{background:var(--viola);border-color:var(--viola);color:#fff}
+.elenco,.lista,.lista-scelta,.ordine{list-style:none;margin:0;padding:0}
+.lista{list-style:disc;padding-left:20px;font-size:.88rem}
+.riga{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)}
+.elenco>li:last-child>.riga:last-child{border-bottom:0}
+.riga-testo{display:flex;flex-direction:column;min-width:0}
+.sotto{font-size:.8rem;color:var(--muted)}
+.blocco{padding:6px 0}
+.dettaglio{padding:4px 0 10px}
+details.sezione{border:1px solid var(--line);border-radius:12px;padding:8px 12px;margin:8px 0;background:#FBFBFF}
+details summary{cursor:pointer}
+.tag{display:inline-block;font-size:.74rem;font-weight:600;padding:3px 9px;border-radius:999px;background:#EDEEF8;color:var(--ink2);white-space:nowrap}
+.tag.viola{background:var(--viola-ch);color:var(--viola)}
+.tag.verde{background:#DDF7EE;color:#0B7D61}
+.tag.rosso{background:var(--rosso-bg);color:var(--rosso)}
+.vuoto{color:var(--muted);font-size:.9rem}
+.errore{color:var(--rosso);background:var(--rosso-bg);padding:8px 12px;border-radius:10px;font-size:.9rem}
+.avviso{color:var(--ambra);background:var(--ambra-bg);padding:8px 12px;border-radius:10px;font-size:.88rem}
+.ok{color:#0B7D61;background:#DDF7EE;padding:8px 12px;border-radius:10px;font-size:.9rem}
+.numeri{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:8px 0 12px}
+.numeri div{background:var(--viola-ch);border-radius:12px;padding:10px 12px;display:flex;flex-direction:column}
+.numeri b{font-family:'Space Grotesk',sans-serif;font-size:1.4rem;color:var(--ink2)}
+.numeri span{font-size:.78rem;color:var(--muted)}
+.benvenuto{text-align:center;background:linear-gradient(160deg,#fff 0%,#EEEAFF 100%);border:1px solid var(--line);border-radius:20px;padding:22px 18px}
+.benvenuto h2{margin:8px 0 4px;font-size:1.4rem}
+.benvenuto p{color:var(--muted);max-width:520px;margin:6px auto 14px}
+.orario{display:grid;grid-template-columns:repeat(auto-fit,minmax(78px,1fr));gap:8px;margin-bottom:12px}
+.ora{display:flex;flex-direction:column;gap:3px;font-size:.78rem;font-weight:600;color:var(--muted)}
+.segmenti{display:flex;gap:6px;background:#EDEEF8;border-radius:12px;padding:4px;margin-bottom:12px}
+.segmenti button{flex:1;border:0;background:none;padding:9px;border-radius:9px;font:inherit;font-weight:600;color:var(--ink2);cursor:pointer}
+.segmenti button.on{background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.12)}
+.mese h3{position:sticky;top:0;background:var(--bg);padding:8px 2px;z-index:5;color:var(--ink2)}
+.mese{display:flex;flex-direction:column;gap:8px}
+.settimana{background:#fff;border:1px solid var(--line);border-left:4px solid var(--cyan);border-radius:14px;overflow:hidden}
+.settimana.vacanza{border-left-color:#C9CBE0;background:#F8F8FC}
+.settimana.sfora{border-left-color:var(--rosso)}
+.settimana header{display:flex;justify-content:space-between;gap:10px;padding:11px 14px;cursor:pointer;align-items:flex-start}
+.settimana .feste{font-size:.78rem;color:var(--ambra)}
+.riassunto{font-size:.84rem;color:var(--muted);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-top:2px}
+.settimana .corpo{padding:4px 14px 14px;display:flex;flex-direction:column;gap:8px;border-top:1px solid var(--line)}
+.item{display:flex;flex-wrap:wrap;gap:6px;align-items:center;padding-top:8px}
+.item select{flex:0 0 108px;width:auto}
+.item .testo{flex:1 1 180px;width:auto}
+.item .ore-in{flex:0 0 70px;width:70px}
+.item.tipo-verifica .testo{border-color:var(--rosso)}
+.velo{position:fixed;inset:0;background:rgba(21,19,43,.55);z-index:50;display:flex;align-items:flex-end;justify-content:center}
+.finestra{background:#fff;width:min(680px,100%);max-height:90vh;display:flex;flex-direction:column;border-radius:20px 20px 0 0}
+@media(min-width:760px){.velo{align-items:center}.finestra{border-radius:20px}}
+.finestra-testa{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;border-bottom:1px solid var(--line)}
+.finestra-corpo{padding:14px 16px;overflow:auto;display:flex;flex-direction:column;gap:10px}
+.finestra-piede{padding:12px 16px;border-top:1px solid var(--line);display:flex;justify-content:flex-end}
+.lista-scelta li{padding:3px 0}
+.lista-scelta .spunta{margin-top:4px}
+.scorri{overflow-x:auto}
+.tabella{border-collapse:collapse;width:100%;font-size:.84rem;min-width:520px}
+.tabella th,.tabella td{border:1px solid var(--line);padding:6px 8px;vertical-align:top;text-align:left}
+.tabella th{background:var(--viola-ch)}
+.tabella tr.vac td{background:#F5F5FA;color:var(--muted)}
+.mese-col{font-weight:600;white-space:nowrap}
+.sett-col span{display:block;font-size:.72rem;color:var(--muted)}
+.ore-col{text-align:center;white-space:nowrap}
+.solo-stampa{display:none}
+code{background:#EDEEF8;padding:1px 6px;border-radius:6px;font-size:.85em}
+@media print{
+  @page{size:landscape;margin:10mm}
+  body{background:#fff}
+  .testata,nav.schede,main .stack>*:not(.solo-stampa){display:none!important}
+  main{padding:0;max-width:none}
+  .solo-stampa{display:block!important}
+  .solo-stampa h1{font-size:14pt;margin-bottom:8px}
+  .tabella{min-width:0;font-size:9pt}
+}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+const { useState, useEffect, useMemo, useRef } = React;
+
+/* ===================== catalogo incorporato ===================== */
+const LIBRI_BASE = [{"id":"scopri-A","titolo":"Scopri perché! – Volume A (chimica e fisica)","editore":"Zanichelli","materia":"Scienze","sezioni":[{"id":"A0","codice":"A0","titolo":"Per iniziare – Il metodo scientifico","lezioni":[{"id":"A0-1","titolo":"Le fasi del metodo scientifico","pagine":"A2-A3, A6-A7"}],"obiettivi":["Formalizzare le tappe dell’indagine scientifica.","Saper utilizzare semplici strumenti di misura adeguati alla situazione."],"indicatori":["Acquisire la consapevolezza che si esplora l’ambiente utilizzando i propri sensi.","Individuare ipotesi coerenti con il fenomeno osservato e verificarle sia sulla base delle esperienze pregresse sia con l’utilizzo di strumenti anche non concettuali."],"traguardi":["Acquisire un metodo di indagine.","Comprendere il ruolo della scienza nella storia e nella società contemporanea."]},{"id":"A1","codice":"A1","titolo":"Osservare, classificare, sperimentare","lezioni":[{"id":"A1-1","titolo":"Gli strumenti e gli errori di misura","pagine":"A20-A21"},{"id":"A1-2","titolo":"Le unità di misura","pagine":"A22-A23"}],"obiettivi":["Riconoscere e descrivere quanto osservato, sentito, toccato.","Individuare le modalità e gli strumenti per verificare le ipotesi.","Effettuare corrette misurazioni, visualizzarne graficamente i risultati; dare una spiegazione del fenomeno coerente con i risultati ottenuti.","Saper utilizzare semplici strumenti di misura adeguati alla situazione.","Essere in grado di calcolare la media delle misure e conoscere il significato di approssimazione."],"indicatori":["Effettuare e stimare misure in modo diretto e indiretto.","Acquisire la consapevolezza che le misure ottenute sono affette da un’intrinseca incertezza."],"traguardi":["Consolidare il concetto di misura come trasformazione di una qualità in un numero e in un’unità di misura."]},{"id":"A2","codice":"A2","titolo":"Un mondo di materia","lezioni":[{"id":"A2-1","titolo":"Che cos’è e com’è fatta la materia","pagine":"A36-A37"},{"id":"A2-2","titolo":"Il volume e la densità","pagine":"A38-A39"},{"id":"A2-3","titolo":"I cambiamenti di stato","pagine":"A40-A41"}],"obiettivi":["Essere in grado di misurare la massa e il volume di un oggetto utilizzando strumenti di misura e metodi empirici.","Stabilire la relazione tra il volume di un liquido e il livello raggiunto.","Organizzare semplici esperienze per consolidare il concetto di densità.","Realizzare modelli (grafici o con l’ausilio di materiali diversi) degli stati di aggregazione della materia.","Saper descrivere i cambiamenti di stato della materia; acquisire termini specifici."],"indicatori":["Acquisire il concetto di volume e massa.","Acquisire il concetto di densità come relazione tra massa e volume.","Conoscere gli assiomi alla base della teoria atomica della materia.","Formulare ipotesi di modelli sulla struttura dei corpi allo stato solido, liquido e aeriforme.","Conoscere le relazioni di trasformazione degli stati di aggregazione della materia."],"traguardi":["Costruire concetti e formularli con un linguaggio adeguato.","Individuare relazioni tra grandezze.","Elaborare modelli (la costruzione di un modello astratto passa attraverso oggetti concreti).","Acquisire competenze linguistiche."]},{"id":"A3","codice":"A3","titolo":"La temperatura e il calore","lezioni":[{"id":"A3-1","titolo":"Misurare la temperatura","pagine":"A58-A59"},{"id":"A3-2","titolo":"La differenza tra calore e temperatura","pagine":"A60"},{"id":"A3-3","titolo":"Come si trasmette il calore","pagine":"A62-A63"}],"obiettivi":["Descrivere le caratteristiche qualitative del calore.","Descrivere le caratteristiche quantitative della temperatura.","Descrivere significative relazioni tra calore e temperatura.","Descrivere i modi di propagazione del calore.","Descrivere le trasformazioni fisiche della materia.","Acquisizione di termini specifici."],"indicatori":["Acquisire il concetto di calore come forma di energia.","Acquisire il concetto di temperatura.","Comprendere la relazione tra i diversi fenomeni e lo stato di agitazione delle particelle che costituiscono i corpi."],"traguardi":["Costruire concetti e formularli con un linguaggio adeguato.","Individuare relazioni tra grandezze.","Acquisire competenze linguistiche."]},{"id":"A4","codice":"A4","titolo":"Le basi della chimica","lezioni":[{"id":"A4-1","titolo":"Le trasformazioni fisiche e chimiche","pagine":"A84-A85"},{"id":"A4-2","titolo":"I miscugli e le soluzioni","pagine":"A86-A87"},{"id":"A4-3","titolo":"La struttura dell’atomo","pagine":"A88-A91"},{"id":"A4-4","titolo":"La tavola periodica","pagine":"A92-A95"},{"id":"A4-5","titolo":"I legami chimici","pagine":"A96-A99"}],"obiettivi":["Acquisire il concetto di fenomeno fisico e chimico.","Acquisire il concetto di elemento e di composto.","Essere in grado di leggere una formula chimica e saper bilanciare semplici reazioni.","Individuare la periodicità e il ripetersi delle caratteristiche dei diversi elementi.","Essere consapevoli della relazione tra le proprietà di un elemento e la sua configurazione elettronica."],"indicatori":["Classificare un fenomeno in base al tipo di trasformazione che la materia subisce.","Comprendere la trasformazione delle sostanze sia scomponendo composti sia formandoli.","Completare la costruzione del concetto di trasformazione della materia.","Individuare un ordine logico nella classificazione degli elementi.","Sviluppare la modellizzazione della struttura atomica."],"traguardi":["Costruire concetti e sistemarli organicamente.","Scomporre e ricomporre la complessità in elementi e relazioni.","Interpretare lo svolgersi di fenomeni controllati sperimentalmente.","Affinare le abilità operative.","Acquisire competenze linguistiche."]},{"id":"A5","codice":"A5","titolo":"Le reazioni chimiche","lezioni":[{"id":"A5-1","titolo":"Le leggi delle reazioni chimiche","pagine":"A110-A113"},{"id":"A5-2","titolo":"Energia e velocità delle reazioni","pagine":"A114-A115"},{"id":"A5-3","titolo":"Gli ossidi, le anidridi e le combustioni","pagine":"A116-A117"},{"id":"A5-4","titolo":"Gli acidi, le basi e i sali","pagine":"A118-A119"},{"id":"A5-5","titolo":"Il pH","pagine":"A120-A121"}],"obiettivi":["Essere consapevoli che alcune reazioni avvengono con sviluppo o assorbimento di energia.","Essere in grado di leggere una formula chimica e saper bilanciare reazioni.","Acquisire il concetto di ossidazione.","Classificare e riconoscere composti chimici anche utilizzando indicatori.","Individuare negli schemi di reazioni chimiche, accanto ai prodotti anche l’energia che si produce."],"indicatori":["Evidenziare la relazione tra energia e materia nelle trasformazioni chimiche.","Acquisire il concetto di conservazione della massa in una trasformazione chimica.","Classificare gli elementi in base alla loro reattività con l’ossigeno.","Riconoscere i composti chimici in base alle loro proprietà.","Identificare le combustioni con le ossidazioni."],"traguardi":["Costruire concetti e sistemarli organicamente.","Individuare relazioni all’interno di un contesto complesso.","Interpretare lo svolgersi di fenomeni controllati sperimentalmente.","Affinare le abilità operative.","Acquisire competenze linguistiche."]},{"id":"A6","codice":"A6","titolo":"La chimica della vita","lezioni":[{"id":"A6-1","titolo":"Il carbonio e gli idrocarburi","pagine":"A134-A135"},{"id":"A6-2","titolo":"I polimeri e le plastiche","pagine":"A136-A137"},{"id":"A6-3","titolo":"I carboidrati","pagine":"A138-A139"},{"id":"A6-4","titolo":"I lipidi","pagine":"A140-A141"},{"id":"A6-5","titolo":"Le proteine e gli acidi nucleici","pagine":"A142-A145"}],"obiettivi":["Essere consapevoli che tutte le molecole di sostanze organiche contengono carbonio e che sono presenti nella quotidianità.","Conoscere le caratteristiche chimiche dei composti del carbonio.","Constatare che gli elementi presenti nelle sostanze organiche sono principalmente quattro.","Comprendere che nei composti organici tali elementi si riuniscono in unità tipiche dal cui montaggio risultano glucidi, lipidi e proteine.","Sapere che glucidi, lipidi e proteine entrano nella struttura cellulare di organismi animali e vegetali e quindi negli alimenti.","Conoscere le funzioni costruttive, regolatrici ed energetiche di glucidi, lipidi e proteine."],"indicatori":["Acquisire il concetto di composto organico e cogliere la differenza con quello inorganico.","Riconoscere analogie e differenze nei comportamenti chimici di alcuni derivati del carbonio.","Elaborare modelli di molecole complesse visti come montaggio di unità semplici.","Intuire la natura sintetica delle materie plastiche.","Capire, attraverso una modellizzazione, la composizione delle sostanze organiche.","Individuare le relazioni tra composti organici e organismi viventi.","Individuare relazioni tra composti organici ed energia."],"traguardi":["Costruire concetti e sistemarli organicamente.","Individuare relazioni tra energia e materia e tra materia e vita.","Acquisire competenze linguistiche."]},{"id":"A7","codice":"A7","titolo":"Il movimento e l’equilibrio","lezioni":[{"id":"A7-1","titolo":"I diversi tipi di moto","pagine":"A158-A161"},{"id":"A7-2","titolo":"Le forze","pagine":"A162-A163"},{"id":"A7-3","titolo":"Il baricentro e l’equilibrio","pagine":"A164-A165"},{"id":"A7-4","titolo":"La leva","pagine":"A166-A169"}],"obiettivi":["Acquisire il concetto di moto e gli elementi che lo caratterizzano.","Rappresentare la velocità come grandezza vettoriale.","Comprendere che la velocità è relativa al sistema di riferimento.","Formalizzare le leggi del moto rettilineo uniforme e del moto uniformemente accelerato.","Acquisire il concetto di forza e rappresentarla graficamente.","Consolidare il concetto di peso come particolare tipo di forza.","Effettuare corrette misure di forze.","Individuare le condizioni che determinano l’equilibrio di un corpo (azioni combinate di più forze).","Conoscere le grandezze caratteristiche di una leva.","Risolvere i problemi riferiti alle condizioni di equilibrio di una leva."],"indicatori":["Comprendere la relazione tra spazio e tempo per definire la velocità.","Dare una descrizione quantitativa del movimento.","Riconoscere una grandezza fisica dagli effetti che produce e imparare a misurarla.","Comprendere la correlazione tra variazione di velocità e forza.","Valutare gli effetti di più forze applicate a un corpo.","Saper individuare la posizione del baricentro di un corpo in equilibrio."],"traguardi":["Costruire concetti e sistemarli organicamente.","Individuare e comprendere relazioni tra grandezze.","Interpretare lo svolgersi di fenomeni controllati sperimentalmente.","Formulare ipotesi e verificarle utilizzando strumenti matematici e di misura.","Acquisire competenze linguistiche."]},{"id":"A8","codice":"A8","titolo":"Le onde, i suoni e la luce","lezioni":[{"id":"A8-1","titolo":"Le onde","pagine":"A182-A183"},{"id":"A8-2","titolo":"Il suono e le sue proprietà","pagine":"A184-A187"},{"id":"A8-3","titolo":"La luce, un’onda molto speciale","pagine":"A188-A189"},{"id":"A8-4","titolo":"La riflessione della luce e gli specchi","pagine":"A190-A191"},{"id":"A8-5","titolo":"La rifrazione della luce e le lenti","pagine":"A192-A193"},{"id":"A8-6","titolo":"La luce e i colori","pagine":"A194-A195"}],"obiettivi":["Descrivere le caratteristiche di un’onda.","Comprendere che nel moto ondulatorio non c’è trasporto di materia.","Cogliere la relazione tra lunghezza d’onda e frequenza.","Saper riconoscere un’onda trasversale da una longitudinale.","Conoscere le velocità di propagazione di un’onda sonora nei mezzi.","Sapere che cosa determina l’altezza, l’intensità e il timbro di un suono.","Verificare sperimentalmente gli effetti della riflessione dei suoni.","Conoscere le caratteristiche di una radiazione luminosa.","Distinguere tra sorgenti luminose, corpi illuminati.","Osservare e descrivere i fenomeni di riflessione, diffusione, rifrazione, assorbimento e dispersione della luce.","Spiegare i colori come scomposizione della luce."],"indicatori":["Capire come si propagano le onde sonore.","Definire il suono e la luce come fenomeni ondulatori.","Correlare la vibrazione di un oggetto con la generazione di onde sonore.","Mettere in relazione le caratteristiche del suono con quelle delle onde sonore.","Comprendere come si genera la riflessione delle onde sonore.","Capire come i corpi rispondono alle radiazioni luminose.","Comprendere e descrivere in che modo si propagano i raggi luminosi.","Saper cogliere le relazioni di causa ed effetto nei fenomeni di riflessione, rifrazione e dispersione della luce."],"traguardi":["Costruire concetti e sistemarli organicamente.","Osservare e interpretare lo svolgersi di fenomeni controllati sperimentalmente.","Individuare le relazioni tra grandezze.","Acquisire competenze linguistiche."]},{"id":"A9","codice":"A9","titolo":"Le forze e il movimento","lezioni":[{"id":"A9-1","titolo":"Il principio di inerzia e l’attrito","pagine":"A212-A213"},{"id":"A9-2","titolo":"La legge fondamentale della dinamica","pagine":"A214-A215"},{"id":"A9-3","titolo":"La gravità, il peso e la massa","pagine":"A216-A217"},{"id":"A9-4","titolo":"Il principio di azione e reazione","pagine":"A218-A219"},{"id":"A9-5","titolo":"Il galleggiamento","pagine":"A220-A221"}],"obiettivi":["Il significato di inerzia e la sua relazione con la massa di un corpo.","Capire la relazione tra variazione di velocità e forza.","Individuare la relazione matematica tra accelerazione e intensità di una forza e tra accelerazione e massa di un corpo.","Conoscere le relazioni tra massa, peso e accelerazione di gravità e formalizzare le relazioni matematiche.","Conoscere e comprendere i principi della dinamica.","Capire la relazione tra densità di un corpo e il suo comportamento in un fluido."],"indicatori":["Consolidare il concetto di forza come causa del moto o ostacolo a esso.","Esaminare fenomeni in cui intervengono più grandezze utilizzando anche strumenti matematici.","Mettere in relazione le forze applicate agli oggetti e il modo in cui essi si muovono.","Individuare grandezze costanti su tutta la superficie terrestre.","Arrivare all’idea di legge come relazione generale che regola fenomeni apparentemente molto diversi."],"traguardi":["Costruire concetti e sistemarli organicamente.","Individuare e comprendere relazioni tra grandezze.","Formulare ipotesi e verificarle utilizzando strumenti matematici e di misura.","Acquisire competenze linguistiche."]},{"id":"A10","codice":"A10","titolo":"L’elettricità e il magnetismo","lezioni":[{"id":"A10-1","titolo":"La forza elettrica","pagine":"A232-A235"},{"id":"A10-2","titolo":"I circuiti elettrici e le leggi di Ohm","pagine":"A236-A239"},{"id":"A10-3","titolo":"La forza magnetica","pagine":"A240-A241"},{"id":"A10-4","titolo":"L’elettromagnetismo","pagine":"A242-A243"}],"obiettivi":["Considerare fenomeni legati a un accumulo di cariche elettriche ferme.","Sapere come si origina la corrente elettrica in un circuito: la differenza di potenziale.","Capire che cosa è la corrente elettrica e come si misura.","Costruire e fare funzionare semplici circuiti elettrici.","Definire in modo operativo l’intensità di corrente, la resistenza e la tensione.","Esaminare l’effetto Joule e la dissociazione elettrolitica.","Essere in grado di effettuare esperienze volte a indurre il magnetismo e l’elettromagnetismo."],"indicatori":["A partire dai concetti di carica e di campo elettrico introdurre quello di corrente elettrica.","Conoscere gli effetti dello spostamento di cariche elettriche.","Analizzare gli elementi di un circuito elettrico e sistemarli in modo logico.","Definire le grandezze elettriche, con le loro unità di misura, in base agli effetti che producono.","Comprendere gli effetti del passaggio della corrente elettrica.","Interpretare fenomeni e situazioni relativi al magnetismo e all’elettromagnetismo."],"traguardi":["Costruire concetti e sistemarli organicamente.","Individuare relazioni all’interno di un contesto complesso.","Interpretare lo svolgersi di fenomeni controllati sperimentalmente.","Affinare le abilità operative.","Acquisire competenze linguistiche."]},{"id":"A11","codice":"A11","titolo":"Le fonti di energia","lezioni":[{"id":"A11-1","titolo":"La definizione e le forme di energia","pagine":"A256-A259"},{"id":"A11-2","titolo":"L’uso dell’energia e le emissioni di gas-serra","pagine":"A260-A261"},{"id":"A11-3","titolo":"I combustibili fossili","pagine":"A262-A263"},{"id":"A11-4","titolo":"Le fonti di energia rinnovabili","pagine":"A266-A267"}],"obiettivi":["Acquisire il concetto di lavoro come relazione tra forza e spostamento.","Acquisire il concetto di potenza come relazione tra lavoro e tempo.","Consolidare il concetto di energia come capacità di un corpo di compiere un lavoro.","Comprendere e descrivere fenomeni in cui avvengono passaggi e trasformazioni di energia.","Esaminare le varie fonti energetiche e individuare quelle ecosostenibili.","Capire il significato di radioattività e fornire esempi di uso dell’energia nucleare."],"indicatori":["Introdurre una grandezza fisica attraverso la relazione matematica con altre due grandezze.","Distinguere le varie forme di energia e le trasformazioni da una forma all’altra.","Comprendere il significato di conservazione dell’energia.","Prendere coscienza dei problemi connessi all’utilizzo delle varie fonti energetiche.","Comprendere la relazione tra massa e energia nelle reazioni nucleari."],"traguardi":["Costruire concetti e sistemarli organicamente.","Scomporre la complessità nei suoi elementi e cogliere relazioni, anche con strumenti matematici.","Individuare relazioni tra energia e materia.","Adottare atteggiamenti responsabili verso l’uso delle risorse energetiche.","Acquisire competenze linguistiche."]}]},{"id":"scopri-B","titolo":"Scopri perché! – Volume B (scienze della vita)","editore":"Zanichelli","materia":"Scienze","sezioni":[{"id":"B0","codice":"B0","titolo":"Per iniziare – Le scienze della vita","lezioni":[{"id":"B0-1","titolo":"La teoria dell’evoluzione","pagine":"B4-B7"}],"obiettivi":["Descrivere il concetto di selezione naturale."],"indicatori":["Acquisire il concetto di teoria dell’evoluzione e di selezione naturale.","Comprendere la relazione tra l’umanità e gli altri esseri viventi."],"traguardi":["Costruire concetti e formularli con un linguaggio adeguato.","Acquisire competenze linguistiche."]},{"id":"B1","codice":"B1","titolo":"La vita e le cellule","lezioni":[{"id":"B1-1","titolo":"Gli elementi fondamentali della cellula","pagine":"B18-B19"},{"id":"B1-2","titolo":"Utilizzare il microscopio","pagine":"B21"},{"id":"B1-3","titolo":"Il ciclo della vita","pagine":"B26-B27"},{"id":"B1-4","titolo":"I regni dei viventi","pagine":"B28-B29"}],"obiettivi":["Applicare più criteri in modo da individuare caratteristiche sempre più specifiche.","Scegliere e applicare criteri per individuare le differenze tra vivente e non vivente.","Definire le funzioni fondamentali alla vita di un vivente.","Conoscere le funzioni vitali di animali e vegetali e la trasformazione della materia nel ciclo biologico.","Acquisire e ordinare le conoscenze sui regni dei viventi individuando la correlazione tra strutture e funzioni."],"indicatori":["Individuare le differenze tra organismi autotrofi ed eterotrofi.","Individuare nella cellula l’unità costitutiva funzionale di tutti gli esseri viventi.","Conoscere la struttura della cellula animale e vegetale in relazione alle funzioni vitali."],"traguardi":["Indurre a osservare in modo analitico la realtà.","Individuare le strutture degli organismi in relazione alle funzioni svolte.","Acquisire competenze linguistiche."]},{"id":"B2","codice":"B2","titolo":"I microrganismi","lezioni":[{"id":"B2-1","titolo":"I virus","pagine":"B42-B45"},{"id":"B2-2","titolo":"I batteri","pagine":"B46-B49"},{"id":"B2-3","titolo":"Il protisti","pagine":"B50-B51"},{"id":"B2-4","titolo":"I funghi","pagine":"B52-B55"}],"obiettivi":["Conoscere le caratteristiche e le funzioni vitali dei microrganismi.","Conoscere le differenze tra virus e batteri."],"indicatori":["Capire che il virus non è un essere vivente.","Comprendere quali sono le strategie da adottare per combattere una malattia di origine virale o batterica.","Collegare e confrontare, sottolineando analogie e differenze, i diversi gruppi di microrganismi."],"traguardi":["Indurre a osservare in modo analitico la realtà.","Individuare le strutture dei microrganismi e le relazioni con gli altri esseri viventi.","Acquisire competenze linguistiche."]},{"id":"B3","codice":"B3","titolo":"Le piante","lezioni":[{"id":"B3-1","titolo":"La fotosintesi clorofilliana","pagine":"B70"},{"id":"B3-2","titolo":"Il trasporto nelle piante","pagine":"B71"},{"id":"B3-3","titolo":"Le radici","pagine":"B72-B73"},{"id":"B3-4","titolo":"Il fusto","pagine":"B74-B75"},{"id":"B3-5","titolo":"La foglia","pagine":"B76-B77"},{"id":"B3-6","titolo":"La riproduzione","pagine":"B78-B81"}],"obiettivi":["Sapere che le differenze di struttura di animali e vegetali sono riconducibili al diverso modo con cui si procurano le sostanze organiche.","Conoscere la struttura della radice, del fusto, della foglia e del fiore e la loro funzione.","Saper contestualizzare i fenomeni di capillarità e osmosi.","Saper descrivere i metodi utilizzati dalle piante per l’impollinazione e la disseminazione.","Saper descrivere l’evoluzione degli adattamenti dei vegetali dall’acqua alla terraferma."],"indicatori":["Conoscere l’interazione tra le piante con la luce e con l’acqua.","Utilizzare la reazione di fotosintesi come guida all’analisi della struttura della pianta.","Comprendere i modi di riprodursi di un vegetale.","Conoscere il processo di evoluzione dai vegetali semplici ai complessi."],"traguardi":["Individuare le strutture degli organismi vegetali in relazione alle funzioni svolte.","Evidenziare la relazione tra ambiente e adattamento a esso.","Acquisire competenze linguistiche."]},{"id":"B4","codice":"B4","titolo":"Gli animali invertebrati","lezioni":[{"id":"B4-1","titolo":"Le spugne","pagine":"B96"},{"id":"B4-2","titolo":"I celenterati","pagine":"B97-B98"},{"id":"B4-3","titolo":"I platelminti","pagine":"B100"},{"id":"B4-4","titolo":"I nematodi","pagine":"B100"},{"id":"B4-5","titolo":"Gli anellidi","pagine":"B101"},{"id":"B4-6","titolo":"I molluschi e gli echinodermi","pagine":"B102"},{"id":"B4-7","titolo":"Gli artropodi","pagine":"B104-B107"}],"obiettivi":["Osservare e descrivere le caratteristiche strutturali e funzionali degli invertebrati.","Analizzare i diversi livelli di organizzazione per risolvere il problema della nutrizione, del movimento, della difesa, della riproduzione.","Individuare che la varietà delle soluzioni con cui viene affrontato lo stesso tipo di problema dipende anche dall’ambiente in cui l’animale vive.","Attraverso il metodo del confronto, esaminare le analogie e le differenze tra i diversi gruppi di organismi."],"indicatori":["Capire che i diversi livelli di organizzazione di vita possono essere molto differenti, pur mantenendo le stesse necessità.","Comprendere che strutture più evolute corrispondono a maggiori esigenze energetiche.","Intuire la relazione tra struttura e abitudini di vita.","Evidenziare le analogie tra i diversi gruppi di animali."],"traguardi":["Individuare le strutture degli organismi invertebrati in relazione alle funzioni svolte.","Evidenziare la relazione tra ambiente e adattamento a esso.","Acquisire competenze linguistiche."]},{"id":"B5","codice":"B5","titolo":"Gli animali vertebrati","lezioni":[{"id":"B5-1","titolo":"I cordati","pagine":"B118"},{"id":"B5-2","titolo":"I vertebrati","pagine":"B119-B120"},{"id":"B5-3","titolo":"I pesci","pagine":"B122-B123"},{"id":"B5-4","titolo":"Gli anfibi","pagine":"B124-B125"},{"id":"B5-5","titolo":"I rettili","pagine":"B126-B127"},{"id":"B5-6","titolo":"Gli uccelli","pagine":"B128-B129"},{"id":"B5-7","titolo":"I mammiferi","pagine":"B130-B131"}],"obiettivi":["Osservare e descrivere le caratteristiche strutturali e funzionali dei vertebrati.","Analizzare i diversi livelli di organizzazione per risolvere il problema della nutrizione, del movimento, della difesa, della riproduzione.","Individuare che la varietà delle soluzioni con cui viene affrontato lo stesso tipo di problema dipende anche dall’ambiente in cui l’animale vive.","Attraverso il metodo del confronto, esaminare le analogie e le differenze tra i diversi gruppi di organismi."],"indicatori":["Interpretare la struttura anatomica e funzionale dei vertebrati tenendo presente che ogni organismo deve procurarsi le sostanze organiche e l’energia di cui ha bisogno.","Comprendere il collegamento tra funzione e sistema predisposto ad assolverla.","Intuire la relazione tra struttura e abitudini di vita.","Evidenziare le analogie tra i diversi gruppi di animali."],"traguardi":["Individuare le strutture degli organismi vertebrati in relazione alle funzioni svolte.","Evidenziare la relazione tra ambiente e adattamento a esso.","Acquisire competenze linguistiche."]},{"id":"B6","codice":"B6","titolo":"La classificazione dei viventi","lezioni":[{"id":"B6-1","titolo":"La nomenclatura binomia","pagine":"B148"},{"id":"B6-2","titolo":"Le categorie tassonomiche","pagine":"B149"},{"id":"B6-3","titolo":"Strutture analoghe e omologhe","pagine":"B150"},{"id":"B6-4","titolo":"Gli alberi filogenetici","pagine":"B151"},{"id":"B6-5","titolo":"La nostra specie tra i viventi","pagine":"B152-B153"}],"obiettivi":["Accedere alla classificazione come strumento interpretativo delle somiglianze e delle diversità.","Capire il significato della nomenclatura binomia.","Sviluppare schematizzazioni per identificare un gruppo di organismi.","Imparare a utilizzare i caratteri tipici che servono a identificare gli esseri viventi appartenenti a un certo gruppo.","Sapere in che modo si possono costruire le parentele tra specie.","Classificare i regni dei viventi non animali o vegetali.","Classificare l’essere umano come esemplificazione di come operano i criteri di classificazione."],"indicatori":["Osservare in modo analitico il mondo dei viventi.","Comprendere il senso delle classificazioni.","Capire che l’appartenenza alla stessa specie è la base della classificazione degli organismi viventi.","Classificare gli esseri viventi in categorie tassonomiche sempre più vaste, in base alle caratteristiche comuni.","Analizzare i caratteri omologhi per costruire la filogenesi degli esseri viventi.","Riordinare le conoscenze sui regni dei viventi.","Classificare la specie Homo sapiens secondo le regole della tassonomia."],"traguardi":["Costruire concetti e formularli con un linguaggio adeguato.","Confrontare situazioni, cogliere analogie e differenze.","Sviluppare formalizzazioni logiche.","Acquisire competenze linguistiche."]},{"id":"B7","codice":"B7","titolo":"I viventi e l’ambiente","lezioni":[{"id":"B7-1","titolo":"Che cos’è l’ecologia","pagine":"B170-B173"},{"id":"B7-2","titolo":"Le interazioni alimentari","pagine":"B174-B177"},{"id":"B7-3","titolo":"Il ciclo del carbonio","pagine":"B179"},{"id":"B7-4","titolo":"Il ciclo dell’azoto","pagine":"B179"},{"id":"B7-5","titolo":"I biomi terrestri","pagine":"B180-B185"},{"id":"B7-6","titolo":"I biomi acquatici","pagine":"B186-B189"}],"obiettivi":["Distinguere i principali elementi costitutivi di un ambiente e analizzare le relazioni tra essi.","Stabilire le relazioni tra viventi e habitat mettendo in evidenza il ruolo che gli elementi abiotici hanno sugli organismi (anche in termini di adattamenti di strutture anatomiche).","Costruire catene e reti alimentari e piramidi alimentari e spiegarle anche in termini di passaggi di energia.","Comprendere la capacità di autoregolarsi di un ecosistema, a fronte dell’evoluzione delle condizioni climatiche.","Prendere coscienza dell’azione dell’uomo nella conservazione o distruzione di ecosistemi."],"indicatori":["Comprensione del concetto di ecosistema.","Comprendere i fattori che condizionano la distribuzione degli organismi in un ecosistema.","Stabilire relazioni di causa e effetto.","Approfondire la conoscenza delle relazioni tra i diversi elementi dell’ambiente per capire le reciproche influenze.","Prendere coscienza dell’ecosistema come entità dinamica.","Comprendere il concetto di bioma."],"traguardi":["Costruire concetti e formularli con un linguaggio adeguato.","Scomporre la complessità in relazioni e sottostrutture.","Costruire una visione dell’ambiente come sistema dinamico di viventi e non viventi che interagiscono tra loro.","Acquisire competenze linguistiche."]},{"id":"B8","codice":"B8","titolo":"I comportamenti degli animali","lezioni":[{"id":"B8-1","titolo":"Che cos’è l’etologia","pagine":"B200-B201"},{"id":"B8-2","titolo":"Comportamenti innati e appresi","pagine":"B202-B205"},{"id":"B8-3","titolo":"La comunicazione animale","pagine":"B206-B207"},{"id":"B8-4","titolo":"La territorialità e la riproduzione","pagine":"B208-B211"},{"id":"B8-5","titolo":"La vita sociale","pagine":"B212-B213"}],"obiettivi":["Distinguere i principali tipi di apprendimento animale.","Stabilire le relazioni tra viventi della stessa specie e di specie diverse, mettendo in evidenza il ruolo dell’apprendimento e della comunicazione nella sopravvivenza degli individui e delle specie.","Stabilire le relazioni tra viventi e habitat mettendo in relazione i comportamenti degli individui con la propria nicchia ecologica.","Comprendere il ruolo della socialità nel mondo animale.","Intuire la relazione tra struttura e abitudini di vita.","Prendere coscienza della relazione tra i comportamenti umani e quelli animali come prodotto del processo evolutivo."],"indicatori":["Comprensione del concetto di etologia.","Stabilire relazioni di causa e effetto.","Classificare i diversi tipi di apprendimento animale.","Approfondire la conoscenza delle relazioni tra i diversi comportamenti animali per capire le reciproche influenze.","Comprendere la complessità delle organizzazioni sociali nel mondo animale."],"traguardi":["Costruire concetti e formularli con un linguaggio adeguato.","Scomporre la complessità in relazioni e sottostrutture.","Costruire una visione dell’ambiente come sistema dinamico di viventi che interagiscono tra loro in modi complessi e codificati.","Acquisire competenze linguistiche."]},{"id":"B9","codice":"B9","titolo":"L’evoluzione della vita","lezioni":[{"id":"B9-1","titolo":"L’evoluzione e la selezione naturale","pagine":"B228-B231"},{"id":"B9-2","titolo":"L’evoluzione sotto i nostri occhi","pagine":"B232-B233"},{"id":"B9-3","titolo":"L’evoluzione ha bisogno di tempo","pagine":"B234-B235"},{"id":"B9-4","titolo":"La vita nelle ere geologiche","pagine":"B236-B241"}],"obiettivi":["Confrontare le teorie di Lamarck e di Darwin, individuando analogie e differenze.","Capire i presupposti della teoria di Darwin: in particolare la variabilità intraspecifica e la lotta per la sopravvivenza.","Analizzare l’azione delle diverse cause per comprendere il meccanismo della selezione naturale.","Utilizzare la teoria per comprendere fenomeni come l’estinzione di specie e la nascita di nuove specie.","Percorrere il cammino evolutivo che ha portato alle variazioni ambientali e allo sviluppo degli organismi nelle ere geologiche.","Conoscere i metodi di datazione di un fossile per ricostruire un quadro dei cambiamenti biologici."],"indicatori":["Evidenziare i presupposti su cui si sono fondate le diverse ipotesi sull’evoluzione dei viventi.","Interpretare in modo dinamico il rapporto esseri viventi-ambiente, per spiegare il fenomeno dell’adattamento e della loro continua trasformazione.","Completare la teoria dell’evoluzione con le conoscenze relative alla genetica.","Riconoscere gli adattamenti e la dimensione storica della vita intrecciata con la storia della Terra.","Interpretare lo studio dei fossili come prova a favore della teoria dell’evoluzione."],"traguardi":["Costruire concetti e sistemarli organicamente.","Scomporre la complessità di un contesto in relazioni.","Interpretare lo svolgersi di fenomeni ambientali osservando analogie e differenze, relazioni di causa-effetto.","Acquisire competenze linguistiche."]},{"id":"B10","codice":"B10","titolo":"L’evoluzione del genere Homo","lezioni":[{"id":"B10-1","titolo":"Gli esseri umani e gli altri primati","pagine":"B254-B255"},{"id":"B10-2","titolo":"I primati bipedi","pagine":"B256-B257"},{"id":"B10-3","titolo":"Le specie del genere Homo","pagine":"B258-B259"}],"obiettivi":["Individuare i caratteri distintivi dei primati.","Ricostruire le tappe attraverso cui sono avvenuti i processi evolutivi dei primati.","Individuare i caratteri distintivi degli ominidi.","Riconoscere le analogie e differenze nelle specie del genere Homo.","Distinguere l’evoluzione culturale da quella biologica e conoscere alcuni aspetti dell’evoluzione culturale.","Identificare l’evoluzione tecnologica con le modificazioni dello stile di vita."],"indicatori":["Analizzare le somiglianze strutturali tra i primati.","Risalire alle relazioni di parentela che esistono tra i primati per ricostruirne l’evoluzione.","Stabilire l’esistenza di un progenitore comune a partire dall’analisi di caratteri esclusivi degli ominidi.","Conoscere i cambiamenti più significativi dell’evoluzione degli ominidi.","Comprendere che le omologie individuate nell’evoluzione dell’uomo non comportano solo una modificazione fisica, ma soprattutto intellettiva."],"traguardi":["Costruire concetti e sistemarli organicamente.","A partire da un contesto complesso esaminare situazioni individuando analogie e differenze.","Comprendere il ruolo della comunità umana nel tempo e nello spazio.","Ricomporre la storia della vita dell’uomo basandosi sulle somiglianze strutturali tra i diversi esseri viventi.","Acquisire competenze linguistiche."]},{"id":"B11","codice":"B11","titolo":"L’antropocene e lo sviluppo sostenibile","lezioni":[{"id":"B11-1","titolo":"La nuova epoca in cui viviamo","pagine":"B274-B277"},{"id":"B11-2","titolo":"La nostra impronta ambientale","pagine":"B278-B279"},{"id":"B11-3","titolo":"Per uno sviluppo sostenibile ed equo","pagine":"B284-B285"}],"obiettivi":["Definire l’Antropocene come era geologica.","Definire il concetto di globalizzazione.","Misurare l’impronta ambientale degli esseri umani.","Indicare le materie prime fondamentali per il nostro benessere.","Riconoscere l’importanza della velocità con cui si verificano i cambiamenti provocati dall’essere umano.","Descrivere il concetto di transizione energetica.","Elencare le possibilità offerte dalla tecnologia per rendere sostenibile la presenza degli esseri umani sulla Terra."],"indicatori":["Riconoscere gli aspetti caratteristici dell’Antropocene.","Capire il ruolo ambivalente della tecnologia come pericolo e soluzione.","Individuare gli effetti positivi e negativi della globalizzazione sulla vita degli esseri umani.","Comprendere l’importanza delle risorse del pianeta Terra per il benessere degli esseri umani e delle altre specie viventi.","Comprendere il concetto di sostenibilità ambientale."],"traguardi":["Costruire concetti e formularli con un linguaggio adeguato.","Confrontare situazioni, cogliere analogie e differenze.","Sviluppare formalizzazioni logiche.","Acquisire competenze linguistiche.","A partire da un contesto complesso esaminare situazioni individuando analogie e differenze.","Comprendere il ruolo della comunità umana nel tempo e nello spazio."]}]},{"id":"scopri-C","titolo":"Scopri perché! – Volume C (corpo umano)","editore":"Zanichelli","materia":"Scienze","sezioni":[{"id":"C0","codice":"C0","titolo":"Per iniziare – Dalle cellule agli apparati","lezioni":[{"id":"C0-1","titolo":"L’organizzazione del corpo umano","pagine":"C2-C3"},{"id":"C0-2","titolo":"Gli organi e gli apparati","pagine":"C4-C5"},{"id":"C0-3","titolo":"Il corpo sano è in equilibrio: l’omeòstasi","pagine":"C6-C7"}],"obiettivi":["Capire il significato dei termini: organo e apparato.","Intendere il passaggio da un’unica cellula a cellule specializzate organizzate in tessuti, organi e sistemi che assolvono a funzioni diverse.","Sviluppare schematizzazioni per identificare organi e apparati.","Acquisire consapevolezza dell’importanza dell’interazione tra diversi organi e apparati del corpo umano al fine del suo funzionamento ottimale.","Intuire la relazione tra benessere fisiologico e salute."],"indicatori":["Individuare relazioni tra le caratteristiche del corpo umano e le risposte agli stimoli ambientali.","Comprendere la complessità dell’organizzazione del corpo umano.","Prendere coscienza degli apparati del corpo umano e delle loro interazioni."],"traguardi":["Costruire concetti e formularli con un linguaggio adeguato.","Scomporre la complessità in relazioni e sottostrutture.","Acquisire competenze linguistiche."]},{"id":"C1","codice":"C1","titolo":"Le ossa e i muscoli","lezioni":[{"id":"C1-1","titolo":"I tessuti delle ossa","pagine":"C12-C13"},{"id":"C1-2","titolo":"Lo scheletro del corpo umano","pagine":"C14-C17"},{"id":"C1-3","titolo":"I tessuti dei muscoli","pagine":"C18-C19"},{"id":"C1-4","titolo":"I muscoli del corpo umano","pagine":"C20-C21"},{"id":"C1-5","titolo":"Le articolazioni","pagine":"C22-C23"}],"obiettivi":["Conoscere le caratteristiche e le funzioni del tessuto osseo.","Evidenziare le parti dell’apparato scheletrico e acquisire termini specifici come presupposto per affrontare lo studio delle sue strutture e funzioni.","Conoscere le caratteristiche e le funzioni dei tessuti muscolari.","Comprendere la sinergia tra scheletro e muscoli per il movimento del corpo umano.","Analizzare le articolazioni e le loro possibilità di movimento."],"indicatori":["Individuare le caratteristiche funzionali fondamentali della cellula e del tessuto osseo.","Individuare le caratteristiche funzionali fondamentali della cellula e dei tessuti muscolari.","Capire quali sono le condizioni che permettono di cambiare la reciproca posizione delle varie parti del corpo."],"traguardi":["Costruire concetti e formularli con un linguaggio adeguato.","Individuare relazioni tra meccanismi di movimento e adattamento all’ambiente.","Acquisire competenze linguistiche."]},{"id":"C2","codice":"C2","titolo":"L’apparato digerente","lezioni":[{"id":"C2-1","titolo":"Il ruolo dell’alimentazione","pagine":"C36-C37"},{"id":"C2-2","titolo":"I principi nutritivi e la dieta","pagine":"C38- C41"},{"id":"C2-3","titolo":"La digestione e la nutrizione","pagine":"C42-C43"},{"id":"C2-4","titolo":"Nella bocca: la lingua e i denti","pagine":"C44-C45"},{"id":"C2-5","titolo":"Dalla bocca allo stomaco","pagine":"C46-C47"},{"id":"C2-6","titolo":"L’intestino: digestione, assorbimento ed eliminazione","pagine":"C48-C49"}],"obiettivi":["Conoscere quali sono i fattori alimentari e in quali alimenti si trovano.","Conoscere la funzione di ciascun principio alimentare e il suo apporto energetico.","Sapere che il fabbisogno calorico giornaliero deve essere soddisfatto da un’opportuna quota di nutrienti.","Conoscere la struttura e la funzione degli organi dell’apparato digerente.","Saper interpretare modelli che servano a chiarire come le sostanze complesse vengono smontate in sostanze semplici e quindi rimontate in complesse."],"indicatori":["Comprendere la relazione tra apparato masticatore e alimentazione.","Comprendere che il nostro organismo ha bisogno di ricevere sostanze capaci di assolvere a diverse funzioni.","Acquisire il concetto di metabolismo basale.","Riconoscere in situazioni concrete gli effetti del rapporto alimentazione- benessere.","Descrivere il collegamento tra strutture, funzioni e sistema predisposto ad assolverle.","Analizzare le fasi del processo di nutrizione."],"traguardi":["Costruire concetti e formularli con un linguaggio adeguato.","Individuare relazioni tra meccanismi di movimento e adattamento all’ambiente.","Individuare la relazione tra alimentazione e energia.","Acquisire competenze linguistiche."]},{"id":"C3","codice":"C3","titolo":"L’apparato respiratorio","lezioni":[{"id":"C3-1","titolo":"Il ruolo della respirazione","pagine":"C62-C63"},{"id":"C3-2","titolo":"Le vie respiratorie e i polmoni","pagine":"C64-C67"},{"id":"C3-3","titolo":"La respirazione cellulare","pagine":"C68-C69"},{"id":"C3-4","titolo":"L’inspirazione e l’espirazione","pagine":"C70-C71"}],"obiettivi":["Comprendere che la reazione di ossidazione è alla base della respirazione cellulare e polmonare.","Confrontare la respirazione e la fotosintesi.","Conoscere la struttura e le funzioni degli organi dell’apparato respiratorio.","Capire che il sistema respiratorio opera scambi con l’ambiente esterno per mezzo del sangue.","Individuare gli effetti del fumo delle sigarette sull’organismo."],"indicatori":["Individuare la corrispondenza tra processi a livello cellulare e processi a livello polmonare.","Comprendere il collegamento tra funzione respiratoria e sistema predisposto ad assolverla.","Mettere in relazione l’apparato respiratorio con il circolatorio.","Riflettere su comportamenti che, pur socialmente accettati, recano danno alla salute."],"traguardi":["Costruire concetti e formularli con un linguaggio adeguato.","Individuare la relazione tra respirazione e energia.","Scomporre la complessità in elementi e relazioni.","Acquisire competenze linguistiche."]},{"id":"C4","codice":"C4","titolo":"L’apparato circolatorio e l’immunità","lezioni":[{"id":"C4-1","titolo":"L’apparato circolatorio e il sangue","pagine":"C84-C87"},{"id":"C4-2","titolo":"Il cuore","pagine":"C88-C89"},{"id":"C4-3","titolo":"Il cuore","pagine":"C88-C89"},{"id":"C4-4","titolo":"I vasi sanguigni","pagine":"C90-C91"},{"id":"C4-5","titolo":"La grande e la piccola circolazione","pagine":"C92-C93"},{"id":"C4-6","titolo":"La linfa","pagine":"C94-C95"},{"id":"C4-7","titolo":"Le difese immunitarie","pagine":"C96-C99"},{"id":"C4-8","titolo":"I gruppi sanguigni","pagine":"C100-C102"}],"obiettivi":["Conoscere le funzioni dell’apparato circolatorio e i meccanismi di trasporto.","Analizzare la parte corpuscolata del sangue e le sue funzioni.","Conoscere la struttura del cuore e come avviene il ciclo cardiaco.","Comprendere come attraverso il sistema circolatorio avvenga lo scambio di gas.","Capire perché la circolazione del sangue è doppia e completa.","Conoscere la funzione della linfa.","Individuare nell’azione dei microrganismi una delle cause di malattia.","Analizzare le vie di diffusione delle malattie.","Riconoscere le difese specifiche e aspecifiche all’ingresso di microrganismi nel corpo.","Conoscere attraverso la risposta immunitaria dei linfociti, le relazioni antigene-anticorpo.","Capire l’importanza della compatibilità tra i gruppi sanguigni.","Essere consapevoli di come l’azione del sistema immunitario può essere indotta attivamente o passivamente."],"indicatori":["Correlare l’apparato circolatorio al respiratorio e al digerente.","Comprendere la relazione tra il sangue e tutte le cellule dell’organismo.","Capire che la ciclicità del sistema di trasporto è correlata al ciclo cardiaco.","Comprendere il collegamento tra la funzione del sangue e il sistema predisposto ad attuarla.","Apprendere una gestione corretta del proprio corpo.","Interpretare le cause che possono determinare lo stato di malessere del corpo.","Capire i meccanismi specifici e aspecifici di difesa dell’organismo.","Comprendere le relazioni di causa e effetto nelle risposte del sistema immunitario.","Capire le modalità con cui viene attivato il sistema di difesa dell’organismo."],"traguardi":["Costruire concetti e formularli con un linguaggio adeguato.","Scomporre la complessità in elementi e relazioni.","Acquisire competenze linguistiche."]},{"id":"C5","codice":"C5","titolo":"L’apparato urinario e la pelle","lezioni":[{"id":"C5-1","titolo":"L’escrezione e l’omeostasi","pagine":"C14-C15"},{"id":"C5-2","titolo":"L’apparato urinario","pagine":"C116-C118"},{"id":"C5-3","titolo":"La pelle","pagine":"C120-C123"}],"obiettivi":["Considerare la funzione di escrezione come complementare alle altre funzioni (respiratoria, digerente, respiratoria).","Conoscere la struttura dell’apparato urinario.","Comprendere in che modo i reni regolano l’equilibrio idrico, salino e chimico nell’organismo.","Descrivere la struttura e la funzione della pelle nel rapporto con l’ambiente esterno."],"indicatori":["Capire che all’equilibrio interno concorre la funzione di escrezione.","Comprendere il collegamento tra la necessità di eliminare i rifiuti e il sistema predisposto ad attuarla.","Comprendere la funzione di omeostasi della pelle."],"traguardi":["Costruire concetti e formularli con un linguaggio adeguato.","Scomporre la complessità in elementi e relazioni.","Acquisire competenze linguistiche."]},{"id":"C6","codice":"C6","titolo":"Il sistema nervoso e il sistema endocrino","lezioni":[{"id":"C6-1","titolo":"Il sistema nervoso e i neuroni","pagine":"C140-C143"},{"id":"C6-2","titolo":"Il sistema nervoso centrale","pagine":"C144-C147"},{"id":"C6-3","titolo":"Il sistema nervoso periferico","pagine":"C148-C149"},{"id":"C6-4","titolo":"Il sistema endocrino","pagine":"C150-C153"}],"obiettivi":["Analizzare la funzione di coordinamento degli organi e di adattamento all’ambiente.","Conoscere la struttura del cervello come centro di funzioni complesse.","Analizzare il meccanismo di alcune funzioni ricostruendo i collegamenti necessari per effettuarle.","Conoscere le modalità di intervento volontario e involontario in risposta agli stimoli.","Conoscere i meccanismi di reciproco controllo tra gli elementi del sistema endocrino.","Comprendere che le differenze di struttura corrispondono ai diversi livelli di organizzazione e dipendono dall’ambiente in cui vive un animale."],"indicatori":["Comprendere la complessità del funzionamento del sistema nervoso individuando relazioni con l’esterno e l’interno.","Conoscere in che modo vengono elaborati i segnali provenienti dall’ambiente.","Essere consapevoli dello stretto collegamento tra azioni e informazioni.","Individuare il coordinamento dei sistemi in relazione al mantenimento dell’equilibrio interno e alle interazioni con l’esterno."],"traguardi":["Costruire concetti e sistemarli organicamente.","Decomporre e ricomporre la complessità del sistema in elementi e relazioni.","Avere una visione organica del proprio corpo al fine di attuarne una corretta gestione.","Acquisire competenze linguistiche."]},{"id":"C7","codice":"C7","titolo":"Gli organi di senso","lezioni":[{"id":"C7-1","titolo":"I sensi e i recettori sensoriali","pagine":"C166-C167"},{"id":"C7-2","titolo":"La pelle e il tatto","pagine":"C168-C169"},{"id":"C7-3","titolo":"L’occhio e la vista","pagine":"C170-C171"},{"id":"C7-4","titolo":"L’orecchio, l’udito e l’equilibrio","pagine":"C172-C173"},{"id":"C7-5","titolo":"Il gusto e l’olfatto","pagine":"C174-C175"}],"obiettivi":["Descrivere la funzione degli organi di senso.","Conoscere e comprendere la struttura degli organi di senso.","Capire come a partire da uno stimolo luminoso, sonoro, olfattivo, tattile il sistema nervoso costruisce la percezione dell’ambiente esterno.","Essere consapevoli che le percezioni sensoriali possono essere associate (es. visive- uditive, gustative-olfattive).","Comprendere che le differenze di struttura corrispondono ai diversi livelli di organizzazione in relazione all’ambiente in cui vive un animale."],"indicatori":["Sapere quali sensazioni gli organismi viventi ricevono dall’ambiente.","Capire in che modo i recettori consentono di conoscere e relazionare con il mondo esterno.","Seguire il percorso degli stimoli esterni dagli organi di senso ai centri nervosi, anche effettuando analogie con strumenti tecnologici.","Riflettere sullo stato di benessere o di malessere che può derivare dall’alterazione dell’interpretazione dei messaggi sensoriali."],"traguardi":["Costruire concetti e sistemarli organicamente.","Decomporre e ricomporre la complessità del sistema in elementi e relazioni.","Avere una visione organica del proprio corpo al fine di attuarne una corretta gestione.","Acquisire competenze linguistiche."]},{"id":"C8","codice":"C8","titolo":"La riproduzione","lezioni":[{"id":"C8-1","titolo":"La meiosi e i gameti","pagine":"C188-C189"},{"id":"C8-2","titolo":"L’apparato riproduttore maschile","pagine":"C190-C191"},{"id":"C8-3","titolo":"L’apparato riproduttore femminile","pagine":"C192-C195"},{"id":"C8-4","titolo":"Come si forma una nuova vita","pagine":"C198-C201"}],"obiettivi":["Conoscere la struttura dello spermatozoo e della cellula uovo.","Saper descrivere le fasi della mitosi e della meiosi.","Conoscere la struttura dell’apparato genitale maschile e femminile e capirne il funzionamento.","Saper descrivere il ciclo riproduttivo femminile.","Conoscere la tappe dello sviluppo di un nuovo organismo: da zigote a feto.","Riconoscere l’età puberale come una fase per vivere la sessualità in modo equilibrato."],"indicatori":["Individuare i processi del cambiamento di un vivente a partire dall’organizzazione microscopica dei gameti maschili e femminili.","Individuare il processo di divisione cromosomica tipico dei gameti.","Analizzare il percorso dei gameti maschili e femminili all’interno degli organi genitali.","Individuare le modalità di coordinamento tra l’apparato genitale e il sistema endocrino.","Conoscere i mutamenti, a livello micro e macroscopico, indotti dalla fecondazione.","Essere consapevoli delle problematiche fisiche e psicologiche legate alla maturazione sessuale."],"traguardi":["Costruire concetti e sistemarli organicamente.","Decomporre e ricomporre la complessità del sistema in elementi e relazioni.","Avere una visione organica del proprio corpo al fine di attuarne una corretta gestione.","Acquisire competenze linguistiche."]},{"id":"C9","codice":"C9","titolo":"La genetica e l’ereditarietà","lezioni":[{"id":"C9-1","titolo":"Le leggi di Mendel","pagine":"C214-C217"},{"id":"C9-2","titolo":"Il DNA e la genetica moderna","pagine":"C218-C219"},{"id":"C9-3","titolo":"La genetica umana","pagine":"C220-C221"},{"id":"C9-4","titolo":"I geni e l’ambiente","pagine":"222-C223"},{"id":"C9-5","titolo":"La variabilità genetica e l’evoluzione","pagine":"C224-C225"},{"id":"C9-6","titolo":"Il codice genetico e le proteine","pagine":"C226-C229"}],"obiettivi":["Capire le principali leggi che governano la trasmissione dei caratteri ereditari.","Tradurre con i termini specifici della genetica i meccanismi evidenziati dalle leggi di Mendel.","Comprendere come il fenotipo di un individuo dipende dal proprio genotipo a cui si aggiunge l’influenza dell’ambiente.","Conoscere il meccanismo di duplicazione del DNA e il crossing-over durante la meiosi.","Comprendere in che modo vengono interpretate le istruzioni del DNA per effettuare la sintesi delle proteine.","Conoscere le cause delle mutazioni.","Conoscere alcune malattie genetiche ereditarie dominanti o recessive e individuare le probabilità che si trasmettano alle generazioni successive.","Utilizzo di schemi, tabelle e calcolo delle percentuali per formalizzare i meccanismi dell’ereditarietà.","Saper descrivere la relazione tra la sintesi delle proteine e il codice genetico."],"indicatori":["Cogliere l’analogia delle leggi di Mendel con la genetica.","Comprendere la relazione tra fenotipo e genotipo di un individuo.","Comprendere il meccanismo di trasmissione del DNA da una cellula all’altra e da una generazione all’altra.","Consolidare il concetto di variabilità genetica.","Comprendere in che modo il codice genetico determina il fenotipo di un individuo.","Considerare la genetica come uno degli elementi che entrano nel quadro dell’evoluzione.","Correlare le mutazioni di alleli e la presenza di agenti mutageni alle malattie genetiche ereditarie."],"traguardi":["Costruire concetti e formularli con un linguaggio adeguato.","Scomporre la complessità del sistema in elementi e relazioni.","Sviluppare formalizzazioni logiche e matematiche di fatti e fenomeni.","Acquisire competenze linguistiche."]},{"id":"C10","codice":"C10","titolo":"Le biotecnologie","lezioni":[{"id":"C10-1","titolo":"Dalle biotecnologie antiche agli OGM","pagine":"C242-C244"},{"id":"C10-2","titolo":"Le tecniche usate dai biologi","pagine":"C246-C249"}],"obiettivi":["Avere la consapevolezza che da molto tempo le biotecnologie implicano l’uso di organismi viventi.","Conoscere la funzione degli enzimi di restrizione e ligasi.","Sapere come, a partire da una molecola di DNA ricombinante, si crea un organismo geneticamente modificato.","Capire in che modo viene effettuata la clonazione del DNA.","Descrivere le tappe del procedimento per ottenere cellule transgeniche.","Conoscere il metodo per ottenere le impronte del DNA, per identificare le persone.","Sapere in che modo le biotecnologie sono utilizzate nell’alimentazione, in medicina, nel risanamento dell’ambiente.","Conoscere le tecniche per realizzare la clonazione di un animale.","Saper descrivere il funzionamento e l’utilità della PCR."],"indicatori":["Essere in grado di spiegare la differenza tra vecchie e nuove biotecnologie.","Comprendere la funzione e le finalità delle biotecnologie e dell’ingegneria genetica.","Capire che cosa si intende per organismo geneticamente modificato e in che modo viene costruito.","Conoscere le modalità per produrre copie di una parte di genoma.","Essere in grado di interpretare le impronte del DNA.","Sapere a che cosa servono gli OGM e riflettere sui rischi derivanti dal loro utilizzo.","Riflettere sulle difficoltà, anche da un punto di vista etico, relative alla clonazione di organismi.","Sapere come viene attuata la replicazione di un frammento di DNA."],"traguardi":["Costruire concetti e formularli con un linguaggio adeguato.","Scomporre la complessità in relazioni e sottostrutture.","Conoscere i problemi legati all’uso delle scienze nel campo dello sviluppo tecnologico.","Acquisire competenze linguistiche."]}]},{"id":"scopri-D","titolo":"Scopri perché! – Volume D (Terra e universo)","editore":"Zanichelli","materia":"Scienze","sezioni":[{"id":"D0","codice":"D0","titolo":"Per iniziare – Il pianeta blu","lezioni":[],"obiettivi":["Conoscere le caratteristiche del pianeta Terra che lo rendono adatto allo sviluppo della vita.","Comprendere che le risorse del pianeta sono limitate e che non devono essere consumate."],"indicatori":["Comprendere la correlazione tra posizione del pianeta nello spazio e caratteristiche adatte allo sviluppo della vita.","Applicare nel quotidiano strategie che consentano di utilizzare in modo sostenibile le risorse del pianeta."],"traguardi":["Acquisire gli strumenti per comprendere perché il nostro pianeta è unico e saperle applicare alla quotidianità."]},{"id":"D1","codice":"D1","titolo":"L’aria, l’atmosfera e il meteo","lezioni":[{"id":"D1-1","titolo":"Le proprietà dell’aria","pagine":"D12-D13"},{"id":"D1-2","titolo":"La pressione dell’aria","pagine":"D14-D17"},{"id":"D1-3","titolo":"Gli strati dell’atmosfera","pagine":"D18-D19"},{"id":"D1-4","titolo":"Il meteo","pagine":"D24-D25"}],"obiettivi":["Attraverso alcune attività prendere coscienza che: – i gas hanno un volume e un peso; – il volume dei gas ha la caratteristica di variare; – esiste una correlazione tra volume e pressione; – la pressione atmosferica varia; – alla pressione sono legati gli spostamenti delle masse d’aria.","Mettere in relazione le variazioni della composizione dell’aria nel processo di respirazione.","Comprendere le modalità di formazione dei fenomeni atmosferici.","Mettere in relazione la pressione atmosferica con le variazioni di altitudine e con le differenze di temperatura."],"indicatori":["Consolidare il concetto di volume di un gas.","Riflettere sulle proprietà dei gas.","Acquisire il concetto di pressione anche in modo operativo.","Approfondire le relazioni tra temperatura, volume e pressione di un gas.","Saper costruire semplici strumenti di misura adeguati alla situazione."],"traguardi":["Costruire concetti e formularli con un linguaggio adeguato.","Acquisire competenze linguistiche."]},{"id":"D2","codice":"D2","titolo":"L’acqua e l’idrosfera","lezioni":[{"id":"D2-1","titolo":"La tensione superficiale","pagine":"D40"},{"id":"D2-2","titolo":"La capillarità","pagine":"D41"},{"id":"D2-3","titolo":"La pressione dell’acqua","pagine":"D42-D43"},{"id":"D2-4","titolo":"Il ciclo dell’acqua","pagine":"D44-D45"}],"obiettivi":["Essere consapevoli dell’importanza dell’idrosfera nelle risorse del nostro pianeta.","Capire come la densità, la capacità termica, la solubilità dell’acqua sono fondamentali per lo sviluppo degli organismi viventi.","Aver chiaro che l’idrosfera e la biosfera sono sistemi chiusi che interagiscono attraverso il ciclo dell’acqua.","Confrontare la pressione dell’acqua con quella atmosferica e capire la relazione tra la pressione di un fluido e la profondità.","Comprendere, in modo operativo, fenomeni legati alle forze di coesione e di adesione tra le molecole dell’acqua."],"indicatori":["Comprendere le relazioni tra le proprietà dell’acqua e la vita degli organismi viventi.","Conoscere le proprietà fisiche e chimiche dell’acqua.","Comprendere l’influenza dei cambiamenti dello stato di aggregazione dell’acqua sull’equilibrio della biosfera.","Comprendere come agisce la pressione idrostatica."],"traguardi":["Costruire concetti e formularli con un linguaggio adeguato.","Individuare relazioni tra fenomeni.","Acquisire competenze linguistiche."]},{"id":"D3","codice":"D3","titolo":"Il suolo","lezioni":[{"id":"D3-1","titolo":"Le proprietà del suolo","pagine":"D64-D67"},{"id":"D3-2","titolo":"La formazione del suolo","pagine":"D68-D71"},{"id":"D3-3","titolo":"I cicli della vita nel suolo","pagine":"D72-D73"}],"obiettivi":["Individuare il profilo e la struttura del suolo.","Classificare gli agenti fisico-chimici e biologici che hanno contribuito all’evoluzione del suolo.","Analizzare le caratteristiche e le proprietà dei terreni e ricercare le interdipendenze tra i fattori fisico-chimici (aria, acqua, costituenti organici) e biologici.","Comprendere le trasformazioni della materia da organica a inorganica in modo ciclico.","Guidare all’osservazione di quei fenomeni che possono servire all’intuizione della ciclicità delle relazioni tra gli organismi viventi e i fattori non viventi.","Riflettere su quanto e come l’intervento dell’uomo agisce sulla realtà naturale e quale sia la responsabilità della collettività sulle trasformazioni del suolo."],"indicatori":["Comprendere che l’attuale aspetto del suolo è il risultato di continue trasformazioni dovute a forze esogene ed endogene.","Conoscere le relazioni tra elementi del suolo per capirne le reciproche influenze.","Collegare le osservazioni dirette e le attività proposte con problematiche di tipo più generale, stabilendo relazioni di causa ed effetto.","Prendere coscienza dell’azione dell’uomo nella conservazione e nella distruzione del suolo."],"traguardi":["Costruire concetti e formularli con un linguaggio adeguato Individuare relazioni tra elementi viventi e non viventi.","Acquisire competenze linguistiche."]},{"id":"D4","codice":"D4","titolo":"La Terra e la sua evoluzione","lezioni":[{"id":"D4-1","titolo":"Com’è fatto il pianeta Terra","pagine":"D92-D93"},{"id":"D4-2","titolo":"La tettonica delle placche","pagine":"D94-D97"},{"id":"D4-3","titolo":"L’erosione, il trasporto e la sedimentazione","pagine":"D98-D99"}],"obiettivi":["Sapere che cosa c’è oltre la crosta terrestre fino al nucleo centrale e in che modo si è giunti a questa conoscenza.","Esaminare le analogie tra organismi viventi e la complementarietà di struttura dei continenti come presupposti della teoria di Wegener.","Trovare relazioni di causa ed effetto tra i movimenti delle placche e fenomeni quali l’orogenesi, la formazione delle dorsali e delle fosse oceaniche.","Descrivere il processo di fossilizzazione e comprendere le informazioni che fornisce la paleontologia."],"indicatori":["Esaminare gli effetti delle forze endogene che agiscono sulla crosta terrestre; elaborare un modello interpretativo dell’interno della Terra.","Individuare i problemi sollevati dall’osservazione di fenomeni, creando possibili collegamenti tra di essi.","Comprendere come la teoria della tettonica delle placche sia in grado di fornire un’interpretazione unitaria ad un insieme di fenomeni diversi.","Considerare i fattori esogeni che modificano la superficie terrestre."],"traguardi":["Costruire concetti e formularli con un linguaggio adeguato.","Scomporre la complessità in relazioni e sottostrutture.","Sviluppare semplici schemi e modelli interpretativi dei fenomeni.","Acquisire competenze linguistiche."]},{"id":"D5","codice":"D5","titolo":"I vulcani e i terremoti","lezioni":[{"id":"D5-1","titolo":"I vulcani e le eruzioni","pagine":"D112-D115"},{"id":"D5-2","titolo":"I terremoti e gli tsunami","pagine":"D118-D121"},{"id":"D5-3","titolo":"L’origine dei vulcani e dei terremoti","pagine":"D124-D125"}],"obiettivi":["Comprendere la struttura di un cono vulcanico. Spiegare il meccanismo delle eruzioni vulcaniche e descriverne le caratteristiche.","Avere un’idea generale sul tipo di attività vulcanica in Italia.","Capire la correlazione tra accumulo di energia elastica e intensità delle scosse sismiche.","Distinguere tra ipocentro e epicentro; riconoscere i tipi di onde sismiche.","Analizzare la carta del pericolo sismico in Italia.","Conoscere su che cosa si basano le scale per misurare l’intensità dei terremoti.","Essere consapevoli che è possibile ridurre il rischio sismico con azioni di prevenzione.","Individuare la distribuzione dei vulcani e terremoti sulla Terra.","Saper spiegare ciò che avviene nelle zone dove le placche si allontanano, dove si scontrano, dove scorrono l’una rispetto all’altra."],"indicatori":["Spiegare come l’attività vulcanica è collegata a fenomeni che avvengono al di sotto della crosta terrestre.","Interpretare attraverso un modello la teoria elastica dei terremoti.","A partire dall’osservazione della propagazione delle onde, distinguere i tipi di onde sismiche.","Correlare le conoscenze alla valutazione sul rischio sismico dell’Italia e comprendere la conseguente pianificazione della protezione da questo rischio.","Interpretare fenomeni mediante la teoria, individuando relazioni di causa ed effetto tra movimenti delle placche e fenomeni osservati."],"traguardi":["Costruire concetti e formularli con un linguaggio adeguato.","Interpretare lo svolgersi di fenomeni ambientali.","Essere in grado di sviluppare semplici modellizzazioni di fenomeni.","Acquisire competenze linguistiche."]},{"id":"D6","codice":"D6","titolo":"I minerali e le rocce","lezioni":[{"id":"D6-1","titolo":"Le rocce e i minerali","pagine":"D136-D139"},{"id":"D6-2","titolo":"Le rocce magmatiche","pagine":"D140-D141"},{"id":"D6-3","titolo":"Le rocce sedimentarie","pagine":"D142-D143"},{"id":"D6-4","titolo":"Le rocce metamorfiche","pagine":"D144-D145"},{"id":"D6-5","titolo":"Il ciclo delle rocce","pagine":"D146-D147"}],"obiettivi":["Sapere come si formano i minerali ed essere in grado di definire che cosa è il reticolo cristallino e che cosa è una roccia.","Leggere e applicare con alcuni esempi la scala di Mohs.","Conoscere l’origine delle rocce magmatiche: saper distinguere rocce effusive e intrusive.","Conoscere il processo di formazione delle rocce sedimentarie: distinguere le rocce clastiche da quelle chimiche e organogene.","Individuare le forze tettoniche che determinano l’origine delle rocce metamorfiche.","Interpretare lo schema del ciclo delle rocce."],"indicatori":["Conoscere la differenza tra minerali e rocce.","Saper descrivere la struttura di qualche minerale.","Collegare le caratteristiche macroscopiche dei diversi tipi di rocce al loro processo di formazione.","Attribuire il nome ai diversi tipi di rocce in base alle loro caratteristiche e alla loro origine.","Comprendere la correlazione degli agenti endogeni ed esogeni che determinano la trasformazione delle rocce."],"traguardi":["Costruire concetti e formularli con un linguaggio adeguato.","Scomporre la complessità in elementi e relazioni.","Interpretare lo svolgersi di fenomeni ambientali.","Essere in grado di sviluppare semplici schematizzazioni di fenomeni.","Acquisire competenze linguistiche."]},{"id":"D7","codice":"D7","titolo":"La Terra e la Luna","lezioni":[{"id":"D7-1","titolo":"Orientarsi sull’astronave Terra","pagine":"D158-D159"},{"id":"D7-2","titolo":"I moti della Terra nello spazio","pagine":"D160-D161"},{"id":"D7-3","titolo":"Il dì, la notte e le stagioni","pagine":"D162-D163"},{"id":"D7-4","titolo":"La Luna, il nostro satellite","pagine":"D164-D165"},{"id":"D7-5","titolo":"Le eclissi e le maree","pagine":"D166-D167"}],"obiettivi":["Precisare l’interpretazione della latitudine e della longitudine. Definire su un reticolato geografico le coordinate di un punto sulla superficie terrestre.","Descrivere i moti della Terra: di rotazione intorno al proprio asse e di rivoluzione intorno al Sole.","Comprendere le conseguenze che derivano da tali movimenti: l’alternarsi del dì e la notte e le stagioni.","Saper descrivere le caratteristiche della Luna e spiegare la sequenza delle fasi lunari.","Conoscere le condizioni in cui può verificarsi un’eclissi di Luna o di Sole."],"indicatori":["Conoscere la funzione di un sistema di riferimento.","Esaminare fenomeni complessi: ricostruire in base a indizi indiretti ciò che non è direttamente visibile.","Costruire semplici modelli che aiutino la comprensione dei fenomeni.","Comprendere, tenendo presente l’attrazione gravitazionale del Sole, i moti della Terra e della Luna.","Saper mettere in relazione le posizioni della Terra, della Luna e del Sole per spiegare come avvengono le eclissi e le maree."],"traguardi":["Costruire concetti e formularli con un linguaggio adeguato.","Scomporre la complessità in elementi e relazioni.","Interpretare lo svolgersi di fenomeni ambientali.","Essere in grado di sviluppare semplici schematizzazioni di fenomeni.","Acquisire competenze linguistiche."]},{"id":"D8","codice":"D8","titolo":"Il sistema solare","lezioni":[{"id":"D8-1","titolo":"Il Sole, la nostra stella","pagine":"D182-D183"},{"id":"D8-2","titolo":"I pianeti rocciosi e i pianeti gassosi","pagine":"D184-D187"}],"obiettivi":["Spiegare attraverso le leggi di Keplero il moto dei pianeti nel Sistema solare.","Descrivere, anche con l’aiuto di uno schema, la struttura del Sole.","Classificare i pianeti in base alla loro origine.","Acquisire informazioni qualitative e quantitative sui pianeti anche mettendole in relazione con la Terra."],"indicatori":["Conoscere la funzione di un sistema di riferimento.","Esaminare fenomeni complessi: ricostruire in base a indizi indiretti ciò che non è direttamente visibile.","Costruire semplici modelli che aiutino la comprensione dei fenomeni.","Mettere in relazione l’emissione di energia termica e luminosa con la struttura del Sole.","Valutare le ipotesi su eventuali altre forme di vita nel Sistema solare."],"traguardi":["Costruire concetti e formularli con un linguaggio adeguato.","Scomporre la complessità in elementi e relazioni.","Sviluppare semplici modelli interpretativi dei fenomeni.","Acquisire competenze linguistiche."]},{"id":"D9","codice":"D9","titolo":"Le stelle, le galassie, l’universo","lezioni":[{"id":"D9-1","titolo":"Le caratteristiche delle stelle","pagine":"D202-D203"},{"id":"D9-2","titolo":"La vita e la morte delle stelle","pagine":"D204-D205"},{"id":"D9-3","titolo":"Le galassie","pagine":"D206-D207"}],"obiettivi":["Rapportare la luminosità di una stella alla sua distanza dalla Terra.","Classificare le stelle per dimensione e colore.","Saper descrivere la principale caratteristica di un buco nero.","Sapere che cosa è una galassia e individuare la posizione della Via Lattea.","Spiegare la teoria del Big Bang e le sue implicazioni."],"indicatori":["Utilizzare l’anno-luce per stimare le distanze stellari.","Mettere in relazione il colore di una stella con la sua temperatura superficiale.","Correlare l’evoluzione di una stella alla sua massa.","Conoscere la teoria del Big Bang per comprendere la relazione tra l’energia liberata e formazione della materia."],"traguardi":["Costruire concetti e formularli con un linguaggio adeguato.","Individuare relazioni tra meccanismi di movimento e adattamento all’ambiente.","Acquisire competenze linguistiche."]},{"id":"D10","codice":"D10","titolo":"L’emergenza clima","lezioni":[{"id":"D10-1","titolo":"Da che cosa dipende il clima","pagine":"D220-D221"},{"id":"D10-2","titolo":"L’effetto serra e le emissioni di carbonio","pagine":"D222-D223"}],"obiettivi":["Individuare le relazioni tra temperatura, pressione e umidità dell’aria.","Comprendere l’evolversi delle condizioni del tempo a partire dall’analisi delle variazioni dei valori di temperatura, pressione e umidità.","Individuare negli emisferi terrestri la corrispondenza tra le celle convettive, le fasce climatiche e ambienti terrestri.","Conoscere l’origine dei venti variabili, periodici e costanti.","Sapere in che cosa consiste l’effetto serra e le conseguenze sull’evoluzione del clima."],"indicatori":["Comprendere come avvengono i movimenti convettivi nell’aria.","Definire la differenza tra tempo atmosferico e clima.","Essere consapevoli dei rischi ambientali legati al surriscaldamento dell’atmosfera e della necessità di scelte sostenibili."],"traguardi":["Costruire concetti e formularli con un linguaggio adeguato.","Individuare relazioni tra meccanismi di movimento e adattamento all’ambiente.","Individuare la relazione tra alimentazione e energia.","Acquisire competenze linguistiche."]}]},{"id":"contaci-N2","titolo":"Contaci – Numeri, relazioni, dati e informatica 2","editore":"Zanichelli","materia":"Matematica","sezioni":[{"id":"cap1","codice":"Cap. 1","titolo":"Percentuali","lezioni":[{"id":"1-L1","titolo":"Lezione 1 Tutto è il cento per cento","pagine":""},{"id":"1-L2","titolo":"Lezione 2 Calcolare percentuali con l’uno percento","pagine":""},{"id":"1-L3","titolo":"Lezione 3 Calcolare percentuali con la calcolatrice","pagine":""},{"id":"1-L4","titolo":"Lezione 4 Calcolare percentuali con il numero decimale","pagine":""},{"id":"1-L5","titolo":"Lezione 5 Lo sconto","pagine":""},{"id":"1-L6","titolo":"Lezione 6 L’aumento percentuale","pagine":""},{"id":"1-L7","titolo":"Lezione 7 Il rapporto percentuale","pagine":""},{"id":"1-L8","titolo":"Lezione 8 Riconoscere due tipi di problemi","pagine":""}],"obiettivi":["Calcolare percentuali utilizzando strategie diverse e interpretare una variazione percentuale di una quantità data come una moltiplicazione per un numero razionale.","Utilizzare il concetto di rapporto fra numeri o misure ed esprimere sia nella forma decimale, sia mediante frazione.","Utilizzare frazioni equivalenti e numeri decimali per denotare uno stesso numero razionale in diversi modi.","Utilizzare frazioni, percentuali, rapporti per descrivere situazioni quotidiane.","Rappresentare con un'espressione numerica la sequenza di operazioni che fornisce la soluzione di un problema."],"indicatori":[],"traguardi":[]},{"id":"cap2","codice":"Cap. 2","titolo":"La radice quadrata","lezioni":[{"id":"2-L11","titolo":"Lezione 11 Ripassiamo le potenze","pagine":""},{"id":"2-L12","titolo":"Lezione 12 Il quadrato e il suo lato","pagine":""},{"id":"2-L13","titolo":"Lezione 13 La radice quadrata","pagine":""},{"id":"2-L14","titolo":"Lezione 14 Espressioni con radici quadrate","pagine":""},{"id":"2-L15","titolo":"Lezione 15 Quadrati perfetti e numeri irrazionali","pagine":""}],"obiettivi":["Utilizzare la notazione usuale per le potenze con esponente intero positivo","Riconoscere e utilizzare la radice come operatore inverso dell’elevamento a potenza.","Fornire stime di radici utilizzando solo la moltiplicazione.","Comprendere che non esiste alcuna frazione o numero decimale finito o periodico il cui quadrato sia uguale a 2 (o ad altri numeri interi non quadrati), riconoscendo così l’esistenza e la natura dei numeri irrazionali."],"indicatori":[],"traguardi":[]},{"id":"cap3","codice":"Cap. 3","titolo":"Proporzionalità e proporzioni","lezioni":[{"id":"3-L17","titolo":"Lezione 17 Rapporti parte-parte e parte-intero","pagine":""},{"id":"3-L18","titolo":"Lezione 18 Ripartire un intero secondo un rapporto","pagine":""},{"id":"3-L19","titolo":"Lezione 19 Grafici cartesiani: relazione tra due grandezze","pagine":""},{"id":"3-L20","titolo":"Lezione 20 Grandezze direttamente proporzionali","pagine":""},{"id":"3-L21","titolo":"Lezione 21 Prezzi non proporzionali","pagine":""},{"id":"3-L22","titolo":"Lezione 22 Le proporzioni","pagine":""},{"id":"3-L23","titolo":"Lezione 23 Applicazioni delle proporzioni","pagine":""},{"id":"3-L24","titolo":"Lezione 24 Rapporti e problemi di ripartizione","pagine":""},{"id":"3-L25","titolo":"Lezione 25 Esercitazione sulle proporzioni","pagine":""}],"obiettivi":["Utilizzare frazioni, percentuali, rapporti per descrivere situazioni quotidiane.","Calcolare percentuali utilizzando strategie diverse.","Utilizzare il concetto di rapporto fra numeri o misure ed esprimere sia nella forma decimale, sia mediante frazione.","Cogliere l’invarianza di rapporti fra numeri o misure.","Rappresentare relazioni e funzioni attraverso tabelle e grafici nel piano cartesiano a partire dalle loro equazioni anche con dati provenienti da contesti esterni alla matematica come quello delle scienze","Conoscere il collegamento tra y=ax, y=a/x e il concetto di proporzionalità."],"indicatori":[],"traguardi":[]},{"id":"cap4","codice":"Cap. 4","titolo":"I numeri interi","lezioni":[{"id":"4-L27","titolo":"Lezione 27 Caldo e freddo","pagine":""},{"id":"4-L28","titolo":"Lezione 28 I numeri interi. Su e giù sul termometro","pagine":""},{"id":"4-L29","titolo":"Lezione 29 Ordinare numeri interi. Opposto di un numero","pagine":""},{"id":"4-L30","titolo":"Lezione 30 Addizione di numeri interi","pagine":""},{"id":"4-L31","titolo":"Lezione 31 Sottrazione di numeri interi","pagine":""},{"id":"4-L32","titolo":"Lezione 32 Addizione algebrica","pagine":""},{"id":"4-L33","titolo":"Lezione 33 Moltiplicazione di numeri interi","pagine":""},{"id":"4-L34","titolo":"Lezione 34 Potenze con base negativa","pagine":""},{"id":"4-L35","titolo":"Lezione 35 Divisione di numeri interi","pagine":""},{"id":"4-L36","titolo":"Lezione 36 Espressioni con i numeri interi","pagine":""}],"obiettivi":["Eseguire addizioni, sottrazioni, moltiplicazioni, divisioni, ordinamenti e confronti tra i numeri interi.","Rappresentare i numeri interi sulla retta.","Applicare la proprietà associativa e distributiva per raggruppare e semplificare, sia per iscritto che mentalmente, operazioni ed espressioni numeriche.","Eseguire semplici espressioni di calcolo con i numeri interi tenendo conto della convenzionalità dell’uso delle parentesi e della precedenza delle operazioni."],"indicatori":[],"traguardi":[]},{"id":"cap5","codice":"Cap. 5","titolo":"Equazioni per risolvere problemi","lezioni":[{"id":"5-L37","titolo":"Lezione 37 Leggi matematiche","pagine":""},{"id":"5-L38","titolo":"Lezione 38 Configurazioni regolari","pagine":""},{"id":"5-L39","titolo":"Lezione 39 Incognite e termini noti","pagine":""},{"id":"5-L40","titolo":"Lezione 40 Rompicapi con la bilancia","pagine":""},{"id":"5-L41","titolo":"Lezione 41 La bilancia come modello di uguaglianza","pagine":""},{"id":"5-L42","titolo":"Lezione 42 Le equazioni","pagine":""},{"id":"5-L43","titolo":"Lezione 43 I principi di equivalenza","pagine":""},{"id":"5-L44","titolo":"Lezione 44 Moltiplicare un’equazione","pagine":""},{"id":"5-L45","titolo":"Lezione 45 Dal problema all’equazione","pagine":""},{"id":"5-L46","titolo":"Lezione 46 Equazioni con le parentesi","pagine":""},{"id":"5-L47","titolo":"Lezione 47 Esercitazione sulle equazioni","pagine":""},{"id":"5-L48","titolo":"Lezione 48 Problemi di geometria","pagine":""}],"obiettivi":["Introduzione al linguaggio algebrico.","Estendere e generalizzare sequenze numeriche e geometriche, costruendo rappresentazioni in linguaggio simbolico per esprimere la generalizzazione individuata.","Risolvere problemi utilizzando equazioni di primo grado.","Comprendere e utilizzare il concetto di algoritmo come strumento per la risoluzione di problemi."],"indicatori":[],"traguardi":[]},{"id":"cap6","codice":"Cap. 6","titolo":"Indici statistici","lezioni":[{"id":"6-L49","titolo":"Lezione 49 Frequenza dei dati","pagine":""},{"id":"6-L50","titolo":"Lezione 50 Campo di variazione e classi di frequenza","pagine":""},{"id":"6-L51","titolo":"Lezione 51 La media aritmetica","pagine":""},{"id":"6-L53","titolo":"Lezione 53 La mediana e confronti con la media","pagine":""}],"obiettivi":["Rappresentare insiemi di dati.","In situazioni significative, confrontare dati al fine di prendere decisioni, utilizzando le distribuzioni delle frequenze e delle frequenze relative.","Conoscere, saper scegliere e utilizzare valori medi (moda, mediana, media aritmetica) adeguati alla tipologia ed alle caratteristiche dei dati a disposizione.","Valutare la variabilità di un insieme di dati determinandone, ad esempio, il campo di variazione."],"indicatori":[],"traguardi":[]},{"id":"cap7","codice":"Cap. 7","titolo":"Blocchi e algoritmi","lezioni":[{"id":"7-L54","titolo":"Lezione 54 Movimenti nel piano cartesiano","pagine":""},{"id":"7-L55","titolo":"Lezione 55 Crea un nuovo blocco","pagine":""},{"id":"7-L56","titolo":"Lezione 56 Blocchi con argomenti","pagine":""},{"id":"7-L57","titolo":"Lezione 57 Grafici di rette e funzioni","pagine":""},{"id":"7-L58","titolo":"Lezione 58 Numeri binari","pagine":""},{"id":"7-L59","titolo":"Lezione 59 L’algoritmo di Euclide e operazioni tra frazioni","pagine":""},{"id":"7-L60","titolo":"Lezione 60 Un algoritmo semplice per la radice","pagine":""},{"id":"7-L61","titolo":"Lezione 61 La traccia di un moto casuale","pagine":""}],"obiettivi":["Scrivere semplici programmi con strutture di controllo e condizioni, anche utilizzando variabili.","Sapere creare e utilizzare i blocchi.","Valutare l’esito di un algoritmo o di un programma seguendone i passi e tenendo traccia del valore delle variabili.","Comprendere e utilizzare il concetto di algoritmo come strumento per la risoluzione di problemi.","Conoscere il sistema di numerazione sistema binario."],"indicatori":[],"traguardi":[]}]},{"id":"contaci-G2","titolo":"Contaci – Misure, spazio e figure 2","editore":"Zanichelli","materia":"Matematica","sezioni":[{"id":"cap1","codice":"Cap. 1","titolo":"L’area","lezioni":[{"id":"1-L1","titolo":"Lezione 1 Pavimentazioni","pagine":""},{"id":"1-L2","titolo":"Lezione 2 Lunghezze e perimetri","pagine":""},{"id":"1-L3","titolo":"Lezione 3 Unità di misura dell'area","pagine":""},{"id":"1-L4","titolo":"Lezione 4 Area dei parallelogrammi","pagine":""},{"id":"1-L5","titolo":"Lezione 5 Area dei triangoli","pagine":""},{"id":"1-L6","titolo":"Lezione 6 Esercitazione sulle aree","pagine":""}],"obiettivi":["Descrivere, classificare, disegnare le principali figure piane (triangoli, quadrilateri, poligoni regolari), figure più semplici o complesse.","Usare le principali trasformazioni geometriche e le loro invarianti.","Determinare l'area di figure piane: triangoli, quadrilateri, ma anche figure irregolari, con metodi esatti e approssimati (stima per difetto e per eccesso).","Effettuare misure e stime di misure di lunghezza e di area."],"indicatori":[],"traguardi":[]},{"id":"cap2","codice":"Cap. 2","titolo":"Il teorema di Pitagora","lezioni":[{"id":"2-L9","titolo":"Lezione 9 Il triangolo rettangolo","pagine":""},{"id":"2-L10","titolo":"Lezione 10 Il teorema di Pitagora","pagine":""},{"id":"2-L11","titolo":"Lezione 11 La lunghezza dei cateti e dell’ipotenusa","pagine":""},{"id":"2-L12","titolo":"Lezione 12 Applicazioni del teorema di Pitagora","pagine":""}],"obiettivi":["Applicare il teorema di Pitagora in contesti geometrici e reali.","Risolvere problemi utilizzando le proprietà geometriche delle figure o applicando teoremi (ad esempio il teorema di Pitagora o quelli di Euclide)."],"indicatori":[],"traguardi":[]},{"id":"cap3","codice":"Cap. 3","titolo":"La similitudine","lezioni":[{"id":"3-L15","titolo":"Lezione 15 Ingrandimenti e riduzioni","pagine":""},{"id":"3-L16","titolo":"Lezione 16 Figure simili","pagine":""},{"id":"3-L17","titolo":"Lezione 17 Il rapporto di scala","pagine":""},{"id":"3-L18","titolo":"Lezione 18 Le carte geografiche","pagine":""},{"id":"3-L19","titolo":"Lezione 19 La similitudine nei triangoli","pagine":""}],"obiettivi":["Identificare figure piane simili in vari contesti e riprodurre in scala una figura assegnata.","Riconoscere, descrivere e utilizzare le similitudini e le sue invarianti.","Riconoscere e costruire figure piane simili e utilizzare isometrie e similitudini per risolvere situazioni problematiche in contesti interni ed esterni alla matematica."],"indicatori":[],"traguardi":[]},{"id":"cap4","codice":"Cap. 4","titolo":"Rette sul piano cartesiano","lezioni":[{"id":"4-L22","titolo":"Lezione 22 Relazioni sul piano cartesiano","pagine":""},{"id":"4-L23","titolo":"Lezione 23 Dall’equazione ai punti al grafico","pagine":""},{"id":"4-L24","titolo":"Lezione 24 Disegnare rette sul piano cartesiano","pagine":""},{"id":"4-L25","titolo":"Lezione 25 Punto di intersezione tra due rette","pagine":""}],"obiettivi":["Estendere e generalizzare sequenze numeriche e geometriche, costruendo rappresentazioni in linguaggio simbolico per esprimere la generalizzazione individuata.","Rappresentare relazioni e funzioni in diversi linguaggi (numerico, simbolico, grafico, verbale) e passare da uno all’altro.","Rappresentare relazioni e funzioni attraverso tabelle e grafici nel piano cartesiano a partire dalle loro equazioni anche con dati provenienti da contesti esterni alla matematica come quello delle scienze, con strumenti materiali o digitali."],"indicatori":[],"traguardi":[]}]},{"id":"contaci-N3","titolo":"Contaci – Numeri, relazioni, funzioni, dati e informatica 3","editore":"Zanichelli","materia":"Matematica","sezioni":[{"id":"cap1","codice":"Cap. 1","titolo":"Numeri razionali e insiemi numerici","lezioni":[{"id":"1-L1","titolo":"Lezione 1 I numeri interi: cosa ricordi?","pagine":""},{"id":"1-L2","titolo":"Lezione 2 Numeri decimali positivi e negativi","pagine":""},{"id":"1-L3","titolo":"Lezione 3 Le frazioni: cosa ricordi?","pagine":""},{"id":"1-L4","titolo":"Lezione 4 Somme algebriche con le frazioni","pagine":""},{"id":"1-L5","titolo":"Lezione 5 Moltiplicazioni e potenze di frazioni","pagine":""},{"id":"1-L6","titolo":"Lezione 6 Divisioni con frazioni positive e negative","pagine":""},{"id":"1-L7","titolo":"Lezione 7 Espressioni","pagine":""},{"id":"1-L8","titolo":"Lezione 8 Numeri razionali: una visione d’insieme","pagine":""},{"id":"1-L9","titolo":"Lezione 9 I numeri reali","pagine":""}],"obiettivi":["Eseguire addizioni, sottrazioni, moltiplicazioni, divisioni, ordinamenti e confronti tra i numeri naturali, interi, razionali sotto forma di frazioni e numeri decimali, quando possibile a mente oppure utilizzando gli usuali algoritmi scritti, le calcolatrici e software specifici, valutando quale strumento possa essere più opportuno.","Operare con diversi sistemi di numerazione.","Rappresentare i numeri naturali, interi e razionali (sotto forma di frazioni e numeri decimali) sulla retta.","Utilizzare frazioni equivalenti e numeri decimali per denotare uno stesso numero razionale in diversi modi, spiegando vantaggi e svantaggi dell’uso di rappresentazioni diverse.","Riconoscere l’esistenza dei numeri irrazionali.","Eseguire semplici espressioni di calcolo con i numeri naturali, interi e razionali (sotto forma di frazioni e numeri decimali), tenendo conto della convenzionalità dell’uso delle parentesi e della precedenza delle operazioni."],"indicatori":[],"traguardi":[]},{"id":"cap2","codice":"Cap. 2","titolo":"Potenze e ordini di grandezza","lezioni":[{"id":"2-L10","titolo":"Lezione 10 Rivediamo le potenze","pagine":""},{"id":"2-L11","titolo":"Lezione 11 Proprietà delle potenze con la stessa base","pagine":""},{"id":"2-L12","titolo":"Lezione 12 Potenze di prodotti e quozienti","pagine":""},{"id":"2-L13","titolo":"Lezione 13 Per esponente un numero negativo o lo zero","pagine":""},{"id":"2-L14","titolo":"Lezione 14 Numeri grandi","pagine":""},{"id":"2-L15","titolo":"Lezione 15 Numeri piccoli","pagine":""},{"id":"2-L16","titolo":"Lezione 16 Confrontare gli ordini di grandezza","pagine":""}],"obiettivi":["Utilizzare la notazione usuale per le potenze con esponente intero positivo e le proprietà delle potenze per semplificare calcoli e notazioni.","Esprimere misure utilizzando anche le potenze del 10 e le cifre significative."],"indicatori":[],"traguardi":[]},{"id":"cap3","codice":"Cap. 3","titolo":"Il calcolo letterale","lezioni":[{"id":"3-L17","titolo":"Lezione 17 Espressioni letterali e modelli","pagine":""},{"id":"3-L18","titolo":"Lezione 18 L’area del rettangolo come modello","pagine":""},{"id":"3-L19","titolo":"Lezione 19 Ancora su perimetri e aree","pagine":""},{"id":"3-L20","titolo":"Lezione 20 Il modello del volume","pagine":""},{"id":"3-L21","titolo":"Lezione 21 I monomi","pagine":""},{"id":"3-L22","titolo":"Lezione 22 Somme e differenze di monomi","pagine":""},{"id":"3-L23","titolo":"Lezione 23 Prodotto di monomi","pagine":""},{"id":"3-L24","titolo":"Lezione 24 Operazioni con i monomi","pagine":""},{"id":"3-L25","titolo":"Lezione 25 I polinomi","pagine":""},{"id":"3-L26","titolo":"Lezione 26 Somma di polinomi","pagine":""},{"id":"3-L27","titolo":"Lezione 27 Differenza di polinomi","pagine":""},{"id":"3-L28","titolo":"Lezione 28 Addizioni e sottrazioni di polinomi","pagine":""},{"id":"3-L29","titolo":"Lezione 29 Prodotto di un numero per un polinomio","pagine":""},{"id":"3-L30","titolo":"Lezione 30 Monomio per polinomio","pagine":""},{"id":"3-L31","titolo":"Lezione 31 Dividere un polinomio, dividere un monomio","pagine":""},{"id":"3-L32","titolo":"Lezione 32 Prodotto di polinomi","pagine":""},{"id":"3-L33","titolo":"Lezione 33 Esercitazione con i polinomi","pagine":""}],"obiettivi":["Introduzione al linguaggio algebrico.","Estendere e generalizzare sequenze numeriche e geometriche, costruendo rappresentazioni in linguaggio simbolico per esprimere la generalizzazione individuata.","Rappresentare relazioni e funzioni in diversi linguaggi (numerico, simbolico, grafico, verbale) e passare da uno all’altro.","Comprendere e utilizzare il concetto di algoritmo come strumento per la risoluzione di problemi.."],"indicatori":[],"traguardi":[]},{"id":"cap4","codice":"Cap. 4","titolo":"Le equazioni","lezioni":[{"id":"4-L34","titolo":"Lezione 34 L’uguale protagonista","pagine":""},{"id":"4-L35","titolo":"Lezione 35 Risolvere un’equazione","pagine":""},{"id":"4-L36","titolo":"Lezione 36 Polinomi, equazioni e formule inverse","pagine":""},{"id":"4-L37","titolo":"Lezione 37 Equazioni determinate, impossibili o indeterminate","pagine":""},{"id":"4-L38","titolo":"Lezione 38 Equazioni con il denominatore","pagine":""},{"id":"4-L39","titolo":"Lezione 39 Due incognite","pagine":""}],"obiettivi":["Risolvere problemi utilizzando equazioni di primo grado.","Rappresentare relazioni e funzioni in diversi linguaggi (numerico, simbolico, grafico, verbale) e passare da uno all’altro.","Comprendere e utilizzare il concetto di algoritmo come strumento per la risoluzione di problemi."],"indicatori":[],"traguardi":[]},{"id":"cap5","codice":"Cap. 5","titolo":"Le funzioni","lezioni":[{"id":"5-L43","titolo":"Lezione 43 Leggere grafici sul piano cartesiano","pagine":""},{"id":"5-L44","titolo":"Lezione 44 Legge di proporzionalità diretta","pagine":""},{"id":"5-L45","titolo":"Lezione 45 Legge di proporzionalità inversa","pagine":""},{"id":"5-L46","titolo":"Lezione 46 Le funzioni","pagine":""},{"id":"5-L47","titolo":"Lezione 47 Il grafico di una funzione","pagine":""},{"id":"5-L48","titolo":"Lezione 48 L’equazione della retta","pagine":""}],"obiettivi":["Rappresentare relazioni e funzioni in diversi linguaggi (numerico, simbolico, grafico, verbale) e passare da uno all’altro.","Rappresentare relazioni e funzioni attraverso tabelle e grafici nel piano cartesiano a partire dalle loro equazioni (ad esempio, y=ax, y=a/x, y=ax2, y=2n) anche con dati provenienti da contesti esterni alla matematica come quello delle scienze, con strumenti materiali o digitali.","Conoscere il collegamento tra y=ax, y=a/x e il concetto di proporzionalità."],"indicatori":[],"traguardi":[]},{"id":"cap6","codice":"Cap. 6","titolo":"Probabilità","lezioni":[{"id":"6-L50","titolo":"Lezione 50 Eventi aleatori","pagine":""},{"id":"6-L51","titolo":"Lezione 51 Rivediamo la probabilità classica","pagine":""},{"id":"6-L52","titolo":"Lezione 52 La probabilità frequentista","pagine":""}],"obiettivi":["In situazioni significative, confrontare dati al fine di prendere decisioni, utilizzando le distribuzioni delle frequenze e delle frequenze relative.","All'interno di contesti di incertezza, individuare gli eventi elementari, assegnare a essi una probabilità; determinare la probabilità di eventi composti, scomponibili in eventi elementari disgiunti.","Riconoscere coppie di eventi complementari, incompatibili, indipendenti."],"indicatori":[],"traguardi":[]},{"id":"cap7","codice":"Cap. 7","titolo":"Probabilità, liste e statistica","lezioni":[{"id":"7-L54","titolo":"Lezione 54 Numeri casuali e probabilità","pagine":""},{"id":"7-L55","titolo":"Lezione 55 Liste e statistica","pagine":""},{"id":"7-L56","titolo":"Lezione 56 Istogrammi","pagine":""},{"id":"7-L57","titolo":"Lezione 57 Calcoliamo π con la pioggia","pagine":""},{"id":"7-L58","titolo":"Lezione 58 Ellissi e iperboli","pagine":""},{"id":"7-L59","titolo":"Lezione 59 Velocità, accelerazione e moto parabolico","pagine":""},{"id":"7-L60","titolo":"Lezione 60 Non è finita qui!","pagine":""}],"obiettivi":["Scrivere semplici programmi con strutture di controllo, condizioni, variabili, liste di dati e applicarli alla probabilità e statistica.","Valutare l’esito di un algoritmo o di un programma seguendone i passi e tenendo traccia del valore delle variabili.","Utilizzare il concetto di algoritmo come strumento per la risoluzione di problemi in ambito matematico, statistico, fisico.","Esaminare un algoritmo o un programma per capirne il comportamento, identificarne eventuali difetti e correggerli (debug)."],"indicatori":[],"traguardi":[]}]},{"id":"contaci-G3","titolo":"Contaci – Misure, spazio e figure 3","editore":"Zanichelli","materia":"Matematica","sezioni":[{"id":"cap1","codice":"Cap. 1","titolo":"Osservazioni sulla circonferenza","lezioni":[{"id":"1-L1","titolo":"Lezione 1 Circonferenza, cerchio e loro parti","pagine":""},{"id":"1-L2","titolo":"Lezione 2 Circonferenze e rette sul piano. La tangente","pagine":""},{"id":"1-L3","titolo":"Lezione 3 Angoli al centro e alla circonferenza","pagine":""},{"id":"1-L4","titolo":"Lezione 4 Circonferenza circoscritta a un poligono","pagine":""}],"obiettivi":["Costruire figure del piano e dello spazio e disegni geometrici, utilizzando in modo appropriato e con accuratezza opportuni strumenti (carta, spago, corde, riga, squadra, compasso, goniometro, software,…).","Riconoscere e costruire figure piane isometriche e simili e utilizzare isometrie e similitudini per risolvere situazioni problematiche in contesti interni ed esterni alla matematica.","Applicare il teorema di Pitagora in contesti geometrici."],"indicatori":[],"traguardi":[]},{"id":"cap2","codice":"Cap. 2","titolo":"Circonferenza e cerchio","lezioni":[{"id":"2-L7","titolo":"Lezione 7 Studi sulla lunghezza della circonferenza","pagine":""},{"id":"2-L8","titolo":"Lezione 8 Lunghezza della circonferenza","pagine":""},{"id":"2-L9","titolo":"Lezione 9 Area del cerchio","pagine":""},{"id":"2-L10","titolo":"Lezione 10 Calcolo di circonferenza e cerchi","pagine":""},{"id":"2-L11","titolo":"Lezione 11 Il valore esatto","pagine":""},{"id":"2-L12","titolo":"Lezione 12 Archi e settori circolari","pagine":""}],"obiettivi":["Determinare la lunghezza della circonferenza e l'area del cerchio con metodi esatti e approssimati (stima per difetto e per eccesso).","Utilizzare il numero π per risolvere problemi geometrici e reali e riconoscere l’importanza storica di tale costante."],"indicatori":[],"traguardi":[]},{"id":"cap3","codice":"Cap. 3","titolo":"La superficie dei solidi","lezioni":[{"id":"3-L13","titolo":"Lezione 13 Classificare i solidi","pagine":""},{"id":"3-L14","titolo":"Lezione 14 Disegnare i solidi in scala","pagine":""},{"id":"3-L15","titolo":"Lezione 15 Dal solido allo sviluppo piano","pagine":""},{"id":"3-L16","titolo":"Lezione 16 Le superfici dei solidi a due basi","pagine":""},{"id":"3-L17","titolo":"Lezione 17 Le superfici dei solidi a punta","pagine":""},{"id":"3-L18","titolo":"Lezione 18 Esercitazione sulle superfici dei solidi","pagine":""},{"id":"3-L19","titolo":"Lezione 19 Il teorema di Pitagora applicato ai solidi","pagine":""}],"obiettivi":["Visualizzare oggetti tridimensionali a partire da rappresentazioni bidimensionali e viceversa.","Determinare l'area di figure piane al fine di calcolare la superficie di alcuni solidi (retti e regolari)","Applicare il teorema di Pitagora in contesti geometrici e reali."],"indicatori":[],"traguardi":[]},{"id":"cap4","codice":"Cap. 4","titolo":"Il volume dei solidi","lezioni":[{"id":"4-L20","titolo":"Lezione 20 Le unità di misura del volume","pagine":""},{"id":"4-L21","titolo":"Lezione 21 Volume dei solidi a due basi","pagine":""},{"id":"4-L22","titolo":"Lezione 22 Volume dei solidi a punta","pagine":""},{"id":"4-L23","titolo":"Lezione 23 Esercitazione su volumi e superfici","pagine":""},{"id":"4-L24","titolo":"Lezione 24 Volume e superficie della sfera","pagine":""}],"obiettivi":["Determinare il volume di figure solide (es. prismi, piramidi, sfera, ecc., ma anche solidi irregolari) con metodi esatti e approssimati (stima per difetto e per eccesso).","Risolvere problemi utilizzando le proprietà geometriche delle figure."],"indicatori":[],"traguardi":[]}]}];
+
+/* ===================== utilità ===================== */
+const uid = () => Math.random().toString(36).slice(2, 9) + Date.now().toString(36).slice(-4);
+const pad = n => String(n).padStart(2, '0');
+const fmtISO = d => d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate());
+const parseISO = s => { const [y, m, d] = s.split('-').map(Number); return new Date(y, m - 1, d); };
+const addDays = (d, n) => new Date(d.getFullYear(), d.getMonth(), d.getDate() + n);
+const lunediDi = d => addDays(d, -((d.getDay() + 6) % 7));
+const MESI = ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'];
+const MESI_BREVI = ['gen', 'feb', 'mar', 'apr', 'mag', 'giu', 'lug', 'ago', 'set', 'ott', 'nov', 'dic'];
+const GIORNI = ['', 'Lun', 'Mar', 'Mer', 'Gio', 'Ven', 'Sab'];
+const fmtGM = d => d.getDate() + ' ' + MESI_BREVI[d.getMonth()];
+const fmtData = iso => (iso ? fmtGM(parseISO(iso)) + ' ' + parseISO(iso).getFullYear() : '');
+const num = v => (Number(v) || 0);
+const fmtOre = n => (Math.round(n * 10) / 10).toString().replace('.', ',');
+
+function pasqua(y) {
+  const a = y % 19, b = Math.floor(y / 100), c = y % 100, d = Math.floor(b / 4), e = b % 4;
+  const f = Math.floor((b + 8) / 25), g = Math.floor((b - f + 1) / 3);
+  const h = (19 * a + b - d - g + 15) % 30, i = Math.floor(c / 4), k = c % 4;
+  const l = (32 + 2 * e + 2 * i - h - k) % 7, m = Math.floor((a + 11 * h + 22 * l) / 451);
+  const mese = Math.floor((h + l - 7 * m + 114) / 31), giorno = ((h + l - 7 * m + 114) % 31) + 1;
+  return new Date(y, mese - 1, giorno);
+}
+
+// Festività nazionali proposte per un anno scolastico (da rivedere: restano modificabili)
+function festivitaSuggerite(inizioISO, fineISO) {
+  const y0 = parseISO(inizioISO).getFullYear();
+  const y1 = Math.max(parseISO(fineISO).getFullYear(), y0);
+  const out = [];
+  const add = (nome, da, a) => out.push({ id: uid(), nome, da: fmtISO(da), a: fmtISO(a || da) });
+  add('Tutti i Santi', new Date(y0, 10, 1));
+  add('Immacolata Concezione', new Date(y0, 11, 8));
+  if (y1 > y0) add('Vacanze di Natale', new Date(y0, 11, 23), new Date(y1, 0, 6));
+  const p = pasqua(y1);
+  add('Vacanze di Pasqua', addDays(p, -3), addDays(p, 2));
+  add('Festa della Liberazione', new Date(y1, 3, 25));
+  add('Festa dei Lavoratori', new Date(y1, 4, 1));
+  add('Festa della Repubblica', new Date(y1, 5, 2));
+  return out.filter(f => f.a >= inizioISO && f.da <= fineISO);
+}
+
+// Date proposte per l'anno scolastico che comprende oggi
+function dateSuggerite() {
+  const oggi = new Date();
+  const y = oggi.getMonth() >= 6 ? oggi.getFullYear() : oggi.getFullYear() - 1;
+  return { nome: y + '-' + String(y + 1).slice(2), inizio: y + '-09-14', fine: (y + 1) + '-06-08' };
+}
+
+/* ===================== calendario dell'anno ===================== */
+function calcolaSettimane(anno) {
+  if (!anno.inizio || !anno.fine) return [];
+  const ini = parseISO(anno.inizio), fin = parseISO(anno.fine);
+  if (fin < ini) return [];
+  const trovaFesta = iso => (anno.festivita || []).find(f => f.da <= iso && iso <= (f.a || f.da));
+  const nGiorni = anno.sabato ? 6 : 5;
+  const out = [];
+  let lun = lunediDi(ini), n = 1;
+  while (lun <= fin) {
+    const giorni = [];
+    for (let i = 0; i < nGiorni; i++) {
+      const d = addDays(lun, i), iso = fmtISO(d);
+      const fuori = d < ini || d > fin;
+      const festa = fuori ? null : trovaFesta(iso);
+      giorni.push({ iso, dow: i + 1, fuori, festa: festa ? festa.nome : null, lavora: !fuori && !festa });
+    }
+    const giovedi = addDays(lun, 3);
+    out.push({
+      n, chiave: fmtISO(lun), lun, al: addDays(lun, nGiorni - 1), giorni,
+      giorniScuola: giorni.filter(g => g.lavora).length,
+      mese: MESI[giovedi.getMonth()], meseIdx: giovedi.getFullYear() * 12 + giovedi.getMonth()
+    });
+    lun = addDays(lun, 7); n++;
+  }
+  return out;
+}
+
+const festeDellaSettimana = s => [...new Set(s.giorni.filter(g => g.festa).map(g => g.festa))];
+const oreDisponibili = (s, piano) => s.giorni.reduce((t, g) => t + (g.lavora ? num(piano.orario[g.dow]) : 0), 0);
+const oreAssegnate = items => (items || []).reduce((t, i) => t + num(i.ore), 0);
+const chiaveLezione = r => r.b + '|' + r.s + '|' + r.l;
+
+function indiceLibri(libri) {
+  const m = {};
+  libri.forEach(b => b.sezioni.forEach(s => s.lezioni.forEach(l => { m[b.id + '|' + s.id + '|' + l.id] = { libro: b, sezione: s, lezione: l }; })));
+  return m;
+}
+
+// Lezioni del piano, nell'ordine scelto
+function lezioniDelPiano(piano, libri) {
+  const out = [];
+  piano.contenuti.forEach(c => {
+    const b = libri.find(x => x.id === c.b);
+    const s = b && b.sezioni.find(x => x.id === c.s);
+    if (!s) return;
+    s.lezioni.forEach(l => out.push({ rif: { b: b.id, s: s.id, l: l.id }, libro: b, sezione: s, lezione: l }));
+  });
+  return out;
+}
+
+function lezioniAssegnate(piano) {
+  const m = {};
+  Object.keys(piano.assegnazioni).forEach(k => piano.assegnazioni[k].forEach(i => { if (i.rif) m[chiaveLezione(i.rif)] = k; }));
+  return m;
+}
+
+// Distribuisce le lezioni non ancora assegnate sulle settimane, secondo le ore disponibili
+function distribuisci(piano, libri, settimane, dallaChiave) {
+  const nuovo = JSON.parse(JSON.stringify(piano.assegnazioni));
+  const fatte = lezioniAssegnate({ assegnazioni: nuovo });
+  const daFare = lezioniDelPiano(piano, libri).filter(x => !fatte[chiaveLezione(x.rif)]);
+  const oreL = num(piano.oreLezione) || 1;
+  let aggiunte = 0, i = 0;
+  for (const s of settimane) {
+    if (dallaChiave && s.chiave < dallaChiave) continue;
+    let libere = oreDisponibili(s, piano) - oreAssegnate(nuovo[s.chiave]);
+    while (i < daFare.length && libere >= oreL - 1e-9) {
+      const x = daFare[i++];
+      (nuovo[s.chiave] = nuovo[s.chiave] || []).push({ id: uid(), tipo: 'lezione', testo: x.lezione.titolo, ore: oreL, rif: x.rif });
+      libere -= oreL; aggiunte++;
+    }
+    if (i >= daFare.length) break;
+  }
+  return { assegnazioni: nuovo, aggiunte, rimaste: daFare.length - i };
+}
+
+/* ===================== tabella per esportazione ===================== */
+function costruisciTabella(data, pianiIds) {
+  const settimane = calcolaSettimane(data.anno);
+  const piani = pianiIds.map(id => data.piani.find(p => p.id === id)).filter(Boolean);
+  const righe = settimane.map(s => ({
+    mese: s.mese, n: s.n, dal: fmtGM(s.lun), al: fmtGM(s.al),
+    vacanza: s.giorniScuola === 0, note: festeDellaSettimana(s).join(', '),
+    celle: piani.map(p => {
+      const it = p.assegnazioni[s.chiave] || [];
+      return { testo: it.map(x => x.testo).join('; '), ore: oreAssegnate(it) };
+    })
+  }));
+  return { piani, righe, titolo: piani.map(p => p.nome).join(' · '), anno: data.anno.nome };
+}
+
+function scaricaFile(nome, contenuto, tipo) {
+  const blob = contenuto instanceof Blob ? contenuto : new Blob([contenuto], { type: tipo });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = nome;
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 2000);
+}
+
+const csvCella = v => '"' + String(v == null ? '' : v).replace(/"/g, '""') + '"';
+function tabellaCSV(t) {
+  const intest = ['Mese', 'Settimana', 'Dal', 'Al'];
+  t.piani.forEach(p => { intest.push(p.nome); intest.push('Ore ' + p.nome); });
+  intest.push('Note');
+  const righe = [intest.map(csvCella).join(';')];
+  t.righe.forEach(r => {
+    const c = [r.mese, r.n, r.dal, r.al];
+    r.celle.forEach(x => { c.push(x.testo); c.push(x.ore ? fmtOre(x.ore) : ''); });
+    c.push(r.note);
+    righe.push(c.map(csvCella).join(';'));
+  });
+  return '﻿' + righe.join('\r\n');
+}
+
+const caricati = {};
+function caricaScript(url) {
+  if (caricati[url]) return caricati[url];
+  caricati[url] = new Promise((ok, ko) => {
+    const s = document.createElement('script');
+    s.src = url; s.onload = ok; s.onerror = () => { delete caricati[url]; ko(new Error('Impossibile caricare ' + url)); };
+    document.head.appendChild(s);
+  });
+  return caricati[url];
+}
+const URL_DOCX = 'https://cdn.jsdelivr.net/npm/docx@9.7.1/dist/index.iife.js';
+const URL_JSZIP = 'https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js';
+
+async function tabellaDocx(t) {
+  await caricaScript(URL_DOCX);
+  const { Document, Packer, Paragraph, Table, TableRow, TableCell, WidthType, TextRun, ShadingType, PageOrientation, HeadingLevel } = window.docx;
+  const bordo = { style: 'single', size: 4, color: '999999' };
+  const bordi = { top: bordo, bottom: bordo, left: bordo, right: bordo };
+  const cella = (testo, opz = {}) => new TableCell({
+    borders: bordi, width: opz.w ? { size: opz.w, type: WidthType.PERCENTAGE } : undefined,
+    shading: opz.fill ? { type: ShadingType.CLEAR, fill: opz.fill, color: 'auto' } : undefined,
+    children: [new Paragraph({ children: [new TextRun({ text: String(testo == null ? '' : testo), bold: !!opz.bold, size: 18, color: opz.color })] })]
+  });
+  const nP = t.piani.length;
+  const wTesto = Math.floor((100 - 18 - nP * 8) / Math.max(nP, 1));
+  const intest = new TableRow({
+    tableHeader: true,
+    children: [cella('mese', { bold: true, fill: 'E6E3FF', w: 10 }), cella('sett.', { bold: true, fill: 'E6E3FF', w: 8 })]
+      .concat(...t.piani.map(p => [cella(p.nome, { bold: true, fill: 'E6E3FF', w: wTesto }), cella('ore', { bold: true, fill: 'E6E3FF', w: 8 })]))
+  });
+  let meseCorr = '';
+  const corpo = t.righe.map(r => {
+    const primo = r.mese !== meseCorr; meseCorr = r.mese;
+    const grigio = r.vacanza ? 'F3F3F3' : undefined;
+    const celleDati = [].concat(...r.celle.map((c, k) => {
+      const testo = c.testo || (r.vacanza && k === 0 ? (r.note || 'Vacanza') : '');
+      return [cella(testo, { fill: grigio, w: wTesto }), cella(c.ore ? fmtOre(c.ore) : '', { fill: grigio, w: 8 })];
+    }));
+    return new TableRow({ children: [cella(primo ? r.mese : '', { bold: true, fill: grigio, w: 10 }), cella(r.n + ' (' + r.dal + '–' + r.al + ')', { fill: grigio, w: 8 })].concat(celleDati) });
+  });
+  const doc = new Document({
+    sections: [{
+      properties: { page: { size: { orientation: PageOrientation.LANDSCAPE } } },
+      children: [
+        new Paragraph({ heading: HeadingLevel.HEADING_1, children: [new TextRun({ text: 'Piano annuale ' + t.titolo + ' — anno scolastico ' + t.anno, bold: true })] }),
+        new Table({ width: { size: 100, type: WidthType.PERCENTAGE }, rows: [intest].concat(corpo) })
+      ]
+    }]
+  });
+  return Packer.toBlob(doc);
+}
+
+/* ===================== importazione di libri ===================== */
+function libroDaTesto(testo, meta) {
+  const sezioni = [];
+  let cur = null;
+  const nuova = titolo => { cur = { id: 's' + (sezioni.length + 1), codice: String(sezioni.length + 1), titolo, lezioni: [], obiettivi: [], indicatori: [], traguardi: [] }; sezioni.push(cur); };
+  testo.split(/\r?\n/).map(r => r.trim()).filter(Boolean).forEach(r => {
+    if (r.startsWith('#')) { nuova(r.replace(/^#+\s*/, '')); return; }
+    if (!cur) nuova('Argomenti');
+    let m;
+    if ((m = r.match(/^obiettivo\s*:\s*(.+)$/i))) cur.obiettivi.push(m[1]);
+    else if ((m = r.match(/^indicatore\s*:\s*(.+)$/i))) cur.indicatori.push(m[1]);
+    else if ((m = r.match(/^traguardo\s*:\s*(.+)$/i))) cur.traguardi.push(m[1]);
+    else {
+      const mp = r.match(/^(.*?)\s*\(\s*pag\.?\s*([^)]*)\)\s*$/i);
+      cur.lezioni.push({ id: 'l' + (cur.lezioni.length + 1), titolo: mp ? mp[1] : r, pagine: mp ? mp[2] : '' });
+    }
+  });
+  return { id: 'imp-' + uid(), titolo: meta.titolo, editore: meta.editore || '', materia: meta.materia || '', sezioni, importato: true };
+}
+
+function validaLibro(j) {
+  if (!j || typeof j !== 'object' || !Array.isArray(j.sezioni)) throw new Error('Formato non riconosciuto: manca l\'elenco "sezioni".');
+  const b = { id: 'imp-' + uid(), titolo: String(j.titolo || 'Libro importato'), editore: String(j.editore || ''), materia: String(j.materia || ''), importato: true, sezioni: [] };
+  j.sezioni.forEach((s, i) => {
+    b.sezioni.push({
+      id: String(s.id || 's' + (i + 1)), codice: String(s.codice || i + 1), titolo: String(s.titolo || 'Sezione ' + (i + 1)),
+      lezioni: (s.lezioni || []).map((l, k) => ({ id: String(l.id || 'l' + (k + 1)), titolo: String(l.titolo || ''), pagine: String(l.pagine || '') })),
+      obiettivi: (s.obiettivi || []).map(String), indicatori: (s.indicatori || []).map(String), traguardi: (s.traguardi || []).map(String)
+    });
+  });
+  return b;
+}
+
+// Importa un .docx con tabella CAPITOLO | OBIETTIVI | ATTIVITÀ (formato Contaci)
+async function libroDaDocx(file, meta) {
+  await caricaScript(URL_JSZIP);
+  const zip = await window.JSZip.loadAsync(await file.arrayBuffer());
+  const xml = await zip.file('word/document.xml').async('string');
+  const doc = new DOMParser().parseFromString(xml, 'application/xml');
+  const W = 'http://schemas.openxmlformats.org/wordprocessingml/2006/main';
+  const testoCella = tc => Array.from(tc.getElementsByTagNameNS(W, 'p')).map(p => Array.from(p.getElementsByTagNameNS(W, 't')).map(t => t.textContent).join('')).filter(Boolean);
+  const tbl = doc.getElementsByTagNameNS(W, 'tbl')[0];
+  if (!tbl) throw new Error('Nel file non ho trovato nessuna tabella.');
+  const righe = Array.from(tbl.getElementsByTagNameNS(W, 'tr')).slice(2);
+  const sezioni = [];
+  righe.forEach(tr => {
+    const celle = Array.from(tr.getElementsByTagNameNS(W, 'tc')).map(testoCella);
+    if (celle.length < 3 || !celle[0].length) return;
+    const m = celle[0].join(' ').match(/^\s*(\d+)\s*(.*)$/);
+    if (!m) return;
+    const les = [];
+    celle[2].join('\n').split('\n').forEach(r => {
+      const x = r.match(/Lezione\s+(\d+)\s+(.+)$/);
+      if (x) les.push({ id: 'L' + x[1], titolo: 'Lezione ' + x[1] + ' ' + x[2].trim(), pagine: '' });
+    });
+    sezioni.push({
+      id: 'cap' + m[1], codice: 'Cap. ' + m[1], titolo: m[2].trim(), lezioni: les,
+      obiettivi: celle[1].map(x => x.replace(/^[•\-\s]+/, '').trim()).filter(Boolean), indicatori: [], traguardi: []
+    });
+  });
+  if (!sezioni.length) throw new Error('Non riconosco la struttura della tabella (attesa: capitolo, obiettivi, attività didattiche).');
+  return { id: 'imp-' + uid(), titolo: meta.titolo, editore: meta.editore || '', materia: meta.materia || '', sezioni, importato: true };
+}
+
+/* ===================== archivio locale ===================== */
+const CHIAVE = 'promateos-v1';
+const datiIniziali = () => ({ v: 1, anno: { nome: '', inizio: '', fine: '', festivita: [], sabato: false }, libri: [], piani: [], pianoAttivo: null });
+
+// Passa a un nuovo anno scolastico: nuove date, festività nazionali proposte, piani spostati di un numero intero di settimane
+function nuovoAnno(d, nome, inizio, fine, portaPiani) {
+  const vecchio = d.anno.inizio ? lunediDi(parseISO(d.anno.inizio)) : null;
+  const nuovo = lunediDi(parseISO(inizio));
+  const delta = vecchio ? Math.round((nuovo - vecchio) / 86400000) : 0;
+  const piani = d.piani.map(p => {
+    const a = {};
+    if (portaPiani) Object.keys(p.assegnazioni).forEach(k => { a[fmtISO(addDays(parseISO(k), delta))] = p.assegnazioni[k]; });
+    return { ...p, assegnazioni: a };
+  });
+  return { ...d, anno: { ...d.anno, nome, inizio, fine, festivita: festivitaSuggerite(inizio, fine) }, piani };
+}
+
+function useArchivio() {
+  const [data, setData] = useState(() => {
+    try { const s = localStorage.getItem(CHIAVE); if (s) return { ...datiIniziali(), ...JSON.parse(s) }; } catch (e) { /* archivio non leggibile */ }
+    return datiIniziali();
+  });
+  const salva = fn => setData(prev => {
+    const nuovo = typeof fn === 'function' ? fn(prev) : fn;
+    try { localStorage.setItem(CHIAVE, JSON.stringify(nuovo)); } catch (e) { /* spazio esaurito */ }
+    return nuovo;
+  });
+  return [data, salva];
+}
+
+/* ===================== componenti di base ===================== */
+function Logo({ size = 44 }) {
+  const id = useRef('lg' + uid()).current;
+  return (
+    <svg width={size} height={size} viewBox="0 0 64 64" role="img" aria-label="ProMateoS">
+      <defs>
+        <radialGradient id={id + 'a'} cx="36%" cy="30%" r="75%">
+          <stop offset="0" stopColor="#B9FBFF" />
+          <stop offset="0.35" stopColor="#2FD3EE" />
+          <stop offset="0.75" stopColor="#6A4CFF" />
+          <stop offset="1" stopColor="#2A1A86" />
+        </radialGradient>
+        <linearGradient id={id + 'b'} x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stopColor="#4B3BC4" />
+          <stop offset="1" stopColor="#1B1450" />
+        </linearGradient>
+      </defs>
+      <path d="M14 52 C19 45.5 45 45.5 50 52 L46 59 H18 Z" fill={`url(#${id}b)`} />
+      <path d="M18 59 H46" stroke="#2FD3EE" strokeWidth="1.4" strokeLinecap="round" opacity=".8" />
+      <circle cx="32" cy="28" r="21" fill={`url(#${id}a)`} />
+      <circle cx="32" cy="28" r="20.4" fill="none" stroke="#fff" strokeOpacity=".35" strokeWidth="1" />
+      <g fill="#fff" fillOpacity=".55">
+        <circle cx="24" cy="27" r="1.7" /><circle cx="32" cy="27" r="1.7" /><circle cx="40" cy="27" r="1.7" />
+        <circle cx="24" cy="34" r="1.7" /><circle cx="32" cy="34" r="1.7" />
+      </g>
+      <path d="M21 40 Q32 20 43 32" fill="none" stroke="#fff" strokeOpacity=".85" strokeWidth="1.8" strokeLinecap="round" />
+      <circle cx="43" cy="32" r="2.4" fill="#FFE27A" />
+      <ellipse cx="23.5" cy="16.5" rx="7.5" ry="4.2" fill="#fff" fillOpacity=".4" transform="rotate(-28 23.5 16.5)" />
+      <path d="M52 5 L53.6 9.4 L58 11 L53.6 12.6 L52 17 L50.4 12.6 L46 11 L50.4 9.4 Z" fill="#9BF5FF" />
+      <path d="M10 14 L11 16.6 L13.6 17.6 L11 18.6 L10 21.2 L9 18.6 L6.4 17.6 L9 16.6 Z" fill="#C9B8FF" />
+    </svg>
+  );
+}
+
+function Icona({ nome }) {
+  const p = {
+    anno: <><rect x="3.5" y="5" width="17" height="15" rx="3" /><path d="M3.5 10h17M8 3v4M16 3v4" /></>,
+    libri: <><path d="M5 4.5h10a3 3 0 0 1 3 3V20H8a3 3 0 0 1-3-3z" /><path d="M5 17a3 3 0 0 1 3-3h10" /></>,
+    piani: <><path d="M5 6h14M5 12h14M5 18h9" /></>,
+    settimane: <><rect x="3.5" y="4" width="17" height="16" rx="3" /><path d="M7.5 9h9M7.5 13h9M7.5 17h5" /></>,
+    esporta: <><path d="M12 4v11M7.5 10.5 12 15l4.5-4.5M5 19.5h14" /></>
+  }[nome];
+  return <svg className="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">{p}</svg>;
+}
+
+function Campo({ etichetta, children, aiuto }) {
+  return (
+    <label className="campo">
+      <span className="campo-et">{etichetta}</span>
+      {children}
+      {aiuto && <span className="aiuto">{aiuto}</span>}
+    </label>
+  );
+}
+
+function Pannello({ titolo, azioni, children, vuoto }) {
+  return (
+    <section className="pannello">
+      {(titolo || azioni) && <div className="pannello-testa"><h2>{titolo}</h2><div className="azioni">{azioni}</div></div>}
+      {children}
+    </section>
+  );
+}
+
+function Finestra({ titolo, chiudi, children, piede }) {
+  return (
+    <div className="velo" onClick={chiudi}>
+      <div className="finestra" onClick={e => e.stopPropagation()}>
+        <div className="finestra-testa"><h3>{titolo}</h3><button className="bt ghost piccolo" onClick={chiudi}>Chiudi</button></div>
+        <div className="finestra-corpo">{children}</div>
+        {piede && <div className="finestra-piede">{piede}</div>}
+      </div>
+    </div>
+  );
+}
+
+/* ===================== scheda: anno scolastico ===================== */
+function AnnoTab({ data, salva, vaiA }) {
+  const a = data.anno;
+  const settimane = useMemo(() => calcolaSettimane(a), [a]);
+  const [nuova, setNuova] = useState({ nome: '', da: '', a: '' });
+  const [nuovoAnnoAperto, setNuovoAnnoAperto] = useState(false);
+  const imposta = patch => salva(d => ({ ...d, anno: { ...d.anno, ...patch } }));
+  const suggerisci = () => { const s = dateSuggerite(); imposta({ nome: s.nome, inizio: s.inizio, fine: s.fine }); };
+  const aggiungiFesta = () => {
+    if (!nuova.nome.trim() || !nuova.da) return;
+    imposta({ festivita: [...a.festivita, { id: uid(), nome: nuova.nome.trim(), da: nuova.da, a: nuova.a || nuova.da }].sort((x, y) => x.da.localeCompare(y.da)) });
+    setNuova({ nome: '', da: '', a: '' });
+  };
+  const nazionali = () => {
+    if (!a.inizio || !a.fine) return;
+    const gia = new Set(a.festivita.map(f => f.nome + f.da));
+    const nuove = festivitaSuggerite(a.inizio, a.fine).filter(f => !gia.has(f.nome + f.da));
+    imposta({ festivita: [...a.festivita, ...nuove].sort((x, y) => x.da.localeCompare(y.da)) });
+  };
+  const cambiaInizio = nuovoIni => {
+    // se cambia l'inizio di un numero intero di settimane, offre di spostare i piani già compilati
+    imposta({ inizio: nuovoIni });
+  };
+  const completo = a.inizio && a.fine && settimane.length > 0;
+  const piene = settimane.filter(s => s.giorniScuola > 0).length;
+  const giorniTot = settimane.reduce((t, s) => t + s.giorniScuola, 0);
+
+  return (
+    <div className="stack">
+      {!completo && (
+        <div className="benvenuto">
+          <Logo size={72} />
+          <h2>Benvenuto in ProMateoS</h2>
+          <p>Per cominciare indica quando inizia e finisce la scuola e i periodi di festività. Il calendario delle settimane si costruisce da solo e si aggiorna a ogni modifica.</p>
+          <button className="bt" onClick={suggerisci}>Proponi le date dell'anno in corso</button>
+        </div>
+      )}
+      <Pannello titolo="Anno scolastico">
+        <div className="griglia">
+          <Campo etichetta="Nome"><input value={a.nome} placeholder="es. 2026-27" onChange={e => imposta({ nome: e.target.value })} /></Campo>
+          <Campo etichetta="Inizio lezioni"><input type="date" value={a.inizio} onChange={e => cambiaInizio(e.target.value)} /></Campo>
+          <Campo etichetta="Fine lezioni"><input type="date" value={a.fine} onChange={e => imposta({ fine: e.target.value })} /></Campo>
+        </div>
+        <label className="spunta"><input type="checkbox" checked={!!a.sabato} onChange={e => imposta({ sabato: e.target.checked })} /> Si fa lezione anche il sabato</label>
+      </Pannello>
+
+      <Pannello titolo="Festività e sospensioni" azioni={<button className="bt ghost piccolo" disabled={!a.inizio || !a.fine} onClick={nazionali}>Aggiungi le festività nazionali</button>}>
+        {a.festivita.length === 0 && <p className="vuoto">Nessuna festività inserita. Le festività nazionali si possono proporre automaticamente; quelle regionali o del tuo istituto aggiungile a mano.</p>}
+        <ul className="elenco">
+          {a.festivita.map(f => (
+            <li key={f.id} className="riga">
+              <div className="riga-testo"><strong>{f.nome}</strong><span className="sotto">{f.a && f.a !== f.da ? fmtData(f.da) + ' → ' + fmtData(f.a) : fmtData(f.da)}</span></div>
+              <button className="bt ghost piccolo" onClick={() => imposta({ festivita: a.festivita.filter(x => x.id !== f.id) })}>Togli</button>
+            </li>
+          ))}
+        </ul>
+        <div className="griglia aggiungi">
+          <Campo etichetta="Nome"><input value={nuova.nome} placeholder="es. Santo patrono" onChange={e => setNuova({ ...nuova, nome: e.target.value })} /></Campo>
+          <Campo etichetta="Dal"><input type="date" value={nuova.da} onChange={e => setNuova({ ...nuova, da: e.target.value })} /></Campo>
+          <Campo etichetta="Al (se più giorni)"><input type="date" value={nuova.a} onChange={e => setNuova({ ...nuova, a: e.target.value })} /></Campo>
+          <button className="bt" onClick={aggiungiFesta} disabled={!nuova.nome.trim() || !nuova.da}>Aggiungi</button>
+        </div>
+      </Pannello>
+
+      {completo && (
+        <Pannello titolo="Riepilogo" azioni={<button className="bt ghost piccolo" onClick={() => setNuovoAnnoAperto(true)}>Nuovo anno scolastico</button>}>
+          <div className="numeri">
+            <div><b>{settimane.length}</b><span>settimane di calendario</span></div>
+            <div><b>{piene}</b><span>con almeno un giorno di lezione</span></div>
+            <div><b>{giorniTot}</b><span>giorni di lezione</span></div>
+          </div>
+          <button className="bt" onClick={() => vaiA('piani')}>Avanti: crea un piano</button>
+        </Pannello>
+      )}
+      {nuovoAnnoAperto && <NuovoAnnoDialogo anno={a} chiudi={() => setNuovoAnnoAperto(false)} conferma={(n, i, f, porta) => { salva(d => nuovoAnno(d, n, i, f, porta)); setNuovoAnnoAperto(false); }} />}
+    </div>
+  );
+}
+
+function NuovoAnnoDialogo({ anno, chiudi, conferma }) {
+  const y = anno.inizio ? parseISO(anno.inizio).getFullYear() + 1 : new Date().getFullYear();
+  const [n, setN] = useState(y + '-' + String(y + 1).slice(2));
+  const [i, setI] = useState(y + '-09-14');
+  const [f, setF] = useState((y + 1) + '-06-08');
+  const [porta, setPorta] = useState(true);
+  return (
+    <Finestra titolo="Nuovo anno scolastico" chiudi={chiudi} piede={<button className="bt" disabled={!i || !f || f < i} onClick={() => conferma(n, i, f, porta)}>Crea il nuovo anno</button>}>
+      <div className="griglia">
+        <Campo etichetta="Nome"><input value={n} onChange={e => setN(e.target.value)} /></Campo>
+        <Campo etichetta="Inizio lezioni"><input type="date" value={i} onChange={e => setI(e.target.value)} /></Campo>
+        <Campo etichetta="Fine lezioni"><input type="date" value={f} onChange={e => setF(e.target.value)} /></Campo>
+      </div>
+      <label className="spunta"><input type="checkbox" checked={porta} onChange={e => setPorta(e.target.checked)} /> Porta con me i piani già compilati (spostati di settimane intere)</label>
+      <p className="vuoto">Le festività vengono sostituite da quelle nazionali del nuovo anno, che poi puoi modificare. Libri, contenuti e orari dei piani restano.</p>
+    </Finestra>
+  );
+}
+
+/* ===================== scheda: libri ===================== */
+function LibriTab({ data, salva }) {
+  const tutti = [...LIBRI_BASE, ...data.libri];
+  const [aperto, setAperto] = useState(null);
+  const [importa, setImporta] = useState(false);
+  const rimuovi = id => { if (confirm('Rimuovere questo libro? I piani che lo usano perdono le sue lezioni.')) salva(d => ({ ...d, libri: d.libri.filter(b => b.id !== id), piani: d.piani.map(p => ({ ...p, libri: p.libri.filter(x => x !== id), contenuti: p.contenuti.filter(c => c.b !== id) })) })); };
+  return (
+    <div className="stack">
+      <Pannello titolo="Libri e programmazioni" azioni={<button className="bt piccolo" onClick={() => setImporta(true)}>Importa</button>}>
+        <p className="vuoto">Ogni libro ha sezioni (unità o capitoli) con lezioni, obiettivi e indicatori. I piani le usano per scegliere cosa fare e quando.</p>
+        <ul className="elenco">
+          {tutti.map(b => (
+            <li key={b.id} className="blocco">
+              <div className="riga" onClick={() => setAperto(aperto === b.id ? null : b.id)}>
+                <div className="riga-testo">
+                  <strong>{b.titolo}</strong>
+                  <span className="sotto">{[b.materia, b.editore, b.sezioni.length + ' sezioni', b.sezioni.reduce((t, s) => t + s.lezioni.length, 0) + ' lezioni'].filter(Boolean).join(' · ')}</span>
+                </div>
+                <span className={'tag ' + (b.importato ? 'viola' : '')}>{b.importato ? 'importato' : 'incluso'}</span>
+              </div>
+              {aperto === b.id && (
+                <div className="dettaglio">
+                  {b.sezioni.map(s => (
+                    <details key={s.id} className="sezione">
+                      <summary><strong>{s.codice}</strong> {s.titolo} <span className="sotto">({s.lezioni.length} lezioni)</span></summary>
+                      {s.lezioni.length > 0 && <ul className="lista">{s.lezioni.map(l => <li key={l.id}>{l.titolo}{l.pagine ? <span className="sotto"> · pag. {l.pagine}</span> : null}</li>)}</ul>}
+                      {s.obiettivi.length > 0 && <><h4>Obiettivi</h4><ul className="lista">{s.obiettivi.map((o, i) => <li key={i}>{o}</li>)}</ul></>}
+                      {s.indicatori.length > 0 && <><h4>Indicatori</h4><ul className="lista">{s.indicatori.map((o, i) => <li key={i}>{o}</li>)}</ul></>}
+                    </details>
+                  ))}
+                  <div className="azioni">
+                    <button className="bt ghost piccolo" onClick={() => scaricaFile((b.titolo.replace(/\W+/g, '_')) + '.json', JSON.stringify(b, null, 1), 'application/json')}>Scarica JSON</button>
+                    {b.importato && <button className="bt ghost piccolo pericolo" onClick={() => rimuovi(b.id)}>Rimuovi</button>}
+                  </div>
+                </div>
+              )}
+            </li>
+          ))}
+        </ul>
+      </Pannello>
+      {importa && <ImportaLibro chiudi={() => setImporta(false)} salva={salva} />}
+    </div>
+  );
+}
+
+function ImportaLibro({ chiudi, salva }) {
+  const [modo, setModo] = useState('file');
+  const [meta, setMeta] = useState({ titolo: '', materia: '', editore: '' });
+  const [testo, setTesto] = useState('');
+  const [errore, setErrore] = useState('');
+  const [occupato, setOccupato] = useState(false);
+  const aggiungi = libro => { salva(d => ({ ...d, libri: [...d.libri, libro] })); chiudi(); };
+  const daFile = async e => {
+    const f = e.target.files[0]; if (!f) return;
+    setErrore(''); setOccupato(true);
+    try {
+      if (/\.json$/i.test(f.name)) aggiungi(validaLibro(JSON.parse(await f.text())));
+      else if (/\.docx$/i.test(f.name)) {
+        if (!meta.titolo.trim()) throw new Error('Scrivi prima il titolo del libro.');
+        aggiungi(await libroDaDocx(f, meta));
+      } else throw new Error('Formato non supportato. Usa un file .json o .docx. Per i PDF serve lo strumento di importazione incluso nel repository (cartella tools).');
+    } catch (err) { setErrore(err.message || String(err)); }
+    setOccupato(false); e.target.value = '';
+  };
+  const daTesto = () => {
+    if (!meta.titolo.trim()) return setErrore('Scrivi il titolo del libro.');
+    const l = libroDaTesto(testo, meta);
+    if (!l.sezioni.length) return setErrore('Il testo è vuoto.');
+    aggiungi(l);
+  };
+  return (
+    <Finestra titolo="Importa un libro" chiudi={chiudi}>
+      <div className="segmenti">
+        <button className={modo === 'file' ? 'on' : ''} onClick={() => setModo('file')}>Da file</button>
+        <button className={modo === 'testo' ? 'on' : ''} onClick={() => setModo('testo')}>Da testo</button>
+      </div>
+      <div className="griglia">
+        <Campo etichetta="Titolo"><input value={meta.titolo} onChange={e => setMeta({ ...meta, titolo: e.target.value })} /></Campo>
+        <Campo etichetta="Materia"><input value={meta.materia} onChange={e => setMeta({ ...meta, materia: e.target.value })} /></Campo>
+        <Campo etichetta="Editore"><input value={meta.editore} onChange={e => setMeta({ ...meta, editore: e.target.value })} /></Campo>
+      </div>
+      {modo === 'file' ? (
+        <>
+          <p className="vuoto">File accettati: <b>.json</b> (libro già nel formato ProMateoS, anche prodotto dagli strumenti del repository per i PDF) e <b>.docx</b> con tabella capitolo / obiettivi / attività didattiche. Per un .json titolo e materia vengono letti dal file.</p>
+          <input type="file" accept=".json,.docx" onChange={daFile} disabled={occupato} />
+        </>
+      ) : (
+        <>
+          <p className="vuoto">Una riga per lezione. Le sezioni iniziano con <code>#</code>. Facoltativi: <code>Obiettivo: …</code>, <code>Indicatore: …</code>, e la pagina tra parentesi: <code>(pag. 12-13)</code>.</p>
+          <textarea rows={9} value={testo} placeholder={'# Le frazioni\nConfronto tra frazioni (pag. 10-11)\nSomma di frazioni\nObiettivo: Operare con le frazioni'} onChange={e => setTesto(e.target.value)} />
+          <button className="bt" onClick={daTesto}>Importa</button>
+        </>
+      )}
+      {errore && <p className="errore">{errore}</p>}
+    </Finestra>
+  );
+}
+
+/* ===================== scheda: piani ===================== */
+function PianiTab({ data, salva, vaiA }) {
+  const tutti = [...LIBRI_BASE, ...data.libri];
+  const piano = data.piani.find(p => p.id === data.pianoAttivo) || null;
+  const [nome, setNome] = useState('');
+  const crea = () => {
+    if (!nome.trim()) return;
+    const p = { id: uid(), nome: nome.trim(), materia: '', classe: '', orario: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0 }, oreLezione: 1, libri: [], contenuti: [], assegnazioni: {} };
+    salva(d => ({ ...d, piani: [...d.piani, p], pianoAttivo: p.id })); setNome('');
+  };
+  const modifica = patch => salva(d => ({ ...d, piani: d.piani.map(p => p.id === piano.id ? { ...p, ...patch } : p) }));
+  const elimina = () => { if (confirm('Eliminare il piano "' + piano.nome + '" con tutte le sue assegnazioni?')) salva(d => { const resto = d.piani.filter(p => p.id !== piano.id); return { ...d, piani: resto, pianoAttivo: resto[0] ? resto[0].id : null }; }); };
+  const duplica = () => salva(d => { const c = { ...JSON.parse(JSON.stringify(piano)), id: uid(), nome: piano.nome + ' (copia)' }; return { ...d, piani: [...d.piani, c], pianoAttivo: c.id }; });
+  const nGiorni = data.anno.sabato ? 6 : 5;
+
+  const scegliLibro = id => {
+    const usa = piano.libri.includes(id);
+    modifica({ libri: usa ? piano.libri.filter(x => x !== id) : [...piano.libri, id], contenuti: usa ? piano.contenuti.filter(c => c.b !== id) : piano.contenuti });
+  };
+  const toggleSezione = (b, s) => {
+    const c = piano.contenuti.find(x => x.b === b && x.s === s);
+    modifica({ contenuti: c ? piano.contenuti.filter(x => x !== c) : [...piano.contenuti, { b, s }] });
+  };
+  const sposta = (i, d) => { const c = [...piano.contenuti], j = i + d; if (j < 0 || j >= c.length) return; [c[i], c[j]] = [c[j], c[i]]; modifica({ contenuti: c }); };
+
+  return (
+    <div className="stack">
+      <Pannello titolo="Piani">
+        {data.piani.length > 0 && (
+          <div className="chips">
+            {data.piani.map(p => <button key={p.id} className={'chip' + (p.id === data.pianoAttivo ? ' on' : '')} onClick={() => salva(d => ({ ...d, pianoAttivo: p.id }))}>{p.nome}</button>)}
+          </div>
+        )}
+        <div className="griglia aggiungi">
+          <Campo etichetta="Nuovo piano" aiuto="es. Matematica 2A, Scienze 3B"><input value={nome} onChange={e => setNome(e.target.value)} onKeyDown={e => e.key === 'Enter' && crea()} /></Campo>
+          <button className="bt" onClick={crea} disabled={!nome.trim()}>Crea</button>
+        </div>
+      </Pannello>
+
+      {piano && (
+        <>
+          <Pannello titolo={piano.nome} azioni={<><button className="bt ghost piccolo" onClick={duplica}>Duplica</button><button className="bt ghost piccolo pericolo" onClick={elimina}>Elimina</button></>}>
+            <div className="griglia">
+              <Campo etichetta="Nome"><input value={piano.nome} onChange={e => modifica({ nome: e.target.value })} /></Campo>
+              <Campo etichetta="Materia"><input value={piano.materia} onChange={e => modifica({ materia: e.target.value })} /></Campo>
+              <Campo etichetta="Classe"><input value={piano.classe} onChange={e => modifica({ classe: e.target.value })} /></Campo>
+            </div>
+            <h4>Orario settimanale (ore per giorno)</h4>
+            <div className="orario">
+              {Array.from({ length: nGiorni }, (_, i) => i + 1).map(g => (
+                <label key={g} className="ora"><span>{GIORNI[g]}</span>
+                  <input type="number" min="0" step="0.5" value={piano.orario[g] || 0} onChange={e => modifica({ orario: { ...piano.orario, [g]: num(e.target.value) } })} />
+                </label>
+              ))}
+            </div>
+            <Campo etichetta="Ore per lezione" aiuto="Usate quando le lezioni dei libri vengono assegnate alle settimane."><input type="number" min="0.5" step="0.5" value={piano.oreLezione} onChange={e => modifica({ oreLezione: num(e.target.value) || 1 })} /></Campo>
+          </Pannello>
+
+          <Pannello titolo="Cosa si fa: libri e contenuti">
+            <h4>Libri usati</h4>
+            <div className="chips">
+              {tutti.map(b => <button key={b.id} className={'chip' + (piano.libri.includes(b.id) ? ' on' : '')} onClick={() => scegliLibro(b.id)}>{b.titolo}</button>)}
+            </div>
+            {piano.libri.map(id => {
+              const b = tutti.find(x => x.id === id); if (!b) return null;
+              return (
+                <div key={id} className="blocco">
+                  <h4>{b.titolo}</h4>
+                  <div className="chips">
+                    {b.sezioni.map(s => {
+                      const on = piano.contenuti.some(c => c.b === id && c.s === s.id);
+                      return <button key={s.id} className={'chip piccolo' + (on ? ' on' : '')} onClick={() => toggleSezione(id, s.id)} title={s.titolo}>{s.codice} {s.titolo.length > 28 ? s.titolo.slice(0, 27) + '…' : s.titolo}</button>;
+                    })}
+                  </div>
+                </div>
+              );
+            })}
+            {piano.contenuti.length > 0 && (
+              <>
+                <h4>Ordine di svolgimento</h4>
+                <ol className="ordine">
+                  {piano.contenuti.map((c, i) => {
+                    const b = tutti.find(x => x.id === c.b), s = b && b.sezioni.find(x => x.id === c.s);
+                    return (
+                      <li key={c.b + c.s} className="riga">
+                        <div className="riga-testo"><strong>{s ? s.codice + ' ' + s.titolo : '(sezione non trovata)'}</strong><span className="sotto">{b ? b.titolo : ''} · {s ? s.lezioni.length : 0} lezioni</span></div>
+                        <div className="azioni">
+                          <button className="bt ghost piccolo" disabled={i === 0} onClick={() => sposta(i, -1)}>↑</button>
+                          <button className="bt ghost piccolo" disabled={i === piano.contenuti.length - 1} onClick={() => sposta(i, 1)}>↓</button>
+                        </div>
+                      </li>
+                    );
+                  })}
+                </ol>
+              </>
+            )}
+            <button className="bt" onClick={() => vaiA('settimane')}>Avanti: pianifica le settimane</button>
+          </Pannello>
+        </>
+      )}
+    </div>
+  );
+}
+
+/* ===================== scheda: pianificazione settimanale ===================== */
+function SettimaneTab({ data, salva, vaiA }) {
+  const tutti = [...LIBRI_BASE, ...data.libri];
+  const piano = data.piani.find(p => p.id === data.pianoAttivo) || null;
+  const settimane = useMemo(() => calcolaSettimane(data.anno), [data.anno]);
+  const [scelta, setScelta] = useState(null);       // settimana in cui si sta scegliendo dal libro
+  const [apertaChiave, setApertaChiave] = useState(null);
+  const [messaggio, setMessaggio] = useState('');
+
+  if (!settimane.length) return <div className="stack"><p className="vuoto">Prima imposta l'anno scolastico.</p><button className="bt" onClick={() => vaiA('anno')}>Vai ad Anno</button></div>;
+  if (!piano) return <div className="stack"><p className="vuoto">Crea o scegli un piano.</p><button className="bt" onClick={() => vaiA('piani')}>Vai a Piani</button></div>;
+
+  const modificaAss = fn => salva(d => ({ ...d, piani: d.piani.map(p => p.id === piano.id ? { ...p, assegnazioni: fn(JSON.parse(JSON.stringify(p.assegnazioni))) } : p) }));
+  const impostaItem = (chiave, id, patch) => modificaAss(a => { a[chiave] = (a[chiave] || []).map(i => i.id === id ? { ...i, ...patch } : i); return a; });
+  const togliItem = (chiave, id) => modificaAss(a => { a[chiave] = (a[chiave] || []).filter(i => i.id !== id); if (!a[chiave].length) delete a[chiave]; return a; });
+  const aggiungiLibero = (chiave, tipo) => modificaAss(a => { (a[chiave] = a[chiave] || []).push({ id: uid(), tipo, testo: tipo === 'verifica' ? 'Verifica' : tipo === 'ripasso' ? 'Ripasso' : '', ore: tipo === 'verifica' ? 1 : num(piano.oreLezione) || 1, rif: null }); return a; });
+  const spostaItem = (chiave, i, d) => modificaAss(a => { const l = a[chiave], j = i + d; if (j < 0 || j >= l.length) return a; [l[i], l[j]] = [l[j], l[i]]; return a; });
+
+  const assegnate = lezioniAssegnate(piano);
+  const lezioni = lezioniDelPiano(piano, tutti);
+  const daAssegnare = lezioni.filter(x => !assegnate[chiaveLezione(x.rif)]).length;
+  const totDisp = settimane.reduce((t, s) => t + oreDisponibili(s, piano), 0);
+  const totAss = Object.values(piano.assegnazioni).reduce((t, l) => t + oreAssegnate(l), 0);
+  const nOrfane = Object.keys(piano.assegnazioni).filter(k => !settimane.some(s => s.chiave === k)).length;
+  const senzaOrario = totDisp === 0;
+  const primaChiaveLibera = (settimane.find(s => s.giorniScuola > 0) || settimane[0]).chiave;
+
+  const autoDistribuisci = () => {
+    if (senzaOrario) { setMessaggio('Imposta prima l\'orario settimanale del piano (scheda Piani).'); return; }
+    const r = distribuisci(piano, tutti, settimane, primaChiaveLibera);
+    salva(d => ({ ...d, piani: d.piani.map(p => p.id === piano.id ? { ...p, assegnazioni: r.assegnazioni } : p) }));
+    setMessaggio(r.aggiunte + ' lezioni assegnate' + (r.rimaste ? '; ' + r.rimaste + ' non entrano nelle ore disponibili.' : '.'));
+  };
+  const svuota = () => { if (confirm('Togliere tutte le assegnazioni di questo piano?')) modificaAss(() => ({})); };
+
+  // raggruppa per mese
+  const gruppi = [];
+  settimane.forEach(s => {
+    const g = gruppi[gruppi.length - 1];
+    if (g && g.meseIdx === s.meseIdx) g.lista.push(s); else gruppi.push({ mese: s.mese, meseIdx: s.meseIdx, lista: [s] });
+  });
+
+  return (
+    <div className="stack">
+      <Pannello>
+        <div className="chips">
+          {data.piani.map(p => <button key={p.id} className={'chip' + (p.id === piano.id ? ' on' : '')} onClick={() => salva(d => ({ ...d, pianoAttivo: p.id }))}>{p.nome}</button>)}
+        </div>
+        <div className="numeri">
+          <div><b>{fmtOre(totAss)}/{fmtOre(totDisp)}</b><span>ore assegnate / disponibili</span></div>
+          <div><b>{daAssegnare}</b><span>lezioni da assegnare</span></div>
+        </div>
+        {senzaOrario && <p className="avviso">L'orario di questo piano è vuoto: imposta le ore per giorno nella scheda Piani per vedere le ore disponibili e usare la distribuzione automatica.</p>}
+        {nOrfane > 0 && <p className="avviso">{nOrfane} settimane con attività sono fuori dal calendario attuale (date cambiate): non compaiono qui ma restano nel piano.</p>}
+        <div className="azioni">
+          <button className="bt" onClick={autoDistribuisci} disabled={daAssegnare === 0}>Distribuisci le lezioni non assegnate</button>
+          <button className="bt ghost" onClick={svuota} disabled={totAss === 0}>Svuota</button>
+        </div>
+        {messaggio && <p className="ok">{messaggio}</p>}
+      </Pannello>
+
+      {gruppi.map(g => (
+        <section key={g.meseIdx} className="mese">
+          <h3>{g.mese}</h3>
+          {g.lista.map(s => {
+            const items = piano.assegnazioni[s.chiave] || [];
+            const disp = oreDisponibili(s, piano), ass = oreAssegnate(items);
+            const feste = festeDellaSettimana(s);
+            const vacanza = s.giorniScuola === 0;
+            const aperta = apertaChiave === s.chiave;
+            const sfora = disp > 0 && ass > disp + 1e-9;
+            return (
+              <article key={s.chiave} className={'settimana' + (vacanza ? ' vacanza' : '') + (sfora ? ' sfora' : '')}>
+                <header onClick={() => setApertaChiave(apertaChiave === s.chiave ? null : s.chiave)}>
+                  <div>
+                    <strong>Sett. {s.n}</strong> <span className="sotto">{fmtGM(s.lun)} – {fmtGM(s.al)}</span>
+                    {feste.length > 0 && <div className="feste">{feste.join(' · ')}</div>}
+                    {items.length > 0 && !aperta && <div className="riassunto">{items.map(i => i.testo || '—').join(' · ')}</div>}
+                  </div>
+                  <div className="ore">{vacanza ? <span className="tag">vacanza</span> : <span className={'tag ' + (sfora ? 'rosso' : ass >= disp && disp > 0 ? 'verde' : '')}>{fmtOre(ass)}{disp ? ' / ' + fmtOre(disp) : ''} h</span>}</div>
+                </header>
+                {aperta && (
+                  <div className="corpo">
+                    {items.map((it, i) => (
+                      <div key={it.id} className={'item tipo-' + it.tipo}>
+                        <select value={it.tipo} onChange={e => impostaItem(s.chiave, it.id, { tipo: e.target.value })} aria-label="Tipo">
+                          <option value="lezione">Lezione</option><option value="verifica">Verifica</option><option value="ripasso">Ripasso</option><option value="uda">UDA</option><option value="altro">Altro</option>
+                        </select>
+                        <input className="testo" value={it.testo} placeholder="Argomento" onChange={e => impostaItem(s.chiave, it.id, { testo: e.target.value })} />
+                        <input className="ore-in" type="number" min="0" step="0.5" value={it.ore} onChange={e => impostaItem(s.chiave, it.id, { ore: num(e.target.value) })} aria-label="Ore" />
+                        <div className="azioni">
+                          <button className="bt ghost piccolo" disabled={i === 0} onClick={() => spostaItem(s.chiave, i, -1)}>↑</button>
+                          <button className="bt ghost piccolo" disabled={i === items.length - 1} onClick={() => spostaItem(s.chiave, i, 1)}>↓</button>
+                          <button className="bt ghost piccolo pericolo" onClick={() => togliItem(s.chiave, it.id)}>×</button>
+                        </div>
+                      </div>
+                    ))}
+                    <div className="azioni">
+                      <button className="bt piccolo" onClick={() => setScelta(s)}>+ Dal libro</button>
+                      <button className="bt ghost piccolo" onClick={() => aggiungiLibero(s.chiave, 'altro')}>+ Libero</button>
+                      <button className="bt ghost piccolo" onClick={() => aggiungiLibero(s.chiave, 'verifica')}>+ Verifica</button>
+                      <button className="bt ghost piccolo" onClick={() => aggiungiLibero(s.chiave, 'ripasso')}>+ Ripasso</button>
+                    </div>
+                  </div>
+                )}
+              </article>
+            );
+          })}
+        </section>
+      ))}
+      {scelta && <ScegliDalLibro settimana={scelta} settimane={settimane} piano={piano} libri={tutti} salva={salva} chiudi={() => setScelta(null)} />}
+    </div>
+  );
+}
+
+function ScegliDalLibro({ settimana, settimane, piano, libri, salva, chiudi }) {
+  const lezioni = lezioniDelPiano(piano, libri);
+  const assegnate = lezioniAssegnate(piano);
+  const [sel, setSel] = useState({});
+  const sezioni = [];
+  lezioni.forEach(x => {
+    const k = x.rif.b + '|' + x.rif.s;
+    let g = sezioni.find(y => y.k === k);
+    if (!g) { g = { k, sezione: x.sezione, libro: x.libro, righe: [] }; sezioni.push(g); }
+    g.righe.push(x);
+  });
+  const nSel = Object.values(sel).filter(Boolean).length;
+  const aggiungi = () => {
+    const scelte = lezioni.filter(x => sel[chiaveLezione(x.rif)]);
+    const oreL = num(piano.oreLezione) || 1;
+    salva(d => ({
+      ...d, piani: d.piani.map(p => {
+        if (p.id !== piano.id) return p;
+        const a = JSON.parse(JSON.stringify(p.assegnazioni));
+        a[settimana.chiave] = (a[settimana.chiave] || []).concat(scelte.map(x => ({ id: uid(), tipo: 'lezione', testo: x.lezione.titolo, ore: oreL, rif: x.rif })));
+        return { ...p, assegnazioni: a };
+      })
+    }));
+    chiudi();
+  };
+  const selezionaSezione = g => setSel(prev => { const n = { ...prev }; g.righe.filter(x => !assegnate[chiaveLezione(x.rif)]).forEach(x => { n[chiaveLezione(x.rif)] = true; }); return n; });
+  return (
+    <Finestra titolo={'Sett. ' + settimana.n + ' · scegli dal libro'} chiudi={chiudi}
+      piede={<button className="bt" onClick={aggiungi} disabled={!nSel}>Aggiungi {nSel ? '(' + nSel + ')' : ''}</button>}>
+      {!sezioni.length && <p className="vuoto">Questo piano non ha ancora contenuti: scegli libri e sezioni nella scheda Piani.</p>}
+      {sezioni.map(g => (
+        <div key={g.k} className="blocco">
+          <div className="riga"><div className="riga-testo"><strong>{g.sezione.codice} {g.sezione.titolo}</strong><span className="sotto">{g.libro.titolo}</span></div>
+            <button className="bt ghost piccolo" onClick={() => selezionaSezione(g)}>Seleziona tutto</button></div>
+          <ul className="lista-scelta">
+            {g.righe.map(x => {
+              const k = chiaveLezione(x.rif), dove = assegnate[k];
+              const sDove = dove ? settimane.find(w => w.chiave === dove) : null;
+              return (
+                <li key={k}>
+                  <label className="spunta">
+                    <input type="checkbox" checked={!!sel[k]} onChange={e => setSel({ ...sel, [k]: e.target.checked })} />
+                    <span>{x.lezione.titolo}{x.lezione.pagine ? <span className="sotto"> · pag. {x.lezione.pagine}</span> : null}</span>
+                    {dove && <span className="tag">{sDove ? 'sett. ' + sDove.n : 'assegnata'}</span>}
+                  </label>
+                </li>
+              );
+            })}
+          </ul>
+          {g.sezione.obiettivi.length > 0 && <details><summary className="sotto">Obiettivi della sezione</summary><ul className="lista">{g.sezione.obiettivi.map((o, i) => <li key={i}>{o}</li>)}</ul></details>}
+        </div>
+      ))}
+    </Finestra>
+  );
+}
+
+/* ===================== scheda: esporta ===================== */
+function EsportaTab({ data, salva }) {
+  const [ids, setIds] = useState(() => data.pianoAttivo ? [data.pianoAttivo] : []);
+  const [msg, setMsg] = useState('');
+  const [occ, setOcc] = useState(false);
+  const tab = useMemo(() => costruisciTabella(data, ids), [data, ids]);
+  const toggle = id => setIds(ids.includes(id) ? ids.filter(x => x !== id) : [...ids, id]);
+  const nome = 'ProMateoS_' + (tab.titolo || 'piano').replace(/[^\w]+/g, '_');
+  const docx = async () => {
+    setOcc(true); setMsg('');
+    try { scaricaFile(nome + '.docx', await tabellaDocx(tab)); } catch (e) { setMsg('Esportazione Word non riuscita: ' + (e.message || e) + ' (serve la connessione).'); }
+    setOcc(false);
+  };
+  const ripristina = async e => {
+    const f = e.target.files[0]; if (!f) return;
+    try { const j = JSON.parse(await f.text()); if (!j.anno || !Array.isArray(j.piani)) throw new Error('File non valido'); if (confirm('Sostituire tutti i dati attuali con quelli del file?')) salva({ ...datiIniziali(), ...j }); }
+    catch (err) { setMsg('Ripristino non riuscito: ' + err.message); }
+    e.target.value = '';
+  };
+  return (
+    <div className="stack">
+      <Pannello titolo="Piano annuale">
+        {data.piani.length === 0 && <p className="vuoto">Nessun piano da esportare.</p>}
+        <p className="vuoto">Scegli i piani da mettere affiancati (per esempio aritmetica e geometria nella stessa tabella).</p>
+        <div className="chips">
+          {data.piani.map(p => <button key={p.id} className={'chip' + (ids.includes(p.id) ? ' on' : '')} onClick={() => toggle(p.id)}>{p.nome}</button>)}
+        </div>
+        <div className="azioni">
+          <button className="bt" disabled={!ids.length || occ} onClick={docx}>Scarica Word (.docx)</button>
+          <button className="bt ghost" disabled={!ids.length} onClick={() => scaricaFile(nome + '.csv', tabellaCSV(tab), 'text/csv;charset=utf-8')}>CSV</button>
+          <button className="bt ghost" disabled={!ids.length} onClick={() => window.print()}>Stampa / PDF</button>
+        </div>
+        {msg && <p className="errore">{msg}</p>}
+      </Pannello>
+
+      {ids.length > 0 && (
+        <Pannello titolo="Anteprima">
+          <div className="scorri"><TabellaPiano tab={tab} /></div>
+        </Pannello>
+      )}
+
+      <Pannello titolo="Copia di sicurezza">
+        <p className="vuoto">I dati restano su questo dispositivo. Scarica una copia per spostarli su un altro dispositivo o per sicurezza.</p>
+        <div className="azioni">
+          <button className="bt ghost" onClick={() => scaricaFile('ProMateoS_backup_' + fmtISO(new Date()) + '.json', JSON.stringify(data, null, 1), 'application/json')}>Scarica backup</button>
+          <label className="bt ghost file">Ripristina<input type="file" accept=".json" onChange={ripristina} hidden /></label>
+        </div>
+      </Pannello>
+      <div className="solo-stampa"><h1>Piano annuale {tab.titolo} — anno scolastico {tab.anno}</h1><TabellaPiano tab={tab} /></div>
+    </div>
+  );
+}
+
+function TabellaPiano({ tab }) {
+  let corrente = '';
+  return (
+    <table className="tabella">
+      <thead><tr><th>mese</th><th>sett.</th>{tab.piani.map(p => <React.Fragment key={p.id}><th>{p.nome}</th><th>ore</th></React.Fragment>)}</tr></thead>
+      <tbody>
+        {tab.righe.map(r => {
+          const primo = r.mese !== corrente; corrente = r.mese;
+          return (
+            <tr key={r.n} className={r.vacanza ? 'vac' : ''}>
+              <td className="mese-col">{primo ? r.mese : ''}</td>
+              <td className="sett-col">{r.n}<span>{r.dal}–{r.al}</span></td>
+              {r.celle.map((c, k) => <React.Fragment key={k}><td>{c.testo || (r.vacanza && k === 0 ? r.note || 'Vacanza' : '')}</td><td className="ore-col">{c.ore ? fmtOre(c.ore) : ''}</td></React.Fragment>)}
+            </tr>
+          );
+        })}
+      </tbody>
+    </table>
+  );
+}
+
+/* ===================== applicazione ===================== */
+const SCHEDE = [
+  { id: 'anno', et: 'Anno' }, { id: 'libri', et: 'Libri' }, { id: 'piani', et: 'Piani' },
+  { id: 'settimane', et: 'Settimane' }, { id: 'esporta', et: 'Esporta' }
+];
+
+function App() {
+  const [data, salva] = useArchivio();
+  const pronto = data.anno.inizio && data.anno.fine;
+  const [scheda, setScheda] = useState(() => (pronto ? 'settimane' : 'anno'));
+  const vaiA = id => { setScheda(id); window.scrollTo(0, 0); };
+  return (
+    <>
+      <header className="testata">
+        <div className="marchio">
+          <Logo size={46} />
+          <div>
+            <div className="nome">ProMate<span>oS</span></div>
+            <div className="motto">Programma l'anno, settimana per settimana</div>
+          </div>
+        </div>
+        {data.anno.nome && <div className="anno-badge">A.S. {data.anno.nome}</div>}
+      </header>
+      <nav className="schede">
+        {SCHEDE.map(s => <button key={s.id} className={scheda === s.id ? 'on' : ''} onClick={() => vaiA(s.id)}><Icona nome={s.id} /><span>{s.et}</span></button>)}
+      </nav>
+      <main>
+        {scheda === 'anno' && <AnnoTab data={data} salva={salva} vaiA={vaiA} />}
+        {scheda === 'libri' && <LibriTab data={data} salva={salva} />}
+        {scheda === 'piani' && <PianiTab data={data} salva={salva} vaiA={vaiA} />}
+        {scheda === 'settimane' && <SettimaneTab data={data} salva={salva} vaiA={vaiA} />}
+        {scheda === 'esporta' && <EsportaTab data={data} salva={salva} />}
+      </main>
+    </>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+
+</script>
+</body>
+</html>

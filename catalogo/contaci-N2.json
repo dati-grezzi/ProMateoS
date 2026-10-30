@@ -1,0 +1,397 @@
+{
+ "id": "contaci-N2",
+ "titolo": "Contaci – Numeri, relazioni, dati e informatica 2",
+ "editore": "Zanichelli",
+ "materia": "Matematica",
+ "sezioni": [
+  {
+   "id": "cap1",
+   "codice": "Cap. 1",
+   "titolo": "Percentuali",
+   "lezioni": [
+    {
+     "id": "1-L1",
+     "titolo": "Lezione 1 Tutto è il cento per cento",
+     "pagine": ""
+    },
+    {
+     "id": "1-L2",
+     "titolo": "Lezione 2 Calcolare percentuali con l’uno percento",
+     "pagine": ""
+    },
+    {
+     "id": "1-L3",
+     "titolo": "Lezione 3 Calcolare percentuali con la calcolatrice",
+     "pagine": ""
+    },
+    {
+     "id": "1-L4",
+     "titolo": "Lezione 4 Calcolare percentuali con il numero decimale",
+     "pagine": ""
+    },
+    {
+     "id": "1-L5",
+     "titolo": "Lezione 5 Lo sconto",
+     "pagine": ""
+    },
+    {
+     "id": "1-L6",
+     "titolo": "Lezione 6 L’aumento percentuale",
+     "pagine": ""
+    },
+    {
+     "id": "1-L7",
+     "titolo": "Lezione 7 Il rapporto percentuale",
+     "pagine": ""
+    },
+    {
+     "id": "1-L8",
+     "titolo": "Lezione 8 Riconoscere due tipi di problemi",
+     "pagine": ""
+    }
+   ],
+   "obiettivi": [
+    "Calcolare percentuali utilizzando strategie diverse e interpretare una variazione percentuale di una quantità data come una moltiplicazione per un numero razionale.",
+    "Utilizzare il concetto di rapporto fra numeri o misure ed esprimere sia nella forma decimale, sia mediante frazione.",
+    "Utilizzare frazioni equivalenti e numeri decimali per denotare uno stesso numero razionale in diversi modi.",
+    "Utilizzare frazioni, percentuali, rapporti per descrivere situazioni quotidiane.",
+    "Rappresentare con un'espressione numerica la sequenza di operazioni che fornisce la soluzione di un problema."
+   ],
+   "indicatori": [],
+   "traguardi": []
+  },
+  {
+   "id": "cap2",
+   "codice": "Cap. 2",
+   "titolo": "La radice quadrata",
+   "lezioni": [
+    {
+     "id": "2-L11",
+     "titolo": "Lezione 11 Ripassiamo le potenze",
+     "pagine": ""
+    },
+    {
+     "id": "2-L12",
+     "titolo": "Lezione 12 Il quadrato e il suo lato",
+     "pagine": ""
+    },
+    {
+     "id": "2-L13",
+     "titolo": "Lezione 13 La radice quadrata",
+     "pagine": ""
+    },
+    {
+     "id": "2-L14",
+     "titolo": "Lezione 14 Espressioni con radici quadrate",
+     "pagine": ""
+    },
+    {
+     "id": "2-L15",
+     "titolo": "Lezione 15 Quadrati perfetti e numeri irrazionali",
+     "pagine": ""
+    }
+   ],
+   "obiettivi": [
+    "Utilizzare la notazione usuale per le potenze con esponente intero positivo",
+    "Riconoscere e utilizzare la radice come operatore inverso dell’elevamento a potenza.",
+    "Fornire stime di radici utilizzando solo la moltiplicazione.",
+    "Comprendere che non esiste alcuna frazione o numero decimale finito o periodico il cui quadrato sia uguale a 2 (o ad altri numeri interi non quadrati), riconoscendo così l’esistenza e la natura dei numeri irrazionali."
+   ],
+   "indicatori": [],
+   "traguardi": []
+  },
+  {
+   "id": "cap3",
+   "codice": "Cap. 3",
+   "titolo": "Proporzionalità e proporzioni",
+   "lezioni": [
+    {
+     "id": "3-L17",
+     "titolo": "Lezione 17 Rapporti parte-parte e parte-intero",
+     "pagine": ""
+    },
+    {
+     "id": "3-L18",
+     "titolo": "Lezione 18 Ripartire un intero secondo un rapporto",
+     "pagine": ""
+    },
+    {
+     "id": "3-L19",
+     "titolo": "Lezione 19 Grafici cartesiani: relazione tra due grandezze",
+     "pagine": ""
+    },
+    {
+     "id": "3-L20",
+     "titolo": "Lezione 20 Grandezze direttamente proporzionali",
+     "pagine": ""
+    },
+    {
+     "id": "3-L21",
+     "titolo": "Lezione 21 Prezzi non proporzionali",
+     "pagine": ""
+    },
+    {
+     "id": "3-L22",
+     "titolo": "Lezione 22 Le proporzioni",
+     "pagine": ""
+    },
+    {
+     "id": "3-L23",
+     "titolo": "Lezione 23 Applicazioni delle proporzioni",
+     "pagine": ""
+    },
+    {
+     "id": "3-L24",
+     "titolo": "Lezione 24 Rapporti e problemi di ripartizione",
+     "pagine": ""
+    },
+    {
+     "id": "3-L25",
+     "titolo": "Lezione 25 Esercitazione sulle proporzioni",
+     "pagine": ""
+    }
+   ],
+   "obiettivi": [
+    "Utilizzare frazioni, percentuali, rapporti per descrivere situazioni quotidiane.",
+    "Calcolare percentuali utilizzando strategie diverse.",
+    "Utilizzare il concetto di rapporto fra numeri o misure ed esprimere sia nella forma decimale, sia mediante frazione.",
+    "Cogliere l’invarianza di rapporti fra numeri o misure.",
+    "Rappresentare relazioni e funzioni attraverso tabelle e grafici nel piano cartesiano a partire dalle loro equazioni anche con dati provenienti da contesti esterni alla matematica come quello delle scienze",
+    "Conoscere il collegamento tra y=ax, y=a/x e il concetto di proporzionalità."
+   ],
+   "indicatori": [],
+   "traguardi": []
+  },
+  {
+   "id": "cap4",
+   "codice": "Cap. 4",
+   "titolo": "I numeri interi",
+   "lezioni": [
+    {
+     "id": "4-L27",
+     "titolo": "Lezione 27 Caldo e freddo",
+     "pagine": ""
+    },
+    {
+     "id": "4-L28",
+     "titolo": "Lezione 28 I numeri interi. Su e giù sul termometro",
+     "pagine": ""
+    },
+    {
+     "id": "4-L29",
+     "titolo": "Lezione 29 Ordinare numeri interi. Opposto di un numero",
+     "pagine": ""
+    },
+    {
+     "id": "4-L30",
+     "titolo": "Lezione 30 Addizione di numeri interi",
+     "pagine": ""
+    },
+    {
+     "id": "4-L31",
+     "titolo": "Lezione 31 Sottrazione di numeri interi",
+     "pagine": ""
+    },
+    {
+     "id": "4-L32",
+     "titolo": "Lezione 32 Addizione algebrica",
+     "pagine": ""
+    },
+    {
+     "id": "4-L33",
+     "titolo": "Lezione 33 Moltiplicazione di numeri interi",
+     "pagine": ""
+    },
+    {
+     "id": "4-L34",
+     "titolo": "Lezione 34 Potenze con base negativa",
+     "pagine": ""
+    },
+    {
+     "id": "4-L35",
+     "titolo": "Lezione 35 Divisione di numeri interi",
+     "pagine": ""
+    },
+    {
+     "id": "4-L36",
+     "titolo": "Lezione 36 Espressioni con i numeri interi",
+     "pagine": ""
+    }
+   ],
+   "obiettivi": [
+    "Eseguire addizioni, sottrazioni, moltiplicazioni, divisioni, ordinamenti e confronti tra i numeri interi.",
+    "Rappresentare i numeri interi sulla retta.",
+    "Applicare la proprietà associativa e distributiva per raggruppare e semplificare, sia per iscritto che mentalmente, operazioni ed espressioni numeriche.",
+    "Eseguire semplici espressioni di calcolo con i numeri interi tenendo conto della convenzionalità dell’uso delle parentesi e della precedenza delle operazioni."
+   ],
+   "indicatori": [],
+   "traguardi": []
+  },
+  {
+   "id": "cap5",
+   "codice": "Cap. 5",
+   "titolo": "Equazioni per risolvere problemi",
+   "lezioni": [
+    {
+     "id": "5-L37",
+     "titolo": "Lezione 37 Leggi matematiche",
+     "pagine": ""
+    },
+    {
+     "id": "5-L38",
+     "titolo": "Lezione 38 Configurazioni regolari",
+     "pagine": ""
+    },
+    {
+     "id": "5-L39",
+     "titolo": "Lezione 39 Incognite e termini noti",
+     "pagine": ""
+    },
+    {
+     "id": "5-L40",
+     "titolo": "Lezione 40 Rompicapi con la bilancia",
+     "pagine": ""
+    },
+    {
+     "id": "5-L41",
+     "titolo": "Lezione 41 La bilancia come modello di uguaglianza",
+     "pagine": ""
+    },
+    {
+     "id": "5-L42",
+     "titolo": "Lezione 42 Le equazioni",
+     "pagine": ""
+    },
+    {
+     "id": "5-L43",
+     "titolo": "Lezione 43 I principi di equivalenza",
+     "pagine": ""
+    },
+    {
+     "id": "5-L44",
+     "titolo": "Lezione 44 Moltiplicare un’equazione",
+     "pagine": ""
+    },
+    {
+     "id": "5-L45",
+     "titolo": "Lezione 45 Dal problema all’equazione",
+     "pagine": ""
+    },
+    {
+     "id": "5-L46",
+     "titolo": "Lezione 46 Equazioni con le parentesi",
+     "pagine": ""
+    },
+    {
+     "id": "5-L47",
+     "titolo": "Lezione 47 Esercitazione sulle equazioni",
+     "pagine": ""
+    },
+    {
+     "id": "5-L48",
+     "titolo": "Lezione 48 Problemi di geometria",
+     "pagine": ""
+    }
+   ],
+   "obiettivi": [
+    "Introduzione al linguaggio algebrico.",
+    "Estendere e generalizzare sequenze numeriche e geometriche, costruendo rappresentazioni in linguaggio simbolico per esprimere la generalizzazione individuata.",
+    "Risolvere problemi utilizzando equazioni di primo grado.",
+    "Comprendere e utilizzare il concetto di algoritmo come strumento per la risoluzione di problemi."
+   ],
+   "indicatori": [],
+   "traguardi": []
+  },
+  {
+   "id": "cap6",
+   "codice": "Cap. 6",
+   "titolo": "Indici statistici",
+   "lezioni": [
+    {
+     "id": "6-L49",
+     "titolo": "Lezione 49 Frequenza dei dati",
+     "pagine": ""
+    },
+    {
+     "id": "6-L50",
+     "titolo": "Lezione 50 Campo di variazione e classi di frequenza",
+     "pagine": ""
+    },
+    {
+     "id": "6-L51",
+     "titolo": "Lezione 51 La media aritmetica",
+     "pagine": ""
+    },
+    {
+     "id": "6-L53",
+     "titolo": "Lezione 53 La mediana e confronti con la media",
+     "pagine": ""
+    }
+   ],
+   "obiettivi": [
+    "Rappresentare insiemi di dati.",
+    "In situazioni significative, confrontare dati al fine di prendere decisioni, utilizzando le distribuzioni delle frequenze e delle frequenze relative.",
+    "Conoscere, saper scegliere e utilizzare valori medi (moda, mediana, media aritmetica) adeguati alla tipologia ed alle caratteristiche dei dati a disposizione.",
+    "Valutare la variabilità di un insieme di dati determinandone, ad esempio, il campo di variazione."
+   ],
+   "indicatori": [],
+   "traguardi": []
+  },
+  {
+   "id": "cap7",
+   "codice": "Cap. 7",
+   "titolo": "Blocchi e algoritmi",
+   "lezioni": [
+    {
+     "id": "7-L54",
+     "titolo": "Lezione 54 Movimenti nel piano cartesiano",
+     "pagine": ""
+    },
+    {
+     "id": "7-L55",
+     "titolo": "Lezione 55 Crea un nuovo blocco",
+     "pagine": ""
+    },
+    {
+     "id": "7-L56",
+     "titolo": "Lezione 56 Blocchi con argomenti",
+     "pagine": ""
+    },
+    {
+     "id": "7-L57",
+     "titolo": "Lezione 57 Grafici di rette e funzioni",
+     "pagine": ""
+    },
+    {
+     "id": "7-L58",
+     "titolo": "Lezione 58 Numeri binari",
+     "pagine": ""
+    },
+    {
+     "id": "7-L59",
+     "titolo": "Lezione 59 L’algoritmo di Euclide e operazioni tra frazioni",
+     "pagine": ""
+    },
+    {
+     "id": "7-L60",
+     "titolo": "Lezione 60 Un algoritmo semplice per la radice",
+     "pagine": ""
+    },
+    {
+     "id": "7-L61",
+     "titolo": "Lezione 61 La traccia di un moto casuale",
+     "pagine": ""
+    }
+   ],
+   "obiettivi": [
+    "Scrivere semplici programmi con strutture di controllo e condizioni, anche utilizzando variabili.",
+    "Sapere creare e utilizzare i blocchi.",
+    "Valutare l’esito di un algoritmo o di un programma seguendone i passi e tenendo traccia del valore delle variabili.",
+    "Comprendere e utilizzare il concetto di algoritmo come strumento per la risoluzione di problemi.",
+    "Conoscere il sistema di numerazione sistema binario."
+   ],
+   "indicatori": [],
+   "traguardi": []
+  }
+ ]
+}
